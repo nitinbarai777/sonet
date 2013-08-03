@@ -50,11 +50,11 @@ gem 'authlogic'
 #authentication through omniauth
 gem 'omniauth'
 
-#linkedin oauth
-gem 'omniauth-linkedin'
-
-#linkedin profile data fetch
-gem 'linkedin'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'facebook_share'
+gem 'twitter'
 
 #random key generate
 gem 'webget_ruby_secure_random'

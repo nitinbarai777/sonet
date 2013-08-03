@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Economy::Application.load_tasks
+Sonet::Application.load_tasks

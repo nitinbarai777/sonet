@@ -1,6 +1,8 @@
 <div class="" style="text-align: center;" data-no-turbolink>
-  <h3><%= t("general.login_via_linkedin")%></h3>
-  <span><%= link_to image_tag("linkedin_login.jpeg", :id => 'subscribe_lnk', :title => t("general.linkedin")), "/auth/linkedin" %></span>
+  <h3><%= t("general.login_via_social_networks")%></h3>
+  <span><%= link_to image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook")), "/auth/facebook" %></span>
+  <span><%= link_to image_tag("twitter.jpeg", :id => 'subscribe_lnk', :title => t("general.twitter")), "/auth/twitter" %></span>
+  <span><%= link_to image_tag("google.jpeg", :id => 'subscribe_lnk', :title => t("general.google")), "/auth/google_oauth2" %></span>
   <br />
   <span id="spinner" style="float: right; margin:-46px 463px 0 0; display: none;">
     <%= image_tag "loading.gif" %>

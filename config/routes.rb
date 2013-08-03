@@ -1,37 +1,30 @@
-Economy::Application.routes.draw do
+Sonet::Application.routes.draw do
   resources :articles
 
 	resources :users
 	resources :user_sessions
 	resources :static_pages
 	resources :fronts
+	resources :user_urls
+	resources :url_contents
 	
 	get 'logout' => 'user_sessions#destroy', :as => :logout
 	get 'login' => 'user_sessions#new', :as => :login
 	get 'dashboard' => 'fronts#dashboard', :as => :dashboard
-	get 'feedbacks' => 'fronts#feedbacks', :as => :feedbacks
-	get 'readlog' => 'fronts#readlog', :as => :readlog
-	
 	
 	get '/p/:username' => 'fronts#dashboard'
 	
-	match '/feedback/:tracking_pixel' => 'fronts#feedback', :as => :feedback, via: [:get, :post, :patch]
-	
-	match 'invite' => 'fronts#invite', :as => :invite, via: [:get, :post, :patch]
-	get '/is_email_invited' => 'fronts#is_email_invited', :as => :is_email_invited
-	
-	get 'subscribe' => 'fronts#subscribe', :as => :subscribe
 	get 'signin' => 'fronts#login', :as => :user_login
 	
-	match '/leave/feedback' => 'fronts#leave_feedback', :as => :leave_feedback, via: [:get, :post, :patch]
-	
-	get 'cv.xml' => 'fronts#cv_xml', :as => :cv_xml
-	
+
 	match '/change_password' => 'fronts#change_password', :as => :change_password, via: [:get, :post, :patch]
   get '/fronts/other/:page_id' => 'fronts#other', :as => :other
   match '/forgot_password' => 'fronts#forgot_password', :as => :forgot_password, via: [:get, :post]
-  get '/auth/linkedin/callback', :to => 'fronts#auth_linkedin_login'
-  get '/auth/facebook/callback', :to => 'fronts#auth_facebook_login'
+  
+  get '/auth/twitter/callback', :to => 'fronts#auth_login'
+  get '/auth/facebook/callback', :to => 'fronts#auth_login'
+  get '/auth/google_oauth2/callback', :to => 'fronts#auth_login'
+  
   get '/oauth2callback', :to => 'fronts#auth_login'
   get '/auth/failure', :to => 'fronts#dashboard'
   get '/:fp' => 'fronts#other'

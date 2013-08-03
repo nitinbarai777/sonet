@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless current_user
-      redirect_to :controller => "fronts", :action => "subscribe"
+      redirect_to :controller => "fronts", :action => "login"
     end
   end
   
@@ -60,28 +60,5 @@ class ApplicationController < ActionController::Base
     current_user.authorizations
   end
   
-  def invite_email_exists?(email)
-    user = User.find_by_email(email)
-    if user
-			user_invited_by_current_user = current_user.invitings.where(:invited_user_id => user.id).first
-			if user_invited_by_current_user
-				return {result: true, invited_date: user_invited_by_current_user.created_at.to_s(:default_date), is_user: true, user: user, invite: user_invited_by_current_user}
-			else
-				return {result: false, is_user: true, user: user}
-			end	
-	  end
-	  return {result: false, is_user: false}
-  end
-  
-  def get_host_name(email)
-  	unless email.nil?
-  		email_arr = []
-  		email_arr = email.split("@")
-  		if email_arr[1]
-  			email_arr = email_arr[1].split(".")
-  			email_arr[0]
-  		end
-  	end
-  end
   
 end

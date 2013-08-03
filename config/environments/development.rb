@@ -1,4 +1,4 @@
-Economy::Application.configure do
+Sonet::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -34,6 +34,10 @@ Economy::Application.configure do
   MAIL_PORT = "587"
   MAIL_ADDRESS = "smtp.gmail.com"
   MAIL_DOMAIN = "gmail.com"
-  LINKEDIN_CONSUMER_KEY = "fk9qc6p7z0ci"
-  LINKEDIN_CONSUMER_SECRET = "neJvNNUaLjjWwC8L"  
+  FACEBOOK_CONSUMER_KEY = "621228414576481"
+  FACEBOOK_CONSUMER_SECRET = "3f17546ff635a9d88d0a0f927b9c7426"    
+  GOOGLE_CONSUMER_KEY = "275103329419.apps.googleusercontent.com"
+  GOOGLE_CONSUMER_SECRET = "klM_mz0r5Pt2ZQOJNVYmva6e"  
+  TWITTER_CONSUMER_KEY = "TegYQXkcEma1nGJ5wjTAdg"
+  TWITTER_CONSUMER_SECRET = "9ayVwYlIjLNLLm8ZglXsyUfLm91NWgVBikGZoVgXDrk"  
 end

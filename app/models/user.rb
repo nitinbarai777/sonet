@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
-	
-	include LinkedinHandler
+
 	include ActionView::Helpers::TextHelper
 	
   acts_as_authentic do |c|
     c.validate_email_field = false
     c.login_field = 'username'
   end
+
+  mount_uploader :image, ImageUploader
   
   attr_writer :password_required
 
@@ -21,6 +22,7 @@ class User < ActiveRecord::Base
 	has_one :user_role, :dependent => :destroy
 	has_one :role, :through => :user_role
 	has_many :authorizations, :dependent => :destroy
+	has_many :user_urls, :dependent => :destroy
 	
 	has_one :cv, :dependent => :destroy
 	has_many :cv_educations

@@ -8,19 +8,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :crypted_password, :null => true
       t.string :password_salt, :null => true
       t.string :persistence_token, :null => true
-      t.string :state
-      t.string :city
-      t.text :address
-      t.string :zipcode
-      t.string :contact
-      t.string :phone
-      t.string :mobile
-      t.string :birthdate
-      t.string :headline
 	    t.string :image
 	    t.string :register_token
       t.boolean :is_active, :default => true
-      t.boolean :is_provider, :default => false
+      t.boolean :is_provider, :default => true
 			t.integer   :login_count,         :null => false, :default => 0 # optional, see Authlogic::Session::MagicColumns
 			t.integer   :failed_login_count,  :null => false, :default => 0 # optional, see Authlogic::Session::MagicColumns
 			t.datetime  :last_request_at                                    # optional, see Authlogic::Session::MagicColumns

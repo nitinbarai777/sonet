@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Economy::Application.config.secret_key_base = '4f5e554a2a6d7ccf79794fa48680ba617b0b8b1fe88401ea1e6c18ac3b87d49217f04e543b15c39ad4f98cf789080ae5c1e444f10bc86625bf449fa89fd9a95f'
+Sonet::Application.config.secret_key_base = '4f5e554a2a6d7ccf79794fa48680ba617b0b8b1fe88401ea1e6c18ac3b87d49217f04e543b15c39ad4f98cf789080ae5c1e444f10bc86625bf449fa89fd9a95f'

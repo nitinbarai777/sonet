@@ -1,0 +1,161 @@
+<div class="">
+  <%= form_for(@o_single) do |f| %>
+
+		<%= f.hidden_field :user_url_id, :value => session[:url_id] %> 
+
+    	
+    	<% if current_user.is_facebook_user? %>
+		    <div class="field">
+		      <h3><%= t("general.share_content") %><span class="redStart">*</span></h3>
+		      <% if @o_single.errors[:content].any? %>
+		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
+		      <% end %>
+		    </div>
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 380px; height: 138px;" %>
+		    
+		    <div class="field">    	
+	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
+	      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info' %>
+	      </div>	
+      <% end %>
+      
+      
+      
+    	<% if current_user.is_twitter_user? %>
+		    <div class="field">
+		      <h3><%= t("general.share_content") %><span class="redStart">*</span><//h3>
+		      <% if @o_single.errors[:content].any? %>
+		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
+		      <% end %>
+		    </div>
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 380px; height: 138px;" %>
+		    
+		    <div class="field">    	
+	    		<%= f.hidden_field :is_twitter_shared, :value => true %>
+	      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info' %>
+      	</div>	
+      <% end %>
+      
+      
+      
+    	<% if current_user.is_google_user? %>
+    		<%= f.hidden_field :is_google_shared, :value => true %>
+    	<% end %>
+    	
+    	<div class="clearb">&nbsp;</div>
+    	
+  		<h3><%= t("general.share_content_directly_to_networks") %></h3>
+  		
+  		<table class="" width="50%">
+  			<tr>
+  				<td width="30%"><%= t("general.share_on_facebook") %></td>
+  				<td width="20%">
+						<!-- facebook -->
+						<div id="fb-root"></div>
+						<a name="fb_share" id="share_button"></a>    					
+  				</td>
+  			</tr>
+  			<tr>
+  				<td><%= t("general.share_on_twitter") %></td>
+  				<td>
+						<!-- twitter -->
+						<div class="social_button twitter_button">
+			    		<div id="foo"><a href="https://google.com" class="twitter-share-button" data-count="horizontal">Tweet</a></div>
+						</div>    					
+  				</td>
+  			</tr>
+  			<tr>
+  				<td><%= t("general.share_on_google") %></td>
+  				<td>
+		    		<!-- google -->
+						<g:plus action="share" href="<%= @user_url.url_name %>"></g:plus>    					
+  				</td>
+  			</tr>
+			</table>
+      
+      
+      <%#= link_to t("general.back"), url_contents_url, :class => "btn btn-info" %>
+
+      
+    
+  <% end %>
+  <div class="cl"></div>
+</div>
+
+
+
+
+<%
+  image = '' 
+  if @user_url.image
+    image = "http://economyofone.herokuapp.com/assets/logo-b8495defaaff575ccd446b3e14cc23e2.png"
+  end
+%>  
+
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<script type="text/javascript">
+
+
+//twitter
+window.twttr = (function (d, s, id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = {
+        _e: [],
+        ready: function (f) {
+            t._e.push(f)
+        }
+    });
+}(document, "script", "twitter-wjs"));
+
+
+
+//facebook api
+
+window.fbAsyncInit = function() {
+FB.init({appId: '<%= FACEBOOK_CONSUMER_KEY %>', status: true, cookie: true,
+xfbml: true});
+};
+(function() {
+var e = document.createElement('script'); e.async = true;
+e.src = document.location.protocol +
+'//connect.facebook.net/en_US/all.js';
+document.getElementById('fb-root').appendChild(e);
+}());
+
+
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<%= @user_url.title %>',
+link: '<%= @user_url.url_name %>',
+picture: '<%= image %>',
+description: '<%= @user_url.desc %>',
+message: ''
+}
+);
+});
+});
+
+
+
+//google api
+
+window.___gcfg = {
+  lang: 'en-US'
+};
+
+(function() {
+  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+  po.src = 'https://apis.google.com/js/plusone.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>

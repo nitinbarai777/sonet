@@ -7,7 +7,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@admin = User.create(:username => 'admin', :first_name => 'admin', :password => 'admin', :password_confirmation => 'admin', :last_name => 'admin', :email => 'admin@economyofone.com', :is_active => 1)
+@admin = User.create(:username => 'admin', :first_name => 'admin', :password => 'admin', :password_confirmation => 'admin', :last_name => 'admin', :email => 'admin@sonet.com', :is_active => 1, :is_provider => false)
 @admin_role = Role.create(:role_type => "SuperAdmin")
 @admin.role = @admin_role
 

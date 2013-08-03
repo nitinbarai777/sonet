@@ -1,0 +1,40 @@
+<div class="">
+  <%= form_for(@o_single) do |f| %>
+ 
+    <div class="field">
+      <%= t("general.url_name") %><span class="redStart">*</span>
+      <% if @o_single.errors[:url_name].any? %>
+        <span class="text-error"><%= @o_single.errors[:url_name].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :url_name %>
+    
+    <div class="field">
+      <%= t("general.title") %><span class="redStart">*</span>
+      <% if @o_single.errors[:title].any? %>
+        <span class="text-error"><%= @o_single.errors[:title].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :title %>    
+   
+    <div class="field">
+      <%= t("general.desc") %>
+    </div>
+    <%= f.text_area :desc, :style => "width: 380px; height: 138px;" %>
+    
+	  <div class="field">
+	    <%= f.label t("general.image") %>
+	    <%= f.file_field :image %>
+	  </div>    
+    
+  	<% if @o_single.image? %>
+			<%= image_tag @o_single.image_url(:logo) %>
+		<% end %>     
+    
+    <div class="field">
+      <%= f.submit t("general.save"), :class => 'btn btn-info' %>
+      <%= link_to t("general.back"), user_urls_url, :class => "btn btn-info" %>
+    </div>
+  <% end %>
+  <div class="cl"></div>
+</div>

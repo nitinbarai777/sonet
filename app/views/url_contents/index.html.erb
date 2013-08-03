@@ -1,0 +1,91 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<h3 style="text-align: center;"><a><%= @user_url.url_name %></a></h3>
+
+<div class="clearb">&nbsp;</div> 
+
+
+<table class="table table-condensed pretty" width="100%">
+	<tr>
+		<td width="80%">
+			<!--<iframe width="100%" height="315" src="<%#= @user_url.url_name %>" id="uf" name='uf' frameborder="0" allowfullscreen></iframe>-->
+			<div style="margin: 0 auto; width:100%; height:500px;">
+			    <object type="text/html" data="<%= @user_url.url_name %>"
+			            style="width:100%; height:100%; margin:1%;">
+			    </object>
+			</div>
+		</td>
+		<td width="30%"><%= render 'form' %></td>	
+	</tr>
+</table>			
+
+<div class="clearb">&nbsp;</div>
+
+<h3><%= t("general.all_records") %> (<%= @o_all.size %>) </h3>
+
+<div class="clearb">&nbsp;</div>
+
+<% if @o_all.size > 0 %>
+<table class="table table-striped" width="100%">
+	<thead>
+		<tr>
+			<th width="80%"><%= sortable "content", t("general.content") %></th>
+			<th width="15%"><%= t("general.url_name") %></th>
+			<th width="10%"><%= sortable "created_at", t("general.created_at")%></th>
+			<th width="10%"><%= t("general.actions") %></th>
+		</tr>
+	<thead>
+	<tbody>
+		<% @o_all.each do |o_row| %>
+		<tr>
+			<td><%= o_row.content %></td>
+			<td><a><%= o_row.user_url.url_name %></a></td>
+			<td><%= o_row.created_at.to_s(:pretty) %></td>
+			<td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_url_content_path(o_row) %>
+			<%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= will_paginate @o_all %>
+<% else %>
+<p>
+	<%= t("general.record_not_found") %>
+</p>
+<div class="clearb">
+	&nbsp;
+</div>
+<% end %>
+<%= link_to t("general.Add"), new_url_content_path, :class => "btn btn-info" %>
+
+<script language=javascript>
+if(!window.Kolich){
+  Kolich = {};
+}
+
+Kolich.Selector = {};
+Kolich.Selector.getSelected = function(){
+  var t = '';
+  if(window.getSelection){
+    t = window.getSelection();
+  }else if(document.getSelection){
+    t = document.getSelection();
+  }else if(document.selection){
+    t = document.selection.createRange().text;
+  }
+  return t;
+}
+
+Kolich.Selector.mouseup = function(){
+  var st = Kolich.Selector.getSelected();
+  if(st!=''){
+    $("textarea#data_content").text(st);
+  }
+}
+
+$(document).ready(function(){
+  $(document).bind("mouseup", Kolich.Selector.mouseup);
+});
+
+</script>

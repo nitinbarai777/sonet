@@ -1,4 +1,4 @@
-Economy::Application.configure do
+Sonet::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -78,13 +78,17 @@ Economy::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  BASE_URL = "http://economyofone.herokuapp.com"
-  BASE_URL_DOMAIN = "economyofone.herokuapp.com"
+  BASE_URL = "http://localhost:3011"
+  BASE_URL_DOMAIN = "localhost:3011"
   MAIL_USER_NAME = "nbarai77@gmail.com"
   MAIL_PASSWORD = "nitin777"
   MAIL_PORT = "587"
   MAIL_ADDRESS = "smtp.gmail.com"
   MAIL_DOMAIN = "gmail.com"
-  LINKEDIN_CONSUMER_KEY = "ayewb1qis3dw"
-  LINKEDIN_CONSUMER_SECRET = "ZQSPwE7ee72C5SSm"    
+  FACEBOOK_CONSUMER_KEY = "621228414576481"
+  FACEBOOK_CONSUMER_SECRET = "3f17546ff635a9d88d0a0f927b9c7426"    
+  GOOGLE_CONSUMER_KEY = "275103329419.apps.googleusercontent.com"
+  GOOGLE_CONSUMER_SECRET = "klM_mz0r5Pt2ZQOJNVYmva6e"  
+  TWITTER_CONSUMER_KEY = "TegYQXkcEma1nGJ5wjTAdg"
+  TWITTER_CONSUMER_SECRET = "9ayVwYlIjLNLLm8ZglXsyUfLm91NWgVBikGZoVgXDrk"    
 end
