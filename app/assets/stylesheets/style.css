@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  border:0;
+  margin:0;
+  outline:none;
+  padding:0;
+  text-decoration:none;
+}
+body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+  list-style:none;
+  text-decoration:none;
+  letter-spacing:normal;
+}
+ol, ul {
+  list-style: none;
+}
+p {text-align:left;}
+/* clear Float  */
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/************* Font Face **************/
+@font-face {
+    font-family: 'museo_slab_500regular';
+    src: url('../fonts/museo_slab_500-webfont.eot');
+    src: url('../fonts/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museo_slab_500-webfont.woff') format('woff'),
+         url('../fonts/museo_slab_500-webfont.ttf') format('truetype'),
+         url('../fonts/museo_slab_500-webfont.svg#museo_slab_500regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* remember to define focus styles! */
+body {font-family:arial, Helvetica, sans-serif; font-size:13px; color:#747474;}
+
+#skip_link {left:-50%; position:absolute; width:auto;}
+
+#wrapper {}
+
+/************* Header **************/
+#header {height:86px; background:#fff; border-bottom:1px solid #D2D3D4; position:fixed; top:0; width:100%; z-index:55;}
+#header .header_content {width:815px; margin:30px auto;}
+#logo {float:left; width:300px; padding:25px 0 0 0;}
+#logo a{font-family:'museo_slab_500regular'; font-size:32px; color:#111111;}
+#logo a span {color:#8ac71e;}
+
+#menu {float:right;}
+#menu ul{}
+#menu ul li{float:left; margin:0 0 0 49px;}
+#menu ul li a{display:block; height:83px; line-height:83px; border-top:3px solid #fff; color:#333333; font-family:'museo_slab_500regular';}
+#menu ul li a:hover{border-top:3px solid #8ac71e; color:#8ac71e;}
+#menu ul li a.active{border-top:3px solid #8ac71e; color:#8ac71e;}
+
+
+/************* Main Container **************/
+#main_container {padding:0;}
+
+.punchline_container {padding:20px 0 0 0;}
+.punchline {background:url(/assets/top_shadow.png) no-repeat center top #424C18;}
+.punchline .punchline_content{background:url(/assets/bottom_shadow.png) no-repeat center bottom; padding:40px 0;}
+.punchline .punchline_content p{width:800px; margin:0 auto; padding:0 140px 0 0; font-size:22px; font-family:'museo_slab_500regular', "Times New Roman", Times, serif; color:#fff;
+line-height:30px;}
+
+#main_content {width:940px; margin:0 auto; padding:35px 0;}
+#main_content p{font-size:13px; line-height:20px; text-align:justify;}
+
+.home_blocks {padding:25px 0 50px; width:980px; position:relative; left:-40px;}
+.home_blocks .home_content_block{float:left; padding:0 0 0 40px; width:285px;}
+.home_blocks .home_content_block h2{font-family:'museo_slab_500regular'; margin:0 0 20px; padding:0 0 0 45px; position:relative; font-size:18px; color:#333333; font-weight:normal;}
+.home_blocks .home_content_block h2 span{width:35px; height:35px; position:absolute; left:0; top:0px; }
+
+
+.page_content {padding:85px 0 0 0;}
+.page_content .title{}
+.page_content .title h1{font-family:'museo_slab_500regular'; margin:0 0 20px 0; font-size:25px; color:#333333; font-weight:normal; text-transform:uppercase; text-align:center;}
+.page_content .content_block {background:url(/assets/top_shadow_light.png) no-repeat center top; padding:40px 0 20px 0; width:940px;}
+
+/************* Techonologies **************/
+.techonologies_block {width:940px; padding:25px 0;}
+.techonologies_block .techonologies_logo {width:92px; float:left;}
+.techonologies_block .techonologies_detail {width:830px; float:right; padding:0 0 0 0;}
+.techonologies_block .techonologies_detail h2{font-family:'museo_slab_500regular'; margin:0 0 10px 0; position:relative; font-size:18px; color:#333333; font-weight:normal;}
+.techonologies_block .techonologies_detail p{}
+.techonologies_logos {padding:10px 0 0 0;}
+
+/************** Team ****************/
+.team_block {padding:25px 0 15px 0;}
+.team_block h2{font-family:'museo_slab_500regular'; margin:0 0 20px; padding:0 0 0 45px; position:relative; font-size:18px; color:#333333; font-weight:normal;}
+.team_block h2 span{width:35px; height:35px; position:absolute; left:0; top:0px; }
+
+
+/************** Blog ****************/
+.blog_container {width:980px; padding:25px 0 15px 0; position:relative; left:-40px;}
+.blog_block {width:285px; float:left; padding:0 0 0 40px;}
+.blog_block .blogs_title{background:url(/assets/blog_sap.gif) repeat-x left bottom; padding:0 0 20px; margin:0 0 20px 0; min-height:33px;}
+.blog_block .blogs_title h3{font-family:'museo_slab_500regular'; font-size:14px; color:#333333; font-weight:normal; text-transform:uppercase;}
+.blog_container .more{position:absolute; right:0; bottom:-25px;}
+.blog_container .more a{font-family:'museo_slab_500regular'; font-size:11px; color:#333333; background:url(/assets/more_pointer.png) no-repeat right 3px; padding:0 14px 0 0;}
+.blog_container .more a:hover{color:#8ac71e;}
+
+.blog_tags {padding:30px 0; width:940px;}
+.blog_tags .blog_tags_title{background:url(/assets/blog_sap.gif) repeat-x left bottom; padding:0 0 15px;  margin:0 0 15px 0; }
+.blog_tags .blog_tags_title h3{font-family:'museo_slab_500regular'; font-size:14px; color:#333333; font-weight:normal; text-transform:uppercase;}
+.blog_tags ul {}
+.blog_tags ul li{float:left; padding:0 8px 0 0;}
+.blog_tags ul li a{font-family:'museo_slab_500regular'; font-size:12px; color:#333333; display:block; padding:3px 5px; border:1px solid #D2D3D4;}
+.blog_tags ul li a:hover{color:#8ac71e;}
+
+
+/************** Careers ****************/
+.careers_block {padding:25px 0 15px 0; width:940px;}
+.careers_block h2{font-family:'museo_slab_500regular'; margin:0 0 20px; padding:0 0 0 45px; position:relative; font-size:18px; color:#333333; font-weight:normal;}
+.careers_block h2 span{width:35px; height:35px; position:absolute; left:0; top:0px; }
+.careers_content{width:980px; padding:25px 0 15px 0; position:relative; left:-40px;}
+.careers_content_block {padding:0 0 40px 40px; width:450px; float:left;}
+.careers_content_block h4{font-family:'museo_slab_500regular'; margin:0 0 10px 0; font-size:18px; color:#333333; font-weight:normal;}
+
+
+/************** Contact ****************/
+.contact {padding:20px 0 0 0;}
+
+.contact_left {width:350px; float:left; padding:25px 0 0 100px;}
+.contact_left h1{font-family:'museo_slab_500regular'; color:#333333; font-size:18px; font-weight:normal; padding:0 0 5px 0;}
+.contact_left .contact_detail {padding:10px 0 15px 0;}
+.contact_left .contact_detail a{color:#8ac71e;}
+
+.contact_right {width:450px; float:right; padding:52px 0 0 0;}
+.contact_right h2{font-family:'museo_slab_500regular'; margin:0 0 20px; font-size:18px; color:#333333; font-weight:normal;}
+
+.contact_form {width:400px; position:relative;}
+.contact_form .contact_form_row {width:400px; position:relative;}
+.contact_form .contact_form_row label{font-size:12px; font-weight:normal; left:11px; position:absolute; top:7px; color:#333;}
+.contact_form .contact_form_row label span{color:#8ac71e;}
+.contact_form .contact_form_row input{ background:#F4F4F4; border:1px solid #D2D2D2; border-radius:5px; color:#2D2D2D; font-size:12px; height:28px; line-height:28px;
+margin:0 0 6px; padding:0 10px; width:378px;}
+.contact_form .contact_form_row textarea{background:#F4F4F4; border:1px solid #D2D2D2; border-radius:5px; color:#2D2D2D; font-size:12px; height:60px; line-height:16px;
+margin:0 0 6px; padding:7px 2px 2px 10px; resize:none; width:386px;}
+
+.contact_form .contact_form_row input.submit {color:#666; cursor:pointer; float:right; font-size:14px; height:30px; line-height:29px; padding:0 20px 0 0; text-align:center; text-transform:uppercase; width:90px; font-family:'museo_slab_500regular'; background:url(/assets/more_pointer.png) no-repeat 64px 11px #F4F4F4;}
+.contact_form .contact_form_row input.submit:hover {color:#fff; background:url(/assets/more_pointer_hover.png) no-repeat 64px 11px #333; border-color:#000;}
+/************* Footer **************/
+#footer {background:#363839; border-top:12px solid #E9EAEE; padding:60px 0; margin:55px 0 0 0;}
+#footer .footer_content{width:940px; margin:0 auto;}
+#footer .footer_content p{color:#999;}
+
+
+/***************** Lime Green *****************/
+.limegreen #logo a span {color:#424C18;}
+.limegreen .punchline {background:url(/assets/top_shadow.png) no-repeat center top #424C18;}
+.limegreen #menu ul li a:hover{border-top:3px solid #424C18; color:#424C18;}
+.limegreen #menu ul li a.active{border-top:3px solid #424C18; color:#424C18;}
+.limegreen .blog_container .more a:hover{color:#424C18;}
+.limegreen .blog_tags ul li a:hover{color:#424C18;}
+.limegreen .contact_left .contact_detail a{color:#424C18;}
+.limegreen .contact_form .contact_form_row label span{color:#424C18;}
+
+/***************** Blue *****************/
+.blue #logo a span {color:#0070e2;}
+.blue .punchline {background:url(/assets/top_shadow.png) no-repeat center top #fdfdfd;}
+.blue #menu ul li a:hover{border-top:3px solid #0070e2; color:#0070e2;}
+.blue #menu ul li a.active{border-top:3px solid #0070e2; color:#0070e2;}
+.blue .blog_container .more a:hover{color:#0070e2;}
+.blue .blog_tags ul li a:hover{color:#0070e2;}
+.blue .contact_left .contact_detail a{color:#0070e2;}
+.blue .contact_form .contact_form_row label span{color:#0070e2;}
+
+/***************** Red *****************/
+.red #logo a span {color:#B30013;}
+.red .punchline {background:url(/assets/top_shadow.png) no-repeat center top #f8f8f8;}
+.red #menu ul li a:hover{border-top:3px solid #B30013; color:#B30013;}
+.red #menu ul li a.active{border-top:3px solid #B30013; color:#B30013;}
+.red .blog_container .more a:hover{color:#B30013;}
+.red .blog_tags ul li a:hover{color:#B30013;}
+.red .contact_left .contact_detail a{color:#B30013;}
+.red .contact_form .contact_form_row label span{color:#B30013;}
+
+/***************** Purple *****************/
+.purple #logo a span {color:#db34ae;}
+.purple .punchline {background:url(/assets/top_shadow.png) no-repeat center top #fffeff;}
+.purple #menu ul li a:hover{border-top:3px solid #db34ae; color:#db34ae;}
+.purple #menu ul li a.active{border-top:3px solid #db34ae; color:#db34ae;}
+.purple .blog_container .more a:hover{color:#db34ae;}
+.purple .blog_tags ul li a:hover{color:#db34ae;}
+.purple .contact_left .contact_detail a{color:#db34ae;}
+.purple .contact_form .contact_form_row label span{color:#db34ae;}
+
+/***************** Orange *****************/
+.orange #logo a span {color:#ff9000;}
+.orange .punchline {background:url(/assets/top_shadow.png) no-repeat center top #f9f9f9;}
+.orange #menu ul li a:hover{border-top:3px solid #ff9000; color:#ff9000;}
+.orange #menu ul li a.active{border-top:3px solid #ff9000; color:#ff9000;}
+.orange .blog_container .more a:hover{color:#ff9000;}
+.orange .blog_tags ul li a:hover{color:#ff9000;}
+.orange .contact_left .contact_detail a{color:#ff9000;}
+.orange .contact_form .contact_form_row label span{color:#ff9000;}
+
+
+
+
+
+
+.redStart {color: red; margin:0 5px 0 3px;font-size:15px;}
+.brand {width:50px; height:30px;}
+.footerFront p {text-align:center !important;}

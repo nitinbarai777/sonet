@@ -1,0 +1,5 @@
+<% if @o_single %>
+  <%= @o_single.content.html_safe unless @o_single.content.blank? %>
+<% else %>
+  <%= t("general.page_not_found") %>
+<% end %>  

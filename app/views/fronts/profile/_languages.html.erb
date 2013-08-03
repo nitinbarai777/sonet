@@ -1,0 +1,16 @@
+<table class="table">
+    <tr>
+      <td>
+        <div style="float:left;width:100%;">
+          
+          
+          <% @user.cv.cv_languages.load.each do |row| %>
+            <p><b># <%= row.language %></b> - <%= row.proficiency %></p>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+</table>
+<p style="float:right;">
+<%= link_to t("general.back"), "#", :class => "btn btn-info", :id => "stepform66" %>
+</p>

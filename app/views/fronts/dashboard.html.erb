@@ -1,0 +1,20 @@
+<% if flash[:error_profile] %>
+  <div class="alert-error" style="text-align:center;" data-no-turbolink>
+    <h3><%= flash[:error_profile] %></h3>
+    <%= link_to t("general.retry"), dashboard_path(:refresh => true) %>
+    <% flash[:error_profile] = nil %>
+   </div>
+<% end %>
+<% if current_user %>
+    <% if is_admin? %>
+      <%= render "admin_dashboard" %>
+    <% elsif is_user? and @user.has_cv? %>
+      <% if params[:username] %>
+        <%= render "user_dashboard" %>
+      <% else %>
+        <%= render "mainpitch" %>
+      <% end %>  
+    <% end %>
+<% else %>
+  <%= render "mainpitch" %>
+<% end %>

@@ -1,0 +1,37 @@
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    
+    <h3><%= t("general.all_records") %> (<%= @o_all.size %>)</h3>
+    
+    <table class="table table-condensed pretty" width="100%">
+     <thead> 
+      <tr>
+        <th width="15%"><%= sortable "name", t("general.name") %></th>
+        <th width="15%"><%= sortable "page_route", t("general.page_route") %></th>
+        <th width="15%"><%= sortable "created_at", t("general.created_at")%></th>
+        <th width="5%"><%= sortable "is_footer", t("general.is_footer") %></th>
+        <th width="10%"><%= t("general.actions") %></th>
+      </tr>
+     <thead> 
+      
+      <tbody>
+        <% if @o_all.size > 0 %>
+          <% @o_all.each do |o_row| %>
+            <tr>
+              <td><%= o_row.name %></td>
+              <td><%= o_row.page_route %></td>
+              <td><%= o_row.created_at.to_s(:pretty) %></td>
+              <td><%= o_row.is_footer ? image_tag("Yes.gif") : image_tag("No.gif") %></td>
+              <td> 
+                <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_static_page_path(o_row) %>
+                <%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr><th colspan="6"><%= t("general.record_not_found") %></th></tr>
+        <% end %>      
+      </tbody>
+    </table>
+    <%= will_paginate @o_all %>
+    <%= link_to t("general.Add"), new_static_page_path, :class => "btn btn-info" %>

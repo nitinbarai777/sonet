@@ -1,0 +1,79 @@
+<h3><%= t("general.this_people_read_your_cv") %></h3>
+<span class="invite_btn"><%= link_to t("general.invite"), invite_path, :class => "btn btn-info" %></span>
+<div class="">
+
+  <% if @feedbacks.size > 0 %>
+  
+    <div id='chart'></div>
+    <%= render_chart(@user_cv_chart, 'chart') %>  
+    
+    <table class="table table-condensed" width="100%">
+      
+     <thead>
+       <tr><td>&nbsp;</td></tr> 
+      <tr>
+        <td width="10%"></td>
+        <td width="15%"><%= t("general.invited_date")%></td>
+        <td width="20%"><%= t("general.mail_sent_to")%></td>
+        <td width="15%"><%= t("general.mail_read_on")%></td>
+        <td width="40%"><%= t("general.feedback") %></td>
+      </tr>
+     <thead>   
+      <tbody>
+          <% arr_host_name = feedback_arr = [] %>
+          <% @feedbacks.each do |o_row| %>
+            <% unless o_row.invited.email.nil? or o_row.invited.email.empty? %>
+              <tr>
+                <td>
+                  <% unless arr_host_name.include?(o_row.host_name) %>
+                    <b><%= o_row.host_name.capitalize %>:</b> 
+                  <% end %>
+                  <% arr_host_name << o_row.host_name %>
+                </td>
+                <td><b><%= o_row.created_at.to_s(:pretty) if o_row.created_at %></b></td>
+                <td><a><%= o_row.invited.email %></a></td>
+                <td>
+                <% o_row.readlogs.each do |r| %>
+                  <b><%= r.created_at.to_s(:pretty) if r.created_at %></b><br />
+                <% end %>
+                </td>
+                <td>
+                  <% unless o_row.feedback.blank? %>
+                    On <%= o_row.feedback_date.to_s(:pretty) if o_row.feedback_date %> <%= o_row.invited.email %> said: "<%= o_row.feedback %>"
+                  <% end %>  
+                </td>
+              </tr>
+             <% else %>
+              <% 
+                o_readlogs = o_row.readlogs.first
+                if o_readlogs
+                  feedback_hash = {}
+                  feedback_hash["ip_add"] = o_readlogs.ip_add
+                  feedback_hash["feedback"] = o_row.feedback
+                  feedback_hash["feedback_date"] = o_row.feedback_date
+                  feedback_arr << feedback_hash  
+                end 
+              %>
+             <% end %> 
+          <% end %>
+          <% feedback_arr.each do |feedback| %>
+            <tr>
+              <td>
+                <b><%= feedback["ip_add"] %></b>
+              </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>
+                 <% unless feedback["feedback"].blank? %>
+                  On <%= feedback["feedback_date"].to_s(:pretty) if feedback["feedback_date"] %> someone at <%= feedback["ip_add"] %> said: "<%= feedback["feedback"] %>"
+                 <% end %> 
+              </td>
+            </tr>          
+          <% end %>
+       </tbody>
+    </table>
+  <% else %>
+    <b><%= t("general.please_invite_and_send_cv") %></b>
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+<div class="" data-no-turbolink>
+
+    <% if flash[:notice_profile] %>
+      <div class="alert-success" id="notice" style="text-align:center;"><h3><%= flash[:notice_profile] %></h3></div>
+      <% flash[:notice_profile] = nil %>
+    <% end %>
+
+    <div class="well sidebar-nav">
+      <ul class="nav nav-tabs">
+        <li id="stepform1" class="active">
+          <%= link_to t("general.profile"),"#profile", :id => "stepform1" %>
+        </li>        
+        <li id="stepform2">
+          <%= link_to t("general.positions"),"#positions", :id => "stepform2" %>
+        </li>
+        <li id="stepform3">
+          <%= link_to t("general.skills"),"#skills", :id => "stepform3" %>
+        </li>       
+        <li id="stepform4">
+          <%= link_to t("general.educations"),"#educations", :id => "stepform4" %>
+        </li>
+        <li id="stepform5">
+          <%= link_to t("general.languages"),"#languages", :id => "stepform5" %>
+        </li>        
+      </ul>
+
+      <span class="p_header_links">
+        <%= link_to t("general.download_as_csv"), cv_xml_path %> | 
+        <%= link_to t("general.refresh_from_linkeding"), "/p/#{current_user.user_name}?refresh=true", :id => 'refresh_lnk_id', :onClick => "refresh_linkedin_data('#{t('general.import_data_from_linkedin')}'); return false;" %>
+      </span>
+      <span id="spinner" style="margin-top: -15px; float:right; display: none;">
+        <%= t("general.please_wait") %> <%= image_tag "loading.gif" %>
+      </span>      
+        
+    </div>
+      
+    <div id="stepcontent1" style="display:block;">    
+      <%= render "fronts/profile/profile" %>
+    </div>    
+    <div id="stepcontent2" style="display:none;">    
+      <%= render "fronts/profile/positions" %>
+    </div>
+    <div id="stepcontent3" style="display:none;">    
+      <%= render "fronts/profile/skills" %>
+    </div>
+    <div id="stepcontent4" style="display:none;">    
+      <%= render "fronts/profile/educations" %>
+    </div>
+    <div id="stepcontent5" style="display:none;">    
+      <%= render "fronts/profile/languages" %>
+    </div>    
+  
+  <div class="cl"></div>
+</div>

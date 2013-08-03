@@ -1,0 +1,19 @@
+<% if @invite %>
+    <div class="" data-no-turbolink>
+      <h3><%= t("general.give_feedback_to") %> <%= @invite.inviting.name %></h3>
+      <%= form_for(@invite, :url => leave_feedback_path) do |f| %>
+        <%= f.hidden_field :tracking_pixel, :value => params[:tracking_pixel] %>
+        <div class="field">
+          <%= f.text_area :feedback, :value => '', :style => "width: 380px; height: 138px;" %>
+        </div>
+        <div class="button">
+          <%= f.button t("general.send"), :class => 'btn btn-info', :id => "" %>
+        </div>
+        <div class="cl"></div>
+      <% end %>  
+    </div>
+<% else %>
+  <div class="loginfom frontform" data-no-turbolink>
+    <h3><%= t("general.you_can_not_access_this_page") %></h3>
+  </div>  
+<% end %>

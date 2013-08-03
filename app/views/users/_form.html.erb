@@ -1,0 +1,76 @@
+<div class="">
+  <%= form_for(@o_single) do |f| %>
+ 
+    <div class="field">
+      <%= f.label t("general.first_name") %>
+      <%= f.text_field :first_name %>
+    </div>
+  
+    <div class="field">
+      <%= f.label t("general.last_name") %>
+      <%= f.text_field :last_name %>
+    </div>
+  
+  
+  <% if is_admin? %>
+    <div class="field">
+      <%= t("general.email") %><span class="redStart">*</span>
+      <% if @o_single.errors[:email].any? %>
+        <span class="text-error"><%= @o_single.errors[:email].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :email %>
+    
+    <div class="field">
+      <%= t("general.username") %><span class="redStart">*</span>
+      <% if @o_single.errors[:username].any? %>
+        <span class="text-error"><%= @o_single.errors[:username].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :username %>    
+  <% end %>
+  
+    
+  <% if @o_single.new_record? %>
+    <div class="field">
+      <%= t("general.password") %>
+      <% if @o_single.errors[:password].any? %>
+        <span class="text-error"><%= t(@o_single.errors[:password].first) %></span>
+      <% end %>
+    </div>
+    <%= f.password_field :password %>
+  
+    <div class="field">
+        <%= t("general.password_confirmation") %>
+    <% if @o_single.errors[:password_confirmation].any? %>
+      <span class="text-error"><%= t(@o_single.errors[:password_confirmation].first) %></span>
+    <% end %>
+    </div>
+    <%= f.password_field :password_confirmation %>
+    
+    <% if is_admin? %>
+      <div class="field">
+        <%= f.label t("general.user_role") %>
+        <%= select_tag "role_id", options_for_select(Role.all.collect {|r| [r.role_type, r.id]}, (@o_single.role.id unless @o_single.role.nil?))  %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :is_active %>
+        <%= f.check_box :is_active %>
+      </div>
+    <% else %>
+      <%#= hidden_field_tag "role_id", current_user.role.id %>   
+    <% end %>    
+ <% end %> 
+ 
+      <%= hidden_field_tag "role_id", current_user.role.id %>
+  
+ 
+  
+    <div class="field">
+      <%= f.submit t("general.save"), :class => 'btn btn-info' %>
+      <%= link_to t("general.back"), (is_admin? ? users_url : root_url), :class => "btn btn-info" %>
+    </div>
+  <% end %>
+  <div class="cl"></div>
+</div>

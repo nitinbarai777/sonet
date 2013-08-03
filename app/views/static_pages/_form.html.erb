@@ -1,0 +1,36 @@
+<div class="">
+  <%= form_for(@o_single) do |f| %>
+ 
+    <div class="field">
+      <%= t("general.name") %><span class="redStart">*</span>
+      <% if @o_single.errors[:name].any? %>
+        <span class="text-error"><%= @o_single.errors[:name].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :name %>
+  
+    <div class="field">
+      <%= t("general.page_route") %><span class="redStart">*</span>
+      <% if @o_single.errors[:page_route].any? %>
+        <span class="text-error"><%= @o_single.errors[:page_route].first %></span>
+      <% end %>
+    </div>
+    <%= f.text_field :page_route %>
+    
+    <div class="field">
+      <%= t("general.content") %>
+    </div>
+    <%= f.text_area :content, :style => "width: 380px; height: 138px;" %>
+    
+    <div class="field">
+      <%= t("general.is_footer") %>
+      <%= f.check_box :is_footer %>
+    </div>  
+    
+    <div class="field">
+      <%= f.submit t("general.save"), :class => 'btn btn-info' %>
+      <%= link_to t("general.back"), static_pages_url, :class => "btn btn-info" %>
+    </div>
+  <% end %>
+  <div class="cl"></div>
+</div>

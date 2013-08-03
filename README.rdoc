@@ -1,0 +1,32 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Install Ruby 2.0 & Rails 4.0 
+
+* Update config/database.yml and set database, credentials.
+
+* Update config/environments/production.rb.
+  -   BASE_URL
+  -   BASE_URL_DOMAIN
+  -   MAIL_USER_NAME
+  -   MAIL_PASSWORD
+  -   MAIL_PORT
+  -   MAIL_ADDRESS
+  -   MAIL_DOMAIN
+  -   LINKEDIN_CONSUMER_KEY
+  -   LINKEDIN_CONSUMER_SECRET
+  
+* Run below commands to create database, migrations and seed data.
+  - rake db:create
+  - rake db:migrate
+  - rake db:seed
+  
+* Admin login (Click 'Sign In' link)
+  - Username: admin
+  - Password: admin
+  
+* User login (Click 'Subscribe' link and sign up throgh linkedin account)

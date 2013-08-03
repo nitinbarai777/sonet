@@ -1,0 +1,25 @@
+<%= form_for([@user_session]) do |f| %> <h3><%= t("general.login") %></h3>
+  <% if @user_session.errors.any? %>
+    <div id="error_explanation">
+      <% @user_session.errors.full_messages.each do |msg| %>
+      <% @msg_var = "general.#{msg.gsub(' ', "_")}" %>
+      <div class="alert-error" id="flash_msg_error">
+        <%= t(@msg_var) %>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :username, :placeholder => t("general.username") %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, :placeholder => t("general.password") %>
+  </div>
+  <div class="actions">
+    <%= f.submit t("general.login"), :class => "btn btn-info" %>
+    <%#= link_to t("general.click_here_to_recover_your_account"), forgot_password_path %>
+  </div>
+  <div class="clearb">
+    &nbsp;
+  </div>
+<% end %>

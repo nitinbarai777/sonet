@@ -1,0 +1,40 @@
+<div class="navbar navbar-fixed-top">
+  <div class="">
+    <div class="container-fluid">
+      <%= link_to(image_tag("logo.png", :alt => "Logo", :class => "brand"), "/") %>
+        <div class="navbar nav-collapse">
+          <ul class="nav pull-right">
+            <% if current_user %>
+              <% unless current_user.is_inactive_cv %>
+                <li><%= link_to t("general.logged_in_as", email: current_user.email), "#", :style => "color: #000;" %></li>
+                <li class="marTop9">|</li>
+                <% if is_user? %>
+                  <li><%= link_to t("general.profile"), "/p/#{current_user.user_name}" %></li>
+                  <li class="marTop9">|</li>
+                  <li><%= link_to t("general.who_saw_the_cv"), feedbacks_path %></li>
+                <% end %>  
+                <% if is_admin? %>
+                  <li><%= link_to t("general.edit_profile"), edit_user_path(current_user.id)%></li>
+                  <li class="marTop9">|</li>
+                  <li><%= link_to t("general.change_password"), change_password_path %></li>  
+                <% end %>
+                <li class="marTop9">|</li> 
+              <% end %>  
+                <li><%= link_to t("general.logout"), :logout %></li>
+            <% else %>
+                <li><%= link_to t("general.user_login"), user_login_path %></li>
+                <li class="marTop9">|</li>
+                <li><%= link_to t("general.subscribe"), subscribe_path %></li>
+            <% end %>
+          </ul>
+          
+          <% if current_user %>
+            <% if is_admin? %>
+              <ul class="nav"><li class="<%= 'active' if @users %>"><%= link_to t("general.users"), users_path %></li></ul>
+              <ul class="nav"><li class="<%= 'active' if @static_pages %>"><%= link_to t("general.pages"), static_pages_path %></li></ul>
+            <% end %>
+          <% end %>  
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+</div>
