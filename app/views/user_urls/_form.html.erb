@@ -1,6 +1,7 @@
 <div class="">
   <%= form_for(@o_single) do |f| %>
- 
+
+		<%= f.hidden_field :user_id, :value => current_user.id %> 
     <div class="field">
       <%= t("general.url_name") %><span class="redStart">*</span>
       <% if @o_single.errors[:url_name].any? %>
@@ -15,7 +16,7 @@
         <span class="text-error"><%= @o_single.errors[:title].first %></span>
       <% end %>
     </div>
-    <%= f.text_field :title %>    
+    <%= f.text_field :title %> <%= t("general.url_example")%>    
    
     <div class="field">
       <%= t("general.desc") %>

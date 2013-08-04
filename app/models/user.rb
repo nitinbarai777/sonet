@@ -64,14 +64,19 @@ class User < ActiveRecord::Base
     self.authorizations
   end  
   
-  def has_cv?
-  	self.cv	
+  def is_facebook_user?
+    self.authorizations.first.provider == 'facebook'
   end
   
-  def is_not_invited_user(invited_user_id)
-  	self.id != invited_user_id
-  end
+  def is_twitter_user?
+    self.authorizations.first.provider == 'twitter'
+  end    
   
+  def is_google_user?
+    self.authorizations.first.provider == 'google_oauth2'
+  end            
+  
+ 
   def name(shorten=true)
     unless first_name.nil? && last_name.nil? or first_name.empty? && last_name.empty?
       [first_name, last_name].join(" ")

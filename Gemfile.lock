@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
+    attr_required (0.0.5)
     authlogic (3.3.0)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
@@ -55,10 +56,16 @@ GEM
     facebook_share (0.0.6)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    fb_graph (2.7.7)
+      httpclient (>= 2.2.0.2)
+      multi_json (>= 1.3)
+      rack-oauth2 (>= 0.14.4)
+      tzinfo
     google_visualr (2.1.7)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
+    httpclient (2.3.4.1)
     i18n (0.6.4)
     jbuilder (1.4.2)
       activesupport (>= 3.0.0)
@@ -109,6 +116,12 @@ GEM
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
+    rack-oauth2 (1.0.5)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.2.0.2)
+      multi_json (>= 1.3.6)
+      rack (>= 1.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -186,6 +199,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   debugger
   facebook_share
+  fb_graph
   google_visualr (>= 2.1)
   jbuilder (~> 1.2)
   jquery-rails

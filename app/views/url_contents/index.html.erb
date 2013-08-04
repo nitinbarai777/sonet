@@ -6,7 +6,7 @@
 <div class="clearb">&nbsp;</div> 
 
 
-<table class="table table-condensed pretty" width="100%">
+<table class="table table-condensed" width="100%">
 	<tr>
 		<td width="80%">
 			<!--<iframe width="100%" height="315" src="<%#= @user_url.url_name %>" id="uf" name='uf' frameborder="0" allowfullscreen></iframe>-->
@@ -16,48 +16,44 @@
 			    </object>
 			</div>
 		</td>
-		<td width="30%"><%= render 'form' %></td>	
+		<td width="5%">&nbsp;</td>
+		<td width="25%"><%= render 'form' %></td>	
 	</tr>
 </table>			
 
 <div class="clearb">&nbsp;</div>
 
-<h3><%= t("general.all_records") %> (<%= @o_all.size %>) </h3>
+
 
 <div class="clearb">&nbsp;</div>
 
-<% if @o_all.size > 0 %>
-<table class="table table-striped" width="100%">
-	<thead>
-		<tr>
-			<th width="80%"><%= sortable "content", t("general.content") %></th>
-			<th width="15%"><%= t("general.url_name") %></th>
-			<th width="10%"><%= sortable "created_at", t("general.created_at")%></th>
-			<th width="10%"><%= t("general.actions") %></th>
-		</tr>
-	<thead>
-	<tbody>
-		<% @o_all.each do |o_row| %>
-		<tr>
-			<td><%= o_row.content %></td>
-			<td><a><%= o_row.user_url.url_name %></a></td>
-			<td><%= o_row.created_at.to_s(:pretty) %></td>
-			<td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_url_content_path(o_row) %>
-			<%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %> </td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-<%= will_paginate @o_all %>
-<% else %>
-<p>
-	<%= t("general.record_not_found") %>
-</p>
-<div class="clearb">
-	&nbsp;
-</div>
-<% end %>
-<%= link_to t("general.Add"), new_url_content_path, :class => "btn btn-info" %>
+    <div class="well sidebar-nav">
+      <ul class="nav nav-tabs">
+        <li id="stepform1" class="active">
+          <%= link_to t("general.shared_to_facebook"),"#facebook", :id => "stepform1" %>
+        </li>        
+        <li id="stepform2">
+          <%= link_to t("general.shared_to_twitter"),"#twitter", :id => "stepform2" %>
+        </li>
+        <li id="stepform3">
+          <%= link_to t("general.shared_to_google"),"#google", :id => "stepform3" %>
+        </li>       
+
+      </ul>
+    </div>
+      
+    <div id="stepcontent1" style="display:block;">    
+      <%= render "facebook" %>
+    </div>    
+    <div id="stepcontent2" style="display:none;">    
+      <%= render "twitter" %>
+    </div>
+    <div id="stepcontent3" style="display:none;">    
+      <%= render "google" %>
+    </div>
+  
+  <div class="cl"></div>
+
 
 <script language=javascript>
 if(!window.Kolich){

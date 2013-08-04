@@ -3,9 +3,9 @@ class UrlContent < ActiveRecord::Base
   
   validates :content, :presence => true
   
-  def self.search(search)
+  def self.search(search, provider)
     if search
-      where('content LIKE ?', "%#{search}%")
+      where('content LIKE AND ?', "%#{search}%")
     else
       scoped
     end

@@ -151,7 +151,7 @@ en:
     twitter: "Twitter"
     google: "Google"
     urls: "URLs"
-    url_name: "URL Name"
+    url_name: "URL"
     url_example: "(Ex. http://www.example.com)"
     url_title: "Title"
     desc: "Description"
@@ -163,6 +163,15 @@ en:
     share_content: "Paste content here and share"
     share_content_directly_to_networks: "Share content directly to networks"
     content_can_not_be_null: "content can not be null"
+    list_urls: "List URLs"
+    add_url: "Add URL"
+    content_shared: "Shared content"
+    share_on_twitter: "Share on Twitter"
+    share_on_google: "Share on Google"
+    share_on_facebook: "Share on Facebook"
+    shared_on_twitter: "Shared on Twitter"
+    shared_on_google: "Shared on Google"
+    shared_on_facebook: "Shared on Facebook"    
 
 
     

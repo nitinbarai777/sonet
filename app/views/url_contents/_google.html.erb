@@ -1,24 +1,27 @@
-<% if @o_all.size > 0 %>
-<table class="table table-striped pretty" width="100%">
+<h3><%= t("general.content_shared") %> (<%= @o_all_google.size %>) </h3>
+<% if @o_all_google.size > 0 %>
+<table class="table table-striped" width="100%">
 	<thead>
 		<tr>
-			<th width="80%"><%= sortable "url_name", t("general.url_name") %></th>
+			<th width="80%"><%= sortable "content", t("general.content") %></th>
+			<th width="15%"><%= t("general.url_name") %></th>
 			<th width="10%"><%= sortable "created_at", t("general.created_at")%></th>
 			<th width="10%"><%= t("general.actions") %></th>
 		</tr>
 	<thead>
 	<tbody>
-		<% @o_all.each do |o_row| %>
+		<% @o_all_google.each do |o_row| %>
 		<tr>
-			<td><%= link_to o_row.url_name, url_contents_url(:id => o_row.id) %></td>
+			<td><%= o_row.content %></td>
+			<td><a><%= o_row.user_url.url_name %></a></td>
 			<td><%= o_row.created_at.to_s(:pretty) %></td>
-			<td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_url_content_path(o_row) %>
+			<td> <%#= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_url_content_path(o_row) %>
 			<%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %> </td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<%= will_paginate @o_all %>
+<%= will_paginate @o_all_google %>
 <% else %>
 <p>
 	<%= t("general.record_not_found") %>

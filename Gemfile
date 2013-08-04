@@ -56,6 +56,8 @@ gem 'omniauth-google-oauth2'
 gem 'facebook_share'
 gem 'twitter'
 
+gem 'fb_graph'
+
 #random key generate
 gem 'webget_ruby_secure_random'
 

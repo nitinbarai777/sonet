@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
-  before_action :require_admin
+  before_action :require_admin, only: [:show, :destroy]
+  before_action :require_user, only: [:edit, :update]
   before_action :set_header_menu_active
   # GET /users
   # GET /users.json

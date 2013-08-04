@@ -10,7 +10,9 @@ class UrlContentsController < ApplicationController
     unless session[:url_id]
       redirect_to user_urls_url
     end
-    @o_all = get_records(params[:search], params[:page])
+    @o_all_facebook = get_records(params[:search], params[:page], 'facebook')
+    @o_all_twitter = get_records(params[:search], params[:page], 'twitter')
+    @o_all_google = get_records(params[:search], params[:page], 'google')
   end
 
   # GET /url_contents/1
@@ -112,10 +114,16 @@ class UrlContentsController < ApplicationController
       params.require(:url_content).permit(:content, :user_url_id, :is_facebook_shared, :is_twitter_shared, :is_google_shared)
     end
     
-    def get_records(search, page)
+    def get_records(search, page, provider)
       @o_single = UrlContent.new
       @user_url = UserUrl.find(session[:url_id])
-      url_content_query = @user_url.url_contents.search(search)
+      if provider == 'facebook'
+        url_content_query = @user_url.url_contents.where(:is_facebook_shared => true)
+      elsif provider == 'twitter'
+        url_content_query = @user_url.url_contents.where(:is_twitter_shared => true)
+      else
+        url_content_query = @user_url.url_contents.where(:is_google_shared => true)
+      end  
       url_content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
     end    
     
