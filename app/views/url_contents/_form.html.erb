@@ -126,7 +126,7 @@
                     method: 'feed',
 										name: '<%= @user_url.title %>',
 										link: '<%= @user_url.url_name %>',
-										picture: '<%= "#{BASE_URL}/#{@user_url.image}" %>',
+										picture: '<%= "#{BASE_URL}/#{@user_url.image_url(:logo)}" %>',
 										description: '<%= @user_url.desc %>',
                     message: ''
                 }, function(response) {

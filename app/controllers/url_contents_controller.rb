@@ -43,7 +43,7 @@ class UrlContentsController < ApplicationController
         me = FbGraph::User.me(session[:token])
         myfeed = me.feed!(
           :message => params[:url_content][:content],
-          :picture => "#{BASE_URL}/#{@user_url.image}",
+          :picture => "#{BASE_URL}/#{@user_url.image_url(:logo)}",
           :link => @user_url.url_name,
           :name => @user_url.title,
           :description => @user_url.desc
