@@ -2,24 +2,36 @@
 	
 	<div class="clearb">&nbsp;</div>
 	
-  <h3><%= t("general.login_msg_front_page1")%></h3>
+  <h3 class="fontContentShare"><%= t("general.login_msg_front_page1")%></h3>
   
   <div class="clearb">&nbsp;</div>
 
 <div class="loginfom frontform">
   
-  <h3><%= t("general.login_msg_front_page2")%></h3>
+  <h3 style="font-family: 'Times New Roman';"><%= t("general.login_msg_front_page2") %></h3>
   
   <div class="clearb">&nbsp;</div>
   
-  <span><%= link_to image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook"), :width => "80px"), "/auth/facebook" %></span>&nbsp;&nbsp;&nbsp;
-  <span><%= link_to image_tag("twitter.png", :id => 'subscribe_lnk', :title => t("general.twitter"), :width => "80px"), "/auth/twitter" %></span>&nbsp;&nbsp;&nbsp;
-  <span><%= link_to image_tag("google.png", :id => 'subscribe_lnk', :title => t("general.google"), :width => "80px"), "/auth/google_oauth2" %></span>
+  <span>
+  	<%= link_to image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook"), :width => "80px"), "/auth/facebook" %>&nbsp;&nbsp;&nbsp;
+  	<%= link_to image_tag("twitter.png", :id => 'subscribe_lnk', :title => t("general.twitter"), :width => "80px"), "/auth/twitter" %>&nbsp;&nbsp;&nbsp;
+  	<%= link_to image_tag("google.png", :id => 'subscribe_lnk', :title => t("general.google"), :width => "80px"), "/auth/google_oauth2" %>
+ 	</span>
+ 	<div class="clearb">&nbsp;</div>
+ 	<span class="social_icons1">
+ 		<%= t("general.facebook") %>
+ 	</span>	
+ 	<span class="social_icons2">	
+ 		<%= t("general.twitter") %>
+ 	</span>	
+ 	<span class="social_icons3">	
+ 		<%= t("general.google") %>  
+ 	</span>
   
   
   <div class="clearb">&nbsp;</div>
   
-  <span id="spinner" style="float: right; margin:-80px 440px 0 0; display: none;">
+  <span id="spinner" style="display: none;">
     <%= image_tag "loading.gif" %>
   </span>
   

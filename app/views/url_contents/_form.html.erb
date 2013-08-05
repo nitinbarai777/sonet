@@ -6,7 +6,7 @@
     	
     	<% if current_user.is_facebook_user? %>
 		    <div class="field">
-		      <h4><%= t("general.share_content") %>:</h4>
+		      <h4 class="fontContentShare"><%= t("general.share_content") %>:</h4>
 		      <% if @o_single.errors[:content].any? %>
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
@@ -23,7 +23,7 @@
       
     	<% if current_user.is_twitter_user? %>
 		    <div class="field">
-		      <h3><%= t("general.share_content") %><span class="redStart">*</span><//h3>
+		      <h4 class="fontContentShare"><%= t("general.share_content") %></h4>
 		      <% if @o_single.errors[:content].any? %>
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
@@ -44,12 +44,12 @@
     	
     	<div class="clearb">&nbsp;</div>
     	
-  		<h3><%= t("general.share_content_directly_to_networks") %></h3>
+  		<h4 class="fontContentShare"><%= t("general.share_content_directly_to_networks") %></h4>
   		<div class="fb-root" id="fb-root"></div>
   			<ul>
   				<li>
   					<!-- facebook -->
-  					<b><%= t("general.share_on_facebook") %></b>
+  					<span class="fontSocialIcon"><%= t("general.share_on_facebook") %></span>
   					<a id="shareonfacebook"> <%= image_tag "facebook.jpeg", :width => "60px" %></a>
   				</li>
   				
@@ -57,7 +57,7 @@
   				
   				<li>	
   					<!-- twitter -->
-  						<b><%= t("general.share_on_twitter") %></b>
+  						<span class="fontSocialIcon"><%= t("general.share_on_twitter") %></span>
 							<a onclick="Share.twitter('http://<%= @user_url.url_name %>','<%= @user_url.title %>')"><%= image_tag "twitter.png", :width => "60px" %></a>
   				</li>
   				
@@ -65,7 +65,7 @@
   				
   				<li>
 		    		<!-- google -->
-		    		<b><%= t("general.share_on_google") %></b>
+		    		<span class="fontSocialIcon"><%= t("general.share_on_google") %></span>
 						<a onclick="Share.google('<%= @user_url.url_name %>')"><%= image_tag "google.png", :width => "60px" %></a>
   				</li>		  				
   			</ul>   

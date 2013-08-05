@@ -5,7 +5,7 @@
         <div class="navbar nav-collapse">
           <ul class="nav pull-right">
             <% if current_user %>
-                <li><%= link_to t("general.logged_in_as", email: current_user.username), "#", :style => "color: #000;" %></li>
+                <li class="fontHeader"><%= link_to t("general.logged_in_as", email: current_user.username), "#", :style => "color: #000;" %></li>
                 <li class="marTop9">|</li>
                 <% if is_user? %>
                 <li class="dropdown">

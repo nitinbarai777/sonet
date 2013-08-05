@@ -1,22 +1,22 @@
 
-<h1 style="text-align: center;"><%= t("general.social_network_engage") %></h1>
+<h2 style="text-align: center; font-family: Comic Sans MS;"><%= t("general.social_network_engage") %></h2>
 
 <div class="clearb">&nbsp;</div>
 
 <div class="loginfom frontform">
 
-    <h3><%= t("general.share_content_to_below_social_networks") %></h3>
+    <h3 style="font-family: monospace;"><%= t("general.share_content_to_below_social_networks") %></h3>
     
     <div class="clearb">&nbsp;</div>
     
     <span class="padLeft30">
-    	<%= image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook"), :width => "80px") %>
-    	<%= image_tag("twitter.png", :id => 'subscribe_lnk', :title => t("general.twitter"), :width => "80px") %>
+    	<%= image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook"), :width => "80px") %>&nbsp;&nbsp;
+    	<%= image_tag("twitter.png", :id => 'subscribe_lnk', :title => t("general.twitter"), :width => "80px") %>&nbsp;&nbsp;
     	<%= image_tag("google.png", :id => 'subscribe_lnk', :title => t("general.google"), :width => "80px") %>
     </span>
     
     <div class="clearb">&nbsp;</div>       
     
-    <h5><b><%= link_to t("general.user_login"), user_login_path %></b>&nbsp;<%= t("general.and_share_important_contents") %></h5> 
+    <h5 style="text-align: center;"><%= link_to t("general.user_login"), user_login_path, :class => "trebuFont" %>&nbsp;<%= t("general.and_share_important_contents") %></h5> 
 
 </div>

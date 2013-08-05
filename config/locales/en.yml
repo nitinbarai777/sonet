@@ -162,7 +162,7 @@ en:
     successfully_tweet_on_twitter: "successfully tweet on twitter"
     share_content: "Share contents"
     share_content_directly_to_networks: "Share content on social sharing sites..!!"
-    content_can_not_be_null: "content can not be null"
+    content_can_not_be_null: "Share contents can't be blank"
     list_urls: "List URLs"
     add_url: "Add URL"
     content_shared: "Shared content"

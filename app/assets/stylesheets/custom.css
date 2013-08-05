@@ -113,7 +113,7 @@ table.pretty {
 
 
 .footerbg { color:#82b0bd; padding-top:15px; text-align:center; font-size:12px; font-weight:normal; } 
-.frontform {width:400px !important;}
+.frontform {width:500px !important;}
 .heartform {width:800px !important;}
 
 div.field, div.actions {
@@ -328,5 +328,51 @@ table textarea {
   float: right;  
 }
 .marTop9 {margin-top:9px}
-.padLeft30 {padding:5px 0 0 75px;}
+.padLeft30 {padding:5px 0 0 110px;}
 .back_lnk_url{float: right; margin: -35px 20px;}
+
+.social_icons1 {
+  float: left;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  margin-left: 103px;	
+}
+.social_icons2 {
+  float: left;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  margin-left: 19px;	
+}
+.social_icons3 {
+  float: left;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  margin-left: 24px;	
+}
+
+.trebuFont {
+  font-family: Trebuchet MS;
+  font-size: 20px;	
+}
+
+.fontContentShare {
+    font-family: Comic Sans MS;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bolder;	
+}
+
+.fontHeader {
+    font-family: Comic Sans MS;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.fontSocialIcon {
+    color: black;
+    float: left;
+    font-family: cursive;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-right: 18px;
+    margin-top: 25px;

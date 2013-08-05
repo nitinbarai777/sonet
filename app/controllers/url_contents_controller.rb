@@ -68,19 +68,19 @@ class UrlContentsController < ApplicationController
         Twitter.update(params[:url_content][:content])
         notice = t("general.successfully_tweet_on_twitter")
       end
-    else
-      notice = t("general.content_can_not_be_null")
-    end
-
-    respond_to do |format|
-      if @o_single.save
+      
+      respond_to do |format|
+        @o_single.save
         if facebook_post_id
          @o_single.facebook_post_id = facebook_post_id
          @o_single.save  
         end
         format.html { redirect_to url_contents_url, notice: notice}
-        format.json { render action: 'show', status: :created, location: @o_single }
-      else
+        format.json { render action: 'show', status: :created, location: @o_single }        
+      end
+    else
+      notice = t("general.content_can_not_be_null")
+      respond_to do |format|
         format.html { redirect_to url_contents_url, notice: notice}
         format.json { render json: @o_single.errors, status: :unprocessable_entity }
       end
