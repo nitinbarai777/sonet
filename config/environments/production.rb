@@ -78,8 +78,8 @@ Sonet::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  BASE_URL = "http://localhost:3011"
-  BASE_URL_DOMAIN = "localhost:3011"
+  BASE_URL = "http://sonetdemo.herokuapp.com"
+  BASE_URL_DOMAIN = "sonetdemo.herokuapp.com"
   MAIL_USER_NAME = "nbarai77@gmail.com"
   MAIL_PASSWORD = "nitin777"
   MAIL_PORT = "587"
