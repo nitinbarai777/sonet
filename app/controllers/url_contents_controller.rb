@@ -137,7 +137,7 @@ class UrlContentsController < ApplicationController
       else
         url_content_query = @user_url.url_contents.where(:is_google_shared => true)
       end  
-      url_content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => page)
+      url_content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
     end    
     
     def set_header_menu_active

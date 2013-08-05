@@ -75,7 +75,7 @@ class UserUrlsController < ApplicationController
     
     def get_records(search, page)
       user_url_query = current_user.user_urls.search(search)
-      user_url_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
+      user_url_query.order(sort_column + " " + sort_direction).paginate(:per_page => 1, :page => page)
     end    
     
     def set_header_menu_active
