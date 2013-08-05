@@ -71,7 +71,7 @@ class FrontsController < ApplicationController
 		user_session = UserSession.create(user)
 		user_session.save
 		flash.keep[:notice] = t("general.login_successful")
-		redirect_to "/p/#{current_user.username}"
+		redirect_to "/p/#{current_user.user_name}"
   end
   
 	#footer and other static pages
