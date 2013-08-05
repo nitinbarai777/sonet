@@ -17,16 +17,20 @@ Things you may want to cover:
   -   MAIL_PORT
   -   MAIL_ADDRESS
   -   MAIL_DOMAIN
-  -   LINKEDIN_CONSUMER_KEY
-  -   LINKEDIN_CONSUMER_SECRET
+	-	  FACEBOOK_CONSUMER_KEY
+	-	  FACEBOOK_CONSUMER_SECRET    
+	-	  GOOGLE_CONSUMER_KEY
+	-	  GOOGLE_CONSUMER_SECRET  
+	-	  TWITTER_CONSUMER_KEY
+	-	  TWITTER_CONSUMER_SECRET
   
 * Run below commands to create database, migrations and seed data.
   - rake db:create
   - rake db:migrate
   - rake db:seed
   
-* Admin login (Click 'Sign In' link)
+* Admin login (Click 'Login as admin' link from footer)
   - Username: admin
   - Password: admin
   
-* User login (Click 'Subscribe' link and sign up throgh linkedin account)
+* User login (Click 'Login' link and sign up throgh facebook or twitter or google account)
