@@ -29,7 +29,7 @@ class UserUrlsController < ApplicationController
     @o_single = UserUrl.new(user_url_params)
     respond_to do |format|
       if @o_single.save
-        format.html { redirect_to user_urls_url, notice: notice}
+        format.html { redirect_to user_urls_url, notice: t("general.successfully_created")}
         format.json { render action: 'show', status: :created, location: @o_single }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class UserUrlsController < ApplicationController
   def update
     respond_to do |format|
       if @o_single.update(user_url_params)
-        format.html { redirect_to (is_admin? ? user_urls_url : root_url), notice: t("general.successfully_updated") }
+        format.html { redirect_to user_urls_url, notice: t("general.successfully_updated") }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

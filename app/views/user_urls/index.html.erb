@@ -12,7 +12,7 @@
 		<tr>
 			<td><%= link_to o_row.url_name, url_contents_url(:id => o_row.id) %></td>
 			<td><%= o_row.created_at.to_s(:pretty) %></td>
-			<td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_url_content_path(o_row) %>
+			<td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_user_url_path(o_row) %>
 			<%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %> </td>
 		</tr>
 		<% end %>
@@ -20,10 +20,7 @@
 </table>
 <%= will_paginate @o_all %>
 <% else %>
-<p>
-	<%= t("general.record_not_found") %>
-</p>
-<div class="clearb">
-	&nbsp;
-</div>
+	<div class="clearb">&nbsp;</div>
+		<%= render "fronts/user_dashboard" %>
+	<div class="clearb">&nbsp;</div>
 <% end %>

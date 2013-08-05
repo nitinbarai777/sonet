@@ -28,6 +28,9 @@ Sonet::Application.routes.draw do
   get '/oauth2callback', :to => 'fronts#auth_login'
   get '/auth/failure', :to => 'fronts#dashboard'
   get '/:fp' => 'fronts#other'
+  match '/facebook/add_post_id' => 'url_contents#add_post_id', :as => :add_post_id, via: [:get]
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

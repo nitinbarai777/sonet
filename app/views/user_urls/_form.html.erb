@@ -3,7 +3,7 @@
 
 		<%= f.hidden_field :user_id, :value => current_user.id %> 
     <div class="field">
-      <%= t("general.url_name") %><span class="redStart">*</span>
+      <%= t("general.url_name") %><span class="redStart">*</span><%= t("general.url_example")%>
       <% if @o_single.errors[:url_name].any? %>
         <span class="text-error"><%= @o_single.errors[:url_name].first %></span>
       <% end %>
@@ -11,22 +11,28 @@
     <%= f.text_field :url_name %>
     
     <div class="field">
-      <%= t("general.title") %><span class="redStart">*</span>
+      <%= t("general.url_title") %><span class="redStart">*</span>
       <% if @o_single.errors[:title].any? %>
         <span class="text-error"><%= @o_single.errors[:title].first %></span>
       <% end %>
     </div>
-    <%= f.text_field :title %> <%= t("general.url_example")%>    
+    <%= f.text_field :title %>     
    
     <div class="field">
       <%= t("general.desc") %>
     </div>
     <%= f.text_area :desc, :style => "width: 380px; height: 138px;" %>
     
-	  <div class="field">
-	    <%= f.label t("general.image") %>
-	    <%= f.file_field :image %>
-	  </div>    
+  
+    <div class="field">
+      <%= t("general.image") %><span class="redStart">*</span>
+      <% if @o_single.errors[:image].any? %>
+        <span class="text-error"><%= @o_single.errors[:image].first %></span>
+      <% end %>
+      <%= f.file_field :image %>
+    </div>
+       	  
+	  
     
   	<% if @o_single.image? %>
 			<%= image_tag @o_single.image_url(:logo) %>

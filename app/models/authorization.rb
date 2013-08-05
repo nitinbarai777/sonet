@@ -5,7 +5,7 @@ class Authorization < ActiveRecord::Base
 	def self.find_or_create(auth_hash)
 		auth = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
 	  unless auth
-	  	uth = self.create_social_user(auth_hash["info"], auth_hash['credentials'], auth_hash["provider"], auth_hash["uid"])
+	  	auth = self.create_social_user(auth_hash["info"], auth_hash['credentials'], auth_hash["provider"], auth_hash["uid"])
 	  else
 	  	auth = self.update_social_user(auth, auth_hash["info"], auth_hash['credentials'])
 	  end

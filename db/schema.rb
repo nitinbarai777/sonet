@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803211830) do
+ActiveRecord::Schema.define(version: 20130804183355) do
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -43,10 +43,12 @@ ActiveRecord::Schema.define(version: 20130803211830) do
 
   create_table "url_contents", force: true do |t|
     t.text     "content"
-    t.boolean  "is_facebook_shared", default: false
-    t.boolean  "is_twitter_shared",  default: false
-    t.boolean  "is_google_shared",   default: false
+    t.boolean  "is_facebook_shared",   default: false
+    t.boolean  "is_twitter_shared",    default: false
+    t.boolean  "is_google_shared",     default: false
     t.integer  "user_url_id"
+    t.string   "facebook_post_id"
+    t.integer  "facebook_likes_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

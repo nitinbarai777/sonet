@@ -1,19 +1,23 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
 
+<%= @result %>
+
 <h3 style="text-align: center;"><a><%= @user_url.url_name %></a></h3>
 
-<div class="clearb">&nbsp;</div> 
+<div class="back_lnk_url">
+	<%= link_to image_tag("back.png"), user_urls_url %>
+</div>
+
+<hr />
 
 
 <table class="table table-condensed" width="100%">
 	<tr>
 		<td width="80%">
-			<!--<iframe width="100%" height="315" src="<%#= @user_url.url_name %>" id="uf" name='uf' frameborder="0" allowfullscreen></iframe>-->
+			<!--<iframe width="100%" height="500" src="//<%#= @user_url.url_name %>" id="uf" name='uf' frameborder="0" scrolling="no" allowfullscreen></iframe>-->
 			<div style="margin: 0 auto; width:100%; height:500px;">
-			    <object type="text/html" data="<%= @user_url.url_name %>"
-			            style="width:100%; height:100%; margin:1%;">
-			    </object>
+			    <object type="text/html" data="//<%= @user_url.url_name %>" style="width:100%; height:500px; margin:1%;"></object>
 			</div>
 		</td>
 		<td width="5%">&nbsp;</td>
@@ -21,41 +25,31 @@
 	</tr>
 </table>			
 
-<div class="clearb">&nbsp;</div>
+<div class="clearb">&nbsp;&nbsp;</div>
 
-
-
-<div class="clearb">&nbsp;</div>
-
-    <div class="well sidebar-nav">
-      <ul class="nav nav-tabs">
-        <li id="stepform1" class="active">
-          <%= link_to t("general.shared_to_facebook"),"#facebook", :id => "stepform1" %>
-        </li>        
-        <li id="stepform2">
-          <%= link_to t("general.shared_to_twitter"),"#twitter", :id => "stepform2" %>
-        </li>
-        <li id="stepform3">
-          <%= link_to t("general.shared_to_google"),"#google", :id => "stepform3" %>
-        </li>       
-
-      </ul>
-    </div>
-      
-    <div id="stepcontent1" style="display:block;">    
-      <%= render "facebook" %>
-    </div>    
-    <div id="stepcontent2" style="display:none;">    
-      <%= render "twitter" %>
-    </div>
-    <div id="stepcontent3" style="display:none;">    
-      <%= render "google" %>
-    </div>
-  
-  <div class="cl"></div>
+<%= render "facebook" %>
 
 
 <script language=javascript>
+
+
+$(function ()
+{
+	
+    $("a[rel='next']").click(function() {
+    		setTimeout(function(){
+    			$("#page").attr("tabindex",-1).focus();
+    		},500)
+    });
+    
+    $("a[rel='prev start']").click(function() {
+    		setTimeout(function(){
+    			$("#page").attr("tabindex",-1).focus();
+    		},500)
+    });    
+        
+});
+
 if(!window.Kolich){
   Kolich = {};
 }

@@ -62,9 +62,11 @@ class FrontsController < ApplicationController
   def auth_login
 		auth_hash = request.env['omniauth.auth']
 		auth_response = Authorization.find_or_create(auth_hash)
-		# Create the session
+		# Create a session
 		user = auth_response.user
 		session[:user_id] = user.id
+		session[:token] = auth_response.token
+		session[:secret] = auth_response.secret
 		session[:user_role] = USER
 		user_session = UserSession.create(user)
 		user_session.save

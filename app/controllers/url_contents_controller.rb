@@ -1,4 +1,5 @@
 class UrlContentsController < ApplicationController
+  require 'json'
   before_action :set_url_content, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   before_action :require_user
@@ -6,6 +7,7 @@ class UrlContentsController < ApplicationController
   # GET /url_contents
   # GET /url_contents.json
   def index
+    
     session[:url_id] = params[:id] if params[:id]
     unless session[:url_id]
       redirect_to user_urls_url
@@ -35,22 +37,24 @@ class UrlContentsController < ApplicationController
     @user_url = UserUrl.find(session[:url_id])
     @o_single = UrlContent.new(url_content_params)
 
-    image = '' 
-    if @user_url.image
-      image = "http://economyofone.herokuapp.com/assets/logo-b8495defaaff575ccd446b3e14cc23e2.png"
-    end
-
-
     unless params[:url_content][:content].blank?
+      facebook_post_id = ''
       if current_user.is_facebook_user?
-        me = FbGraph::User.me(current_user.authorizations.first.token)
-        me.feed!(
+        me = FbGraph::User.me(session[:token])
+        myfeed = me.feed!(
           :message => params[:url_content][:content],
-          :picture => image,
+          :picture => "#{BASE_URL}/#{@user_url.image}",
           :link => @user_url.url_name,
           :name => @user_url.title,
           :description => @user_url.desc
         )
+        
+        input_string = "'"+myfeed.inspect.to_s+"'"
+        str1_markerstring = '"id"=>"'
+        str2_markerstring = '", :access_token'
+        
+        facebook_post_id = input_string[/#{str1_markerstring}(.*?)#{str2_markerstring}/m, 1]
+        
         notice = t("general.successfully_shared_on_facebook")
       end
       
@@ -58,8 +62,8 @@ class UrlContentsController < ApplicationController
         Twitter.configure do |config|
           config.consumer_key = TWITTER_CONSUMER_KEY
           config.consumer_secret = TWITTER_CONSUMER_SECRET
-          config.oauth_token = current_user.authorizations.first.token
-          config.oauth_token_secret = current_user.authorizations.first.secret
+          config.oauth_token = session[:token]
+          config.oauth_token_secret = session[:secret]
         end
         Twitter.update(params[:url_content][:content])
         notice = t("general.successfully_tweet_on_twitter")
@@ -70,6 +74,10 @@ class UrlContentsController < ApplicationController
 
     respond_to do |format|
       if @o_single.save
+        if facebook_post_id
+         @o_single.facebook_post_id = facebook_post_id
+         @o_single.save  
+        end
         format.html { redirect_to url_contents_url, notice: notice}
         format.json { render action: 'show', status: :created, location: @o_single }
       else
@@ -102,6 +110,11 @@ class UrlContentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def add_post_id
+    UrlContent.create(:facebook_post_id => params[:post_id], :user_url_id => session[:url_id], :is_facebook_shared => true, :content => params[:content])
+    render json: true
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -111,7 +124,7 @@ class UrlContentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def url_content_params
-      params.require(:url_content).permit(:content, :user_url_id, :is_facebook_shared, :is_twitter_shared, :is_google_shared)
+      params.require(:url_content).permit(:content, :user_url_id, :is_facebook_shared, :is_twitter_shared, :is_google_shared, :facebook_post_id, :facebook_likes_count)
     end
     
     def get_records(search, page, provider)
@@ -124,7 +137,7 @@ class UrlContentsController < ApplicationController
       else
         url_content_query = @user_url.url_contents.where(:is_google_shared => true)
       end  
-      url_content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
+      url_content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => page)
     end    
     
     def set_header_menu_active

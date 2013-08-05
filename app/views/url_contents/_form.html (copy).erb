@@ -1,4 +1,12 @@
 <div class="frontform loginform">
+	
+	<%
+	  image = '' 
+	  if @user_url.image
+	    image = "http://economyofone.herokuapp.com/assets/logo-b8495defaaff575ccd446b3e14cc23e2.png"
+	  end
+	%>	
+	
   <%= form_for(@o_single) do |f| %>
 
 		<%= f.hidden_field :user_url_id, :value => session[:url_id] %> 
@@ -6,7 +14,7 @@
     	
     	<% if current_user.is_facebook_user? %>
 		    <div class="field">
-		      <h4><%= t("general.share_content") %>:</h4>
+		      <h3><%= t("general.share_content") %><span class="redStart">*</span></h3>
 		      <% if @o_single.errors[:content].any? %>
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
@@ -45,11 +53,13 @@
     	<div class="clearb">&nbsp;</div>
     	
   		<h3><%= t("general.share_content_directly_to_networks") %></h3>
-  		<div class="fb-root" id="fb-root"></div>
+  		<div id="msg" class="redStart"></div>
   			<ul>
   				<li>
+
   					<!-- facebook -->
   					<b><%= t("general.share_on_facebook") %></b>
+  					<div id="fb-root"></div>
   					<a id="shareonfacebook"> <%= image_tag "facebook.jpeg", :width => "80px" %></a>
   				</li>
   				
@@ -58,7 +68,7 @@
   				<li>	
   					<!-- twitter -->
   						<b><%= t("general.share_on_twitter") %></b>
-							<a onclick="Share.twitter('http://<%= @user_url.url_name %>','<%= @user_url.title %>')"><%= image_tag "twitter.png", :width => "80px" %></a>
+							<a onclick="Share.twitter('<%= @user_url.url_name %>','<%= @user_url.title %>')"><%= image_tag "twitter.png", :width => "80px" %></a>
   				</li>
   				
   				<hr />
@@ -77,6 +87,8 @@
 
 
 <script type="text/javascript">
+
+function postToFeed() {
 
 	Share = {
 		facebook: function(purl, ptitle, pimg, text) {
@@ -126,32 +138,30 @@
                     method: 'feed',
 										name: '<%= @user_url.title %>',
 										link: '<%= @user_url.url_name %>',
-										picture: '<%= "#{BASE_URL}/#{@user_url.image}" %>',
+										picture: '<%= image %>',
 										description: '<%= @user_url.desc %>',
                     message: ''
-                }, function(response) {
-									    if (response.post_id) {
-									      $.ajax({
-									        type: 'GET',
-									        dataType: 'json',
-									        data: {"access_token": "<%= session[:token] %>"},
-									        url: "https://graph.facebook.com/" + response.post_id,
-									        success: function(responseData) {
-												      $.ajax({
-												        type: 'GET',
-												        dataType: 'json',
-												        data: {"post_id": response.post_id, "content": responseData.message},
-												        url: "/facebook/add_post_id",
-												        success: function(responseData) {
-												        	alert("Content has been shared successfully on facebook");
-												        }
-												     });
-									        	//alert(JSON.stringify(responseData, null, "\t"));
-									        }
-									     });
-									    }
-									});
+                }, callback);
         });
+        
+    function callback(response) {
+    	if(response['post_id']) {
+	      $.ajax({
+	        type: 'GET',
+	        dataType: 'json',
+	        data: {"post_id": response['post_id']},
+	        url: "/facebook/add_post_id",
+	        success: function(responseData) {
+	        	$('#msg').innerHTML = "Content has been shared successfully";
+	        }
+	     });
+     }
+    }
             
   });
 </script>
+
+
+
+
+

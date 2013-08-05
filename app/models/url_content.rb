@@ -1,7 +1,7 @@
 class UrlContent < ActiveRecord::Base
   belongs_to :user_url
   
-  validates :content, :presence => true
+  #validates :content, :presence => true
   
   def self.search(search, provider)
     if search

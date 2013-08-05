@@ -1,9 +1,18 @@
-<div class="">
-  <table border=0 width="100%" class="table dashboard">  
-    <tr valign="top">
-      <td align=left valign=top width="50%">
-        <h4><%= t("general.welcome") %></h4>
-      </td>
-    </tr>
-  </table>
+
+<h1 style="text-align: center;"><%= t("general.welcome") %>, <%= current_user.username %></h1>
+
+<div class="clearb">&nbsp;</div>
+
+<div class="loginfom frontform">
+
+    <h3><%= t("general.add_domain_details_here") %></h3>
+    
+    <div class="clearb">&nbsp;</div>
+    
+    <div class="" style="text-align: center;">
+    	<%= link_to image_tag("add_domain.jpg", :id => 'subscribe_lnk', :title => t("general.add_domain_details_here"), :width => "100px"), new_user_url_path %>
+    </div>
+    
+    <div class="clearb">&nbsp;</div> 
+
 </div>

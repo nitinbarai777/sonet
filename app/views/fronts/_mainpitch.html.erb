@@ -1,9 +1,22 @@
-<div class="">
-  <table border=0 width="100%" class="table dashboard">  
-    <tr valign="top">
-      <td align=left valign=top width="50%">
-        <h4><%= t("general.welcome") %></h4>
-      </td>
-    </tr>
-  </table>
+
+<h1 style="text-align: center;"><%= t("general.social_network_engage") %></h1>
+
+<div class="clearb">&nbsp;</div>
+
+<div class="loginfom frontform">
+
+    <h3><%= t("general.share_content_to_below_social_networks") %></h3>
+    
+    <div class="clearb">&nbsp;</div>
+    
+    <span class="padLeft30">
+    	<%= image_tag("facebook.jpeg", :id => 'subscribe_lnk', :title => t("general.facebook"), :width => "80px") %>
+    	<%= image_tag("twitter.png", :id => 'subscribe_lnk', :title => t("general.twitter"), :width => "80px") %>
+    	<%= image_tag("google.png", :id => 'subscribe_lnk', :title => t("general.google"), :width => "80px") %>
+    </span>
+    
+    <div class="clearb">&nbsp;</div>       
+    
+    <h5><b><%= link_to t("general.user_login"), user_login_path %></b>&nbsp;<%= t("general.and_share_important_contents") %></h5> 
+
 </div>

@@ -1,11 +1,11 @@
 <div class="navbar navbar-fixed-top">
   <div class="">
     <div class="container-fluid">
-      <%= link_to(image_tag("logo.png", :alt => "Logo", :class => "brand"), "/") %>
+      <%= link_to(image_tag("logo.jpeg", :alt => "Logo", :class => "brand"), "/") %>
         <div class="navbar nav-collapse">
           <ul class="nav pull-right">
             <% if current_user %>
-                <li><%= link_to t("general.logged_in_as", email: current_user.email), "#", :style => "color: #000;" %></li>
+                <li><%= link_to t("general.logged_in_as", email: current_user.username), "#", :style => "color: #000;" %></li>
                 <li class="marTop9">|</li>
                 <% if is_user? %>
                 <li class="dropdown">
