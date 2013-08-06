@@ -6,7 +6,7 @@
 		<% end %>
 			 
     <div class="field">
-      <%= t("general.url_name") %><span class="redStart">*</span><%= t("general.url_example")%>
+      <%= t("general.url_name") %><span class="redStart">*</span><b><%= t("general.url_example")%></b>
       <% if @o_single.errors[:url_name].any? %>
         <span class="text-error"><%= @o_single.errors[:url_name].first %></span>
       <% end %>

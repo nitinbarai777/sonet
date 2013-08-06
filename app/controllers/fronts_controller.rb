@@ -6,7 +6,9 @@ class FrontsController < ApplicationController
   #dashboard
   def dashboard
   	if current_user
-			@user = User.find(current_user.id)
+			if current_user.user_urls
+			  redirect_to user_urls_url
+			end
 		end
   end
   
@@ -71,7 +73,7 @@ class FrontsController < ApplicationController
 		user_session = UserSession.create(user)
 		user_session.save
 		flash.keep[:notice] = t("general.login_successful")
-		redirect_to "/p/#{current_user.user_name}"
+		redirect_to root_url
   end
   
 	#footer and other static pages

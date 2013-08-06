@@ -48,6 +48,10 @@ $(document).ready ->
     
   $('#subscribe_lnk').click (e) ->
     $("#spinner").show()
+
+  $('#tweet_facebook_btn').click (e) ->
+    $("#loader").show()    
+    
     
   $("#invite_btn").click (e) ->
     user_email = $('#user_email').val()

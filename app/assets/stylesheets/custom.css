@@ -377,3 +377,9 @@ table textarea {
     margin-right: 18px;
     margin-top: 25px;
 }    
+
+.loaderSpin {
+	margin: -2px 285px 0px 0px;
+	float: right;
+	display: none;	
+}

@@ -15,7 +15,10 @@
 		    
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
-	      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info' %>
+	      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
+				  <span class="loaderSpin" id="loader">
+				    <%= image_tag "loading.gif" %>
+				  </span>	      	
 	      </div>	
       <% end %>
       
@@ -23,7 +26,7 @@
       
     	<% if current_user.is_twitter_user? %>
 		    <div class="field">
-		      <h4 class="fontContentShare"><%= t("general.share_content") %></h4>
+		      <h4 class="fontContentShare"><%= t("general.share_content") %>:</h4>
 		      <% if @o_single.errors[:content].any? %>
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
@@ -32,7 +35,10 @@
 		    
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_twitter_shared, :value => true %>
-	      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info' %>
+	      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
+				  <span class="loaderSpin" id="loader">
+				    <%= image_tag "loading.gif" %>
+				  </span>	      	
       	</div>	
       <% end %>
       
