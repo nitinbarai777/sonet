@@ -6,9 +6,11 @@ class FrontsController < ApplicationController
   #dashboard
   def dashboard
   	if current_user
-			if current_user.user_urls
-			  redirect_to user_urls_url
-			end
+  	  if is_user?
+  			if current_user.user_urls
+  			  redirect_to user_urls_url
+  			end
+  		end	
 		end
   end
   
