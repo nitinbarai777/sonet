@@ -19,22 +19,11 @@ class User < ActiveRecord::Base
   
 	validates_uniqueness_of :username
 	validates :email, :presence => true
+	
 	has_one :user_role, :dependent => :destroy
 	has_one :role, :through => :user_role
 	has_one :authorization, :dependent => :destroy
 	has_many :user_urls, :dependent => :destroy
-	
-	has_one :cv, :dependent => :destroy
-	has_many :cv_educations
-	has_many :cv_experiences
-	has_many :cv_languages
-	has_many :cv_skills
-
-	has_many :invitings, :class_name => "Invite", :foreign_key => "inviting_user_id", :dependent => :destroy
-	has_many :inviteds, :class_name => "Invite", :foreign_key => "invited_user_id", :dependent => :destroy
-	
-	has_many :invitings_read_logs, :class_name => "ReadLog", :foreign_key => "inviting_user_id", :dependent => :destroy
-	has_many :inviteds_read_logs, :class_name => "ReadLog", :foreign_key => "invited_user_id", :dependent => :destroy	
 	
   def self.search(search)
     if search
