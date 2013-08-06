@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
   end
   
   def is_provider_user?
-    current_user.authorizations
+    current_user.authorization
   end
   
   

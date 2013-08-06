@@ -8,7 +8,7 @@
       <tr>
         <th width="15%"><%= sortable "username", t("general.username") %></th>
         <th width="15%"><%= sortable "email", t("general.email") %></th>
-        <!--<th width="15%"><%#= t("general.role") %></th>-->
+        <th width="15%"><%= t("general.provider") %></th>
         <th width="15%"><%= sortable "created_at", t("general.created_at")%></th>
         <th width="5%"><%= sortable "is_active", t("general.is_active") %></th>
         <th width="10%"><%= t("general.actions") %></th>
@@ -21,12 +21,14 @@
             <tr>
               <td><%= o_row.username %></td>
               <td><%= o_row.email %></td>
-              <!--<td><%#= o_row.role.role_type %></td>-->
+              <td><%= o_row.authorization.provider %></td>
               <td><%= o_row.created_at.to_s(:pretty) %></td>
               <td><%= o_row.is_active ? image_tag("Yes.gif") : image_tag("No.gif") %></td>
               <td> 
                 <%#= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_user_path(o_row) %>
                 <%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, method: :delete, data: { confirm: t("general.are_you_sure_to_delete") } %>
+                <%= link_to image_tag("view-icon.png", :width => "16px", :height => "16px", :title => "View urls"), user_urls_path(:user_id => o_row.id) %>
+                
               </td>
             </tr>
           <% end %>

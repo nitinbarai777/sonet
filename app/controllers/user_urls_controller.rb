@@ -6,7 +6,7 @@ class UserUrlsController < ApplicationController
   # GET /user_urls
   # GET /user_urls.json
   def index
-    @o_all = get_records(params[:search], params[:page])
+    @o_all = get_records(params[:search], params[:page], params[:user_id])
   end
 
   # GET /user_urls/1
@@ -73,9 +73,19 @@ class UserUrlsController < ApplicationController
       params.require(:user_url).permit(:url_name, :image, :user_id, :title, :desc)
     end
     
-    def get_records(search, page)
-      user_url_query = current_user.user_urls.search(search)
-      user_url_query.order(sort_column + " " + sort_direction).paginate(:per_page => 1, :page => page)
+    def get_records(search, page, user_id)
+      if is_admin?
+        session[:url_user_id] = user_id unless user_id.blank?
+        if session[:url_user_id]
+          user = User.find(session[:url_user_id])
+        else
+          user = current_user
+        end  
+      else
+        user = current_user
+      end 
+      user_url_query = user.user_urls.search(search)
+      user_url_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
     end    
     
     def set_header_menu_active

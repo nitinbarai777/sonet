@@ -10,9 +10,8 @@
       current_controller_name = controller.controller_name
       current_action = controller.action_name
   %>
-  <% if current_controller_name == "fronts" and current_action == "feedbacks" %>    
-    <%= javascript_include_tag "http://www.google.com/jsapi" %>
-    <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+  <% if current_controller_name == "url_contents" and current_action == "index" %>
+  	<script src="https://connect.facebook.net/en_US/all.js"></script>
   <% end %>  
   <%= csrf_meta_tags %>
 </head>

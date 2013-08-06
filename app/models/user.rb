@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 	validates :email, :presence => true
 	has_one :user_role, :dependent => :destroy
 	has_one :role, :through => :user_role
-	has_many :authorizations, :dependent => :destroy
+	has_one :authorization, :dependent => :destroy
 	has_many :user_urls, :dependent => :destroy
 	
 	has_one :cv, :dependent => :destroy
@@ -61,19 +61,19 @@ class User < ActiveRecord::Base
   end
   
   def is_provider_user?
-    self.authorizations
+    self.authorization
   end  
   
   def is_facebook_user?
-    self.authorizations.first.provider == 'facebook'
+    self.authorization.provider == 'facebook'
   end
   
   def is_twitter_user?
-    self.authorizations.first.provider == 'twitter'
+    self.authorization.provider == 'twitter'
   end    
   
   def is_google_user?
-    self.authorizations.first.provider == 'google_oauth2'
+    self.authorization.provider == 'google_oauth2'
   end            
   
  

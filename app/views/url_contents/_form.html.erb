@@ -51,6 +51,9 @@
   					<!-- facebook -->
   					<span class="fontSocialIcon"><%= t("general.share_on_facebook") %></span>
   					<a id="shareonfacebook"> <%= image_tag "facebook.jpeg", :width => "60px" %></a>
+					  <span id="spinner" style="display: none;">
+					    <%= image_tag "loading.gif" %>
+					  </span>  					
   				</li>
   				
   				<hr />
@@ -108,50 +111,47 @@
 			window.open(url,'','toolbar=0,status=0,width=626, height=436');
 		}
 	};
-</script>
-
-
-<script src="https://connect.facebook.net/en_US/all.js"></script>
-<script type="text/javascript">
 
 		FB.init({
 			appId : '<%= FACEBOOK_CONSUMER_KEY %>'
 		});
 
     $(document).ready(function () {
-        $('#shareonfacebook').click(function (e) {
-            e.preventDefault();
-            FB.ui(
-                {
-                    method: 'feed',
-										name: '<%= @user_url.title %>',
-										link: '<%= @user_url.url_name %>',
-										picture: '<%= "#{BASE_URL}/#{@user_url.image_url(:logo)}" %>',
-										description: '<%= @user_url.desc %>',
-                    message: ''
-                }, function(response) {
-									    if (response.post_id) {
-									      $.ajax({
-									        type: 'GET',
-									        dataType: 'json',
-									        data: {"access_token": "<%= session[:token] %>"},
-									        url: "https://graph.facebook.com/" + response.post_id,
-									        success: function(responseData) {
-												      $.ajax({
-												        type: 'GET',
-												        dataType: 'json',
-												        data: {"post_id": response.post_id, "content": responseData.message},
-												        url: "/facebook/add_post_id",
-												        success: function(responseData) {
-												        	alert("Content has been shared successfully on facebook");
-												        }
-												     });
-									        	//alert(JSON.stringify(responseData, null, "\t"));
-									        }
-									     });
-									    }
-									});
-        });
+      $('#shareonfacebook').click(function (e) {
+          e.preventDefault();
+          FB.ui(
+              {
+                  method: 'feed',
+									name: '<%= @user_url.title %>',
+									link: '<%= @user_url.url_name %>',
+									picture: '<%= "#{BASE_URL}/#{@user_url.image_url(:logo)}" %>',
+									description: '<%= @user_url.desc %>',
+                  message: ''
+              }, function(response) {
+								    if (response.post_id) {
+								      $.ajax({
+								        type: 'GET',
+								        dataType: 'json',
+								        data: {"access_token": "<%= session[:token] %>"},
+								        url: "https://graph.facebook.com/" + response.post_id,
+								        success: function(responseData) {
+								        	$("#spinner").show();
+											      $.ajax({
+											        type: 'GET',
+											        dataType: 'json',
+											        data: {"post_id": response.post_id, "content": responseData.message},
+											        url: "/facebook/add_post_id",
+											        success: function(responseData) {
+											        	alert("Content has been shared successfully on facebook");
+											        	$("#spinner").hide();
+											        }
+											     });
+								        	//alert(JSON.stringify(responseData, null, "\t"));
+								        }
+								     });
+								    }
+								});
+      });
             
-  });
+  	});
 </script>
