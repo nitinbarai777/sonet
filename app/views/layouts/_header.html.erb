@@ -15,6 +15,10 @@
                 		<li><%= link_to t("general.add_url"), new_user_url_path %></li>
                 	</ul>	
                 </li>	
+                <% if current_user.is_facebook_user? or current_user.is_twitter_user? %>
+                	<li class="marTop9">|</li>
+                	<li data-no-turbolink><%= link_to t("general.share_content"), share_content_path %></li>
+                <% end %>	
                 	<li class="marTop9">|</li>
                   <li><%= link_to t("general.edit_profile"), edit_user_path(current_user.id)%></li>
                 <% end %>  

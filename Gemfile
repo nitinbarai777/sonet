@@ -68,9 +68,13 @@ gem "will_paginate"
 gem "carrierwave"
 gem "rmagick"
 gem "mini_magick"
+gem "ckeditor"
 
 #mail sender
 gem "mail"
+
+#nokogiri
+gem "nokogiri"
 
 #debugger
 gem 'debugger'

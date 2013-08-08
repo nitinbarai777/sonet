@@ -18,6 +18,59 @@ class UserUrlsController < ApplicationController
   def new
     @o_single = UserUrl.new
   end
+  
+  def share_content
+    @o_single = UserUrl.new
+    @o_url_content = UrlContent.new
+    @contact_body = ''
+    if request.post?
+      session[:user_url] = params[:user_url][:url_name] if params[:user_url][:url_name]
+      unless session[:user_url].blank?
+        @contact_body = get_main_page_feed_url(session[:user_url])
+      else
+        flash[:notice] = t("general.url_is_required")
+        render action: 'share_content'
+      end
+    else
+      unless session[:user_url].blank?
+        @contact_body = get_main_page_feed_url(session[:user_url])
+      end        
+    end
+  end  
+  
+  def send_content
+      facebook_post_id = ''
+      if current_user.is_facebook_user?
+        me = FbGraph::User.me(session[:token])
+        myfeed = me.feed!(
+          :message => params[:url_content][:content],
+          :picture => "",
+          :link => session[:user_url],
+          :name => "",
+          :description => ""
+        )
+        
+        input_string = "'"+myfeed.inspect.to_s+"'"
+        str1_markerstring = '"id"=>"'
+        str2_markerstring = '", :access_token'
+        
+        facebook_post_id = input_string[/#{str1_markerstring}(.*?)#{str2_markerstring}/m, 1]
+        
+        flash[:notice] = t("general.successfully_shared_on_facebook")
+      end
+      
+      if current_user.is_twitter_user?
+        Twitter.configure do |config|
+          config.consumer_key = TWITTER_CONSUMER_KEY
+          config.consumer_secret = TWITTER_CONSUMER_SECRET
+          config.oauth_token = session[:token]
+          config.oauth_token_secret = session[:secret]
+        end
+        Twitter.update(params[:url_content][:content])
+        flash[:notice] = t("general.successfully_tweet_on_twitter")
+      end
+      redirect_to share_content_url
+  end
 
   # GET /user_urls/1/edit
   def edit

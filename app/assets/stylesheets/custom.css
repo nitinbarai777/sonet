@@ -383,3 +383,20 @@ table textarea {
 	float: right;
 	display: none;	
 }
+
+.page_content {
+	border:#fff solid 1px; -webkit-border-radius:0 0 10px 10px;  -moz-border-radius:0 0 10px 10px;  border-radius:0 0 10px 10px;	
+}
+
+.selectContentLnk {
+    border-bottom: 1px solid #0088CC;
+    border-top: 1px solid #0088CC;
+    float: left;
+    font-family: Comic Sans MS;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bolder;
+    margin-top: 130px;
+    padding: 5px;	
+}
+

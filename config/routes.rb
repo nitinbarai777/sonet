@@ -1,4 +1,5 @@
 Sonet::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :articles
 
 	resources :users
@@ -29,6 +30,9 @@ Sonet::Application.routes.draw do
   get '/auth/failure', :to => 'fronts#dashboard'
   get '/:fp' => 'fronts#other'
   match '/facebook/add_post_id' => 'url_contents#add_post_id', :as => :add_post_id, via: [:get]
+  
+  match '/user_url/share_content' => 'user_urls#share_content', :as => :share_content, via: [:get, :post, :patch]
+  match '/user_url/send_content' => 'user_urls#send_content', :as => :send_content, via: [:get, :post, :patch]
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,7 +2,6 @@
   <%= form_for(@o_single) do |f| %>
 
 		<%= f.hidden_field :user_url_id, :value => session[:url_id] %> 
-
     	
     	<% if current_user.is_facebook_user? %>
 		    <div class="field">
@@ -11,8 +10,8 @@
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
 		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 380px; height: 138px;" %>
-		    
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content ckeditor", :value => '', :style => "width: 510px; height: 250px;" %>
+		    <div class="clearb">&nbsp;</div>
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
 	      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
@@ -31,8 +30,8 @@
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
 		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 380px; height: 138px;" %>
-		    
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content ckeditor", :value => '', :style => "width: 510px; height: 250px;" %>
+		    <div class="clearb">&nbsp;</div>
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_twitter_shared, :value => true %>
 	      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
@@ -81,57 +80,58 @@
   			
   			 
   <% end %>
-  <div class="cl"></div>
+  <div class="clearb">&nbsp;</div>
 </div>
 
 
 <script type="text/javascript">
 
-	Share = {
-		facebook: function(purl, ptitle, pimg, text) {
-			url = 'http://www.facebook.com/sharer.php?s=100';
-			url += '&p[title]=' + encodeURIComponent(ptitle);
-			url += '&p[summary]=' + encodeURIComponent(text);
-			url += '&p[url]=' + encodeURIComponent(purl);
-			url += '&p[images][0]=' + encodeURIComponent(pimg);
-			Share.popup(url);
-		},
-		
-		
-		twitter: function(purl, ptitle) {
-			url = 'http://twitter.com/share?';
-			url += 'text=' + encodeURIComponent(ptitle);
-			url += '&url=' + encodeURIComponent(purl);
-			url += '&counturl=' + encodeURIComponent(purl);
-			Share.popup(url);
-		},
-		
-		google: function(purl) {
-			url = 'https://plus.google.com/share?&hl=en';
-			url += '&url=' + encodeURIComponent(purl);
-			Share.popup(url);
-		},	
-		
-		
-		popup: function(url) {
-			window.open(url,'','toolbar=0,status=0,width=626, height=436');
-		}
-	};
-
+	$(document).ready(function () {
+		Share = {
+			facebook: function(purl, ptitle, pimg, text) {
+				url = 'http://www.facebook.com/sharer.php?s=100';
+				url += '&p[title]=' + encodeURIComponent(ptitle);
+				url += '&p[summary]=' + encodeURIComponent(text);
+				url += '&p[url]=' + $('#uf').attr('src');
+				url += '&p[images][0]=' + encodeURIComponent(pimg);
+				Share.popup(url);
+			},
+			
+			
+			twitter: function(purl, ptitle) {
+				url = 'http://twitter.com/share?';
+				url += 'text=' + encodeURIComponent(ptitle);
+				url += '&url=' + encodeURIComponent(purl);
+				url += '&counturl=' + encodeURIComponent(purl);
+				Share.popup(url);
+			},
+			
+			google: function(purl) {
+				url = 'https://plus.google.com/share?&hl=en';
+				url += '&url=' + encodeURIComponent(purl);
+				Share.popup(url);
+			},	
+			
+			
+			popup: function(url) {
+				window.open(url,'','toolbar=0,status=0,width=626, height=436');
+			}
+		};
+	
 		FB.init({
 			appId : '<%= FACEBOOK_CONSUMER_KEY %>'
 		});
-
+	});
     $(document).ready(function () {
       $('#shareonfacebook').click(function (e) {
           e.preventDefault();
           FB.ui(
               {
                   method: 'feed',
-									name: '<%= @user_url.title %>',
+									name: '',
 									link: '<%= @user_url.url_name %>',
-									picture: '<%= "#{BASE_URL}/#{@user_url.image_url(:logo)}" %>',
-									description: '<%= @user_url.desc %>',
+									picture: '',
+									description: '',
                   message: ''
               }, function(response) {
 								    if (response.post_id) {

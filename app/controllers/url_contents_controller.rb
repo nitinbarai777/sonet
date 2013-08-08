@@ -13,8 +13,6 @@ class UrlContentsController < ApplicationController
       redirect_to user_urls_url
     end
     @o_all_facebook = get_records(params[:search], params[:page], 'facebook')
-    @o_all_twitter = get_records(params[:search], params[:page], 'twitter')
-    @o_all_google = get_records(params[:search], params[:page], 'google')
   end
 
   # GET /url_contents/1
@@ -130,6 +128,7 @@ class UrlContentsController < ApplicationController
     def get_records(search, page, provider)
       @o_single = UrlContent.new
       @user_url = UserUrl.find(session[:url_id])
+      @contact_body = get_main_page_feed_url(@user_url.url_name)
       if provider == 'facebook'
         url_content_query = @user_url.url_contents.where(:is_facebook_shared => true)
       elsif provider == 'twitter'

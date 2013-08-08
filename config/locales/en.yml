@@ -3,7 +3,7 @@
 
 en:
   has already been taken: "Has already been taken"
-  doesn't match confirmation: "Doesn't match confirmation"
+  doesn't match confirmation: "Doesn't match confirmatioyn"
   is required: "Is required."
   is too short (minimum is 3 characters): "Minimum is 3 characters required."
   is too short (minimum is 4 characters): "Minimum is 4 characters required."
@@ -69,7 +69,7 @@ en:
     home: "Home"
     change_password: "Change Password"
     created_at: "Date"
-    copyright_all_rights_reserved_html: "Copyright &copy; 2013 SoNet. All rights reserved."
+    copyright_all_rights_reserved_html: "(C) 2013 PostNukeThai Co., Ltd."
     welcome: "Welcome"
     contact: "Contact"
     username: "Username"
@@ -181,6 +181,10 @@ en:
     add_domain_details_here: "Add your Domain details and share..!!"
     url_title: "Title"
     likes_count: "Likes"
+    submit: "Submit"
+    url_is_required: "URL is required."
+    click_here_to_select_content: "Click here to select contents"
+    select_content_popup_header: "Select contents and it will drop to content area automatically."
 
 
     
