@@ -11,7 +11,7 @@
 		        <span class="text-error"><%= @o_url_content.errors[:content].first %></span>
 		      <% end %>
 		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '' %>
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 715px; height: 255px;" %>
 		    
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
