@@ -10,7 +10,7 @@
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
 		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content ckeditor", :value => '', :style => "width: 510px; height: 250px;" %>
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 510px; height: 250px;" %>
 		    <div class="clearb">&nbsp;</div>
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
@@ -30,7 +30,7 @@
 		        <span class="text-error"><%= @o_single.errors[:content].first %></span>
 		      <% end %>
 		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content ckeditor", :value => '', :style => "width: 510px; height: 250px;" %>
+		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 510px; height: 250px;" %>
 		    <div class="clearb">&nbsp;</div>
 		    <div class="field">    	
 	    		<%= f.hidden_field :is_twitter_shared, :value => true %>

@@ -85,8 +85,8 @@ Kolich.Selector.mouseup = function(){
   
   if(st!=''){
   	var parent = $(window.parent.document);
-  	var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
-  	//$(parent).find('textarea#data_content').val($('textarea#data_content').val() + " " + st);
+  	//var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
+  	$(parent).find('textarea#data_content').val($('textarea#data_content').val() + " " + st);
   }
 }
 
