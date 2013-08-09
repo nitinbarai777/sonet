@@ -25,8 +25,8 @@
 			<div id="myModal" class="reveal-modal">
 			     <h1 class="fontContentShare" style="color: #0088CC;">Select contents and it will drop to content area automatically..!!</h1>
 			     <hr />
-			     <p><%= @contact_body.html_safe %></p>
-			     <a class="close-reveal-modal">&#215;</a>
+			     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>			     
+			     <a class="close-reveal-modal">&nbsp;</a>
 			</div>				
 
 		</td>

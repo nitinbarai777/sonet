@@ -28,7 +28,7 @@
 				<div id="myModal" class="reveal-modal">
 			     <h1 class="fontContentShare" style="color: #0088CC; text-align: center;"><%= t("general.select_content_popup_header") %></h1>
 			     <hr />
-			     <p><%= @contact_body.html_safe %></p>
+			     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>
 			     <a class="close-reveal-modal">&#215;</a>
 				</div>
 			</td>
