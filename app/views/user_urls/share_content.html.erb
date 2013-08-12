@@ -10,7 +10,7 @@
 
 <%= form_for @o_single, :url => share_content_path, :method => "post" do |f| %>
   <div class="field">
-    <%= t("general.url_name") %><span class="redStart">*</span>
+    <%= t("general.url_name") %><span class="redStart">*</span><b><%= t("general.url_example")%></b>
   </div>
   <div class="field">
 		<%= f.text_field :url_name, :value => session[:user_url] %>

@@ -79,6 +79,9 @@ class ApplicationController < ActionController::Base
         @page_url = 'http://' + host_name.to_s
         res = Net::HTTP.get_response(URI.parse(@page_url))
         body = res.body
+        if body.length < 100
+          body = ''
+        end
       end
       content = ''
       begin
