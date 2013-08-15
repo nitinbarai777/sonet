@@ -15,23 +15,12 @@
 <table class="table table-condensed" width="100%">
 	<tr>
 		<td width="70%">
-			
-			<iframe width="100%" height="500" src="//<%= @user_url.url_name %>" id="uf" name='uf' frameborder="0"></iframe>
-			<!--<div style="margin: 0 auto; width:100%; height:500px;">
-			    <object type="text/html" data="//<%#= @user_url.url_name %>" style="width:100%; height:500px; margin:1%;"></object>
-			</div>-->
+			<div data-no-turbolink>
+				<iframe width="100%" height="500" src="//<%= @user_url.url_name %>" id="myiframe" name='myiframe' frameborder="0"></iframe>
 			<div>
-				
-			<div id="myModal" class="reveal-modal">
-			     <h1 class="fontContentShare" style="color: #0088CC;">Select contents and it will drop to content area automatically..!!</h1>
-			     <hr />
-			     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>			     
-			     <a class="close-reveal-modal">&nbsp;</a>
-			</div>				
-
 		</td>
 		<td width="10%">
-			<a href="#" data-reveal-id="myModal" class="selectContentLnk" >Click here to select contents</a>
+			&nbsp;
 		</td>
 		<td width="20%"><%= render 'form' %></td>	
 	</tr>
@@ -69,20 +58,26 @@ if(!window.Kolich){
 Kolich.Selector = {};
 Kolich.Selector.getSelected = function(){
   var t = '';
-  if(window.getSelection){
-    t = window.getSelection();
+	var iframe= document.getElementById('myiframe');
+	var idoc= iframe.contentDocument || iframe.contentWindow.document; // ie compatibility  
+  if(idoc.getSelection){
+  	t = idoc.getSelection();
+    
+  }else if(window.getSelection){
+  	t = window.getSelection();
+    
   }else if(document.getSelection){
-    t = document.getSelection();
+  	t = document.getSelection();
+    
   }else if(document.selection){
-    t = document.selection.createRange().text;
-  }
+  	t = document.selection.createRange().text;
+  }  
   return t;
 }
 
 Kolich.Selector.mouseup = function(){
 	
   var st = Kolich.Selector.getSelected();
-  
   if(st!=''){
   	var parent = $(window.parent.document);
   	//var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
@@ -91,7 +86,24 @@ Kolich.Selector.mouseup = function(){
 }
 
 $(document).ready(function(){
-  $(document).bind("mouseup", Kolich.Selector.mouseup);
+  //$(document).bind("mouseup", Kolich.Selector.mouseup);
+  //window.parent.document.getElementById('myiframe').contentWindow.document.addEventListener("mouseup", Kolich.Selector.mouseup);
+  
+  
+
+  
+  $('#myiframe').load(function() {
+  	$('#myiframe').location = 'http://local.sonet.com/iframe.html';
+  	 
+		setTimeout(function(){
+			$('#myiframe').contents().find("body").bind('mouseup', Kolich.Selector.mouseup);
+		},3000);    
+  });  
+  
+  
+ 
+  
+  
 	//setTimeout(function(){
 		//$('#myModal').reveal();
 	//},1000);  

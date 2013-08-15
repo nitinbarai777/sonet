@@ -92,6 +92,14 @@ class ApplicationController < ActionController::Base
           content = cleaned
       rescue
       end
+      
+      
+      #write javascript file start
+      
+      directory_file = Rails.public_path.to_s + "/iframe.html"
+      
+      target = File.open(directory_file, 'w') {|f| f.write(content) }
+      
       return content
     rescue
     end
