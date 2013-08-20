@@ -1,51 +1,175 @@
-
-  
-  <%= form_for @o_url_content, :url => send_content_path, :method => "post" do |f| %>
-
-		<%= f.hidden_field :user_url_id, :value => session[:url_id] %> 
+<div class="">
+		
+	<%= form_for(@o_url_content) do |f| %>
+		
+		<table class="table table-condensed" width="100%">
+			<tr>
+				<td width="45%">
+		
+				<%= f.hidden_field :user_url_id, :value => session[:url_id] %> 
+		  	
+		  	<% if current_user.is_facebook_user? %>
+			    <div class="field">
+			      <h4 class="fontContentShare"><%= t("general.share_content") %>: <p style="float: right;"><a href="#" data-reveal-id="myModal">Open Content</a></p> </h4>
+			      <% if @o_url_content.errors[:content].any? %>
+			        <span class="text-error"><%= @o_url_content.errors[:content].first %></span>
+			      <% end %>
+			    </div>
+			    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 800px; height: 300px;" %>
+			    <div class="clearb">&nbsp;</div>
+			    <div class="field">    	
+		    		<%= f.hidden_field :is_facebook_shared, :value => true %>
+		      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
+					  <span class="loaderSpin" id="loader">
+					    <%= image_tag "loading.gif" %>
+					  </span>	      	
+		      </div>	
+		    <% end %>
+    
+      
+      
+	    	<% if current_user.is_twitter_user? %>
+			    <div class="field">
+			      <h4 class="fontContentShare"><%= t("general.share_content") %>: <p style="float: right;"><a href="#" data-reveal-id="myModal">Open Content</a></p> </h4>
+			      <% if @o_url_content.errors[:content].any? %>
+			        <span class="text-error"><%= @o_url_content.errors[:content].first %></span>
+			      <% end %>
+			    </div>
+			    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 800px; height: 300px;" %>
+			    <div class="clearb">&nbsp;</div>
+			    <div class="field">    	
+		    		<%= f.hidden_field :is_twitter_shared, :value => true %>
+		      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
+					  <span class="loaderSpin" id="loader">
+					    <%= image_tag "loading.gif" %>
+					  </span>	      	
+	      	</div>	
+	      <% end %>
+      
+	    	<% if current_user.is_google_user? %>
+	    		<%= f.hidden_field :is_google_shared, :value => true %>
+	    	<% end %>
     	
-    	<% if current_user.is_facebook_user? %>
-		    <div class="field">
-		      <h4 class="fontContentShare"><%= t("general.share_content") %>:</h4>
-		      <% if @o_url_content.errors[:content].any? %>
-		        <span class="text-error"><%= @o_url_content.errors[:content].first %></span>
-		      <% end %>
-		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 715px; height: 255px;" %>
-		    
-		    <div class="field">    	
-	    		<%= f.hidden_field :is_facebook_shared, :value => true %>
-	      	<%= f.submit t("general.share_on_facebook"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
-				  <span class="loaderSpin" id="loader">
-				    <%= image_tag "loading.gif" %>
-				  </span>
-	      </div>	
-      <% end %>
-      
-      
-      
-    	<% if current_user.is_twitter_user? %>
-		    <div class="field">
-		      <h4 class="fontContentShare"><%= t("general.share_content") %>:</h4>
-		      <% if @o_url_content.errors[:content].any? %>
-		        <span class="text-error"><%= @o_url_content.errors[:content].first %></span>
-		      <% end %>
-		    </div>
-		    <%= f.text_area :content, :id => 'data_content', :class => "data_content", :value => '', :style => "width: 715px; height: 255px;" %>
-		    
-		    <div class="field">    	
-	    		<%= f.hidden_field :is_twitter_shared, :value => true %>
-	      	<%= f.submit t("general.tweet_on_twitter"), :class => 'btn btn-info', :id => 'tweet_facebook_btn' %>
-				  <span class="loaderSpin" id="loader">
-				    <%= image_tag "loading.gif" %>
-				  </span>	      	
-      	</div>	
-      <% end %>
-    	
-    	<div class="clearb">&nbsp;</div>
-  			 
-  <% end %>
-  <div class="cl"></div>
+    </td>	
+    <td width="10%">&nbsp;</td>
+    <td width="45%">	
+  		
+  		<div class="fb-root" id="fb-root"></div>
+				<table class="table table-condensed" width="100%">
+					
+					<tr>
+						<td width="100%" colspan="3"><h4 class="fontContentShare"><%= t("general.share_content_directly_to_networks") %></h4></td>
+					</tr>
+					<tr>
+						<td width="100%" colspan="3">&nbsp;</td>
+					</tr>					
+					<tr>
+						<td width="100%" colspan="3">
+	  					<!-- facebook -->
+	  					<span class="fontSocialIcon"><%= t("general.share_on_facebook") %></span>
+	  					<a id="shareonfacebook"> <%= image_tag "facebook.jpeg", :width => "60px" %></a>
+						  <span id="spinner" style="display: none;">
+						    <%= image_tag "loading.gif" %>
+						  </span>  		
+						</td>
+					</tr>	
+					<tr>
+						<td width="100%" colspan="3">
+	  					<!-- twitter -->
+	  						<span class="fontSocialIcon"><%= t("general.share_on_twitter") %></span>
+								<a onclick="Share.twitter('http://<%= session[:user_url] %>','')"><%= image_tag "twitter.png", :width => "60px" %></a>
+						</td>	
+					</tr>
+					<tr>	
+						<td width="100%" colspan="3">	
+							<!-- google -->
+			    		<span class="fontSocialIcon"><%= t("general.share_on_google") %></span>
+							<a onclick="Share.google('<%= session[:user_url] %>')"><%= image_tag "google.png", :width => "60px" %></a>
+	  				</td>
+  				</tr>
+  			</table> 
+  		</td>
+		</tr>
+	</table>  			 
+<% end %>
+<div class="clearb">&nbsp;</div>
+</div>
 
 
+<script type="text/javascript">
 
+	$(document).ready(function () {
+		Share = {
+			facebook: function(purl, ptitle, pimg, text) {
+				url = 'http://www.facebook.com/sharer.php?s=100';
+				url += '&p[title]=' + encodeURIComponent(ptitle);
+				url += '&p[summary]=' + encodeURIComponent(text);
+				url += '&p[url]=' + $('#uf').attr('src');
+				url += '&p[images][0]=' + encodeURIComponent(pimg);
+				Share.popup(url);
+			},
+			
+			
+			twitter: function(purl, ptitle) {
+				url = 'http://twitter.com/share?';
+				url += 'text=' + encodeURIComponent(ptitle);
+				url += '&url=' + encodeURIComponent(purl);
+				url += '&counturl=' + encodeURIComponent(purl);
+				Share.popup(url);
+			},
+			
+			google: function(purl) {
+				url = 'https://plus.google.com/share?&hl=en';
+				url += '&url=' + encodeURIComponent(purl);
+				Share.popup(url);
+			},	
+			
+			
+			popup: function(url) {
+				window.open(url,'','toolbar=0,status=0,width=626, height=436');
+			}
+		};
+	
+		FB.init({
+			appId : '<%= FACEBOOK_CONSUMER_KEY %>'
+		});
+	});
+    $(document).ready(function () {
+      $('#shareonfacebook').click(function (e) {
+          e.preventDefault();
+          FB.ui(
+              {
+                  method: 'feed',
+									name: '',
+									link: '<%= session[:user_url] %>',
+									picture: '',
+									description: '',
+                  message: ''
+              }, function(response) {
+								    if (response.post_id) {
+								      $.ajax({
+								        type: 'GET',
+								        dataType: 'json',
+								        data: {"access_token": "<%= session[:token] %>"},
+								        url: "https://graph.facebook.com/" + response.post_id,
+								        success: function(responseData) {
+								        	$("#spinner").show();
+											      $.ajax({
+											        type: 'GET',
+											        dataType: 'json',
+											        data: {"post_id": response.post_id, "content": responseData.message},
+											        url: "/facebook/add_post_id",
+											        success: function(responseData) {
+											        	alert("Content has been shared successfully on facebook");
+											        	$("#spinner").hide();
+											        }
+											     });
+								        	//alert(JSON.stringify(responseData, null, "\t"));
+								        }
+								     });
+								    }
+								});
+      });
+            
+  	});
+</script>

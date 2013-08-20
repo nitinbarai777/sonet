@@ -1,21 +1,26 @@
-<h3 style="text-align: center;"><a><%= t("general.share_content") %></a></h3>
+<h3 style="text-align: center; color:#FFA200;"><%= t("general.share_content_to_networks") %></h3>
 
 <div class="back_lnk_url">
-	<%= link_to image_tag("back.png"), root_url %>
+	<%= link_to image_tag("back.png"), user_urls_url %>
 </div>
 
 <hr />
 
-
-
 <%= form_for @o_single, :url => share_content_path, :method => "post" do |f| %>
+
   <div class="field">
-    <%= t("general.url_name") %><span class="redStart">*</span><b><%= t("general.url_example")%></b>
+    <h4><%= t("general.enter_url_to_share") %>:</h4>
   </div>
   <div class="field">
 		<%= f.text_field :url_name, :value => session[:user_url] %>
-		<%= f.submit t("general.submit"), :class => 'btn btn-info' %>      
+		<b><%= t("general.url_example")%></b>
   </div>
+  <div class="field">
+  	<%= f.submit t("general.submit"), :class => 'btn btn-info', :id => 'subscribe_lnk' %>
+  </div>	  
+  <span id="spinner" style="display: none; float: left; margin-left: 82px; margin-top: -40px;">
+    <%= image_tag "loading.gif" %>
+  </span>  
 <% end %>    
     
 <div class="clearb">&nbsp;&nbsp;</div>
@@ -23,23 +28,21 @@
 <% unless session[:user_url].blank? %>
 	<table class="table table-condensed" width="100%">
 		<tr>
-			<td width="30%">
-				<a href="#" data-reveal-id="myModal" class="selectContentLnk" id="tModal"><%= t("general.click_here_to_select_content") %></a>
-				<div id="myModal" class="reveal-modal">
-			     <h1 class="fontContentShare" style="color: #0088CC; text-align: center;"><%= t("general.select_content_popup_header") %></h1>
-			     <hr />
-			     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>
-			     <a class="close-reveal-modal">&#215;</a>
-				</div>
-			</td>
-			<td width="5%">&nbsp;</td>
-			<td width="65%"><%= render 'extra_form' %></td>	
+			<td width="100%"><%= render 'extra_form' %></td>
 		</tr>
 	</table>	
 	<div class="clearb">&nbsp;&nbsp;</div>
 <% end %>
 
 <div class="cl"></div>
+
+	<div id="myModal" class="reveal-modal">
+     <h1 class="fontContentShare" style="color: #FFA200; font-size: 25px; text-align: center;"><%= t("general.select_content_popup_header") %></h1>
+     <hr />
+     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>
+     <a class="close-reveal-modal">&nbsp;</a>
+	</div>
+
 
 <script language=javascript>
 
@@ -67,12 +70,17 @@
 	  if(st!=''){
 	  	var parent = $(window.parent.document);
 	  	$(parent).find('textarea#data_content').val($('textarea#data_content').val() + " " + st);
+	  	$('#myModal').trigger('reveal:close');;
 			//var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
 	  }
 	}
 	
 	$(document).ready(function(){
 	  $(document).bind("mouseup", Kolich.Selector.mouseup);
+
+		 	setTimeout(function(){
+				$('#myModal').reveal();
+	 		},1000)
 
 	});
 </script>

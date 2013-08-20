@@ -16,7 +16,22 @@
 	<tr>
 		<td width="70%">
 			<div data-no-turbolink>
-				<iframe width="100%" height="500" src="//<%= @user_url.url_name %>" id="myiframe" name='myiframe' frameborder="0"></iframe>
+				<!--<iframe width="100%" height="500" src="//<%#= @user_url.url_name %>" id="myiframe" name='myiframe' frameborder="0"></iframe>-->
+					<%= form_for @o_single, :url => url_contents_path(:id => params[:id]), :method => "post" do |f| %>
+					  <div class="field">
+					    <%= t("general.url_name") %><span class="redStart">*</span><b><%= t("general.url_example")%></b>
+					  </div>
+					  <div class="field">
+							<%= f.text_field :url_name, :value => session[:user_url] %>
+							<%= f.submit t("general.submit"), :class => 'btn btn-info' %>      
+					  </div>
+					<% end %>
+					<div id="myModal" class="reveal-modal">
+				     <h1 class="fontContentShare" style="color: #0088CC; text-align: center;"><%= t("general.select_content_popup_header") %></h1>
+				     <hr />
+				     <p><%= @contact_body.html_safe unless @contact_body.blank? %></p>
+				     <a class="close-reveal-modal">&#215;</a>
+					</div>
 			<div>
 		</td>
 		<td width="10%">
@@ -51,69 +66,46 @@ $(function ()
         
 });
 
-if(!window.Kolich){
-  Kolich = {};
-}
-
-Kolich.Selector = {};
-Kolich.Selector.getSelected = function(){
-  var t = '';
-	var iframe= document.getElementById('myiframe');
-	var idoc= iframe.contentDocument || iframe.contentWindow.document; // ie compatibility  
-  if(idoc.getSelection){
-  	t = idoc.getSelection();
-    
-  }else if(window.getSelection){
-  	t = window.getSelection();
-    
-  }else if(document.getSelection){
-  	t = document.getSelection();
-    
-  }else if(document.selection){
-  	t = document.selection.createRange().text;
-  }  
-  return t;
-}
-
-Kolich.Selector.mouseup = function(){
+	if(!window.Kolich){
+	  Kolich = {};
+	}
 	
-  var st = Kolich.Selector.getSelected();
-  if(st!=''){
-  	var parent = $(window.parent.document);
-  	//var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
-  	$(parent).find('textarea#data_content').val($('textarea#data_content').val() + " " + st);
-  }
-}
-
-$(document).ready(function(){
-  //$(document).bind("mouseup", Kolich.Selector.mouseup);
-  //window.parent.document.getElementById('myiframe').contentWindow.document.addEventListener("mouseup", Kolich.Selector.mouseup);
-  
-  
-
-  
-  $('#myiframe').load(function() {
-  	$('#myiframe').location = 'http://local.sonet.com/iframe.html';
-  	 
-		setTimeout(function(){
-			$('#myiframe').contents().find("body").bind('mouseup', Kolich.Selector.mouseup);
-		},3000);    
-  });  
-  
-  
- 
-  
-  
-	//setTimeout(function(){
-		//$('#myModal').reveal();
-	//},1000);  
-});
-
-$('#uf').load(function(){
-	//var iframe = parent.document.getElementById("uf");
-	//var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-	//var currentFrame = innerDoc.location.href;
-  //alert(currentFrame);
-});
+	Kolich.Selector = {};
+	Kolich.Selector.getSelected = function(){
+	  var t = '';
+	  if(window.getSelection){
+	    t = window.getSelection();
+	  }else if(document.getSelection){
+	    t = document.getSelection();
+	  }else if(document.selection){
+	    t = document.selection.createRange().text;
+	  }
+	  return t;
+	}
+	
+	Kolich.Selector.mouseup = function(){
+		
+	  var st = Kolich.Selector.getSelected();
+	  
+	  if(st!=''){
+	  	var parent = $(window.parent.document);
+	  	$(parent).find('textarea#data_content').val($('textarea#data_content').val() + " " + st);
+			//var dstFrame = $(parent).find('.cke_wysiwyg_frame').contents().find('body').append(""+st+"");
+	  }
+	}
+	
+	$(document).ready(function(){
+	  $(document).bind("mouseup", Kolich.Selector.mouseup);
+	 	setTimeout(function(){
+			$('#myModal').reveal();
+ 		},3000)  	  
+	  
+	  
+	  //$('#myiframe').load(function() {
+	  	//alert($('#myiframe').attr('src'));
+    
+	 // });
+	  
+	});
 
 </script>

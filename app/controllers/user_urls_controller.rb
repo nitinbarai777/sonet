@@ -22,6 +22,7 @@ class UserUrlsController < ApplicationController
   def share_content
     @o_single = UserUrl.new
     @o_url_content = UrlContent.new
+        
     @contact_body = ''
     if request.post?
       session[:user_url] = params[:user_url][:url_name] if params[:user_url][:url_name]
@@ -32,6 +33,7 @@ class UserUrlsController < ApplicationController
         render action: 'share_content'
       end
     else
+      session[:user_url] = params[:urlname] if params[:urlname]
       unless session[:user_url].blank?
         @contact_body = get_main_page_feed_url(session[:user_url])
       end        

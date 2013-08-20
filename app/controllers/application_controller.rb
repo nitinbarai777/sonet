@@ -90,6 +90,7 @@ class ApplicationController < ActionController::Base
              cleaned = body.encode( 'UTF-8', 'Windows-1251' )
           end
           content = cleaned
+          content = content.gsub("href", "hreff")
       rescue
       end
       

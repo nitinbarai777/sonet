@@ -14,7 +14,7 @@
 				<% if is_admin? %>
 					<%= o_row.url_name %>
 				<% else %>
-					<div data-no-turbolink><%= link_to o_row.url_name, url_contents_url(:id => o_row.id) %></div>
+					<div data-no-turbolink><%= link_to o_row.url_name, share_content_url(:urlname => o_row.url_name) %></div>
 				<% end %>
 			</td>
 			<td><%= o_row.created_at.to_s(:pretty) %></td>

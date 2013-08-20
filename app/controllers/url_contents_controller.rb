@@ -128,7 +128,7 @@ class UrlContentsController < ApplicationController
     def get_records(search, page, provider)
       @o_single = UrlContent.new
       @user_url = UserUrl.find(session[:url_id])
-      #@contact_body = get_main_page_feed_url(@user_url.url_name)
+      @contact_body = get_main_page_feed_url(@user_url.url_name)
       if provider == 'facebook'
         url_content_query = @user_url.url_contents.where(:is_facebook_shared => true)
       elsif provider == 'twitter'
