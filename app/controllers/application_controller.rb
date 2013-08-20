@@ -91,6 +91,10 @@ class ApplicationController < ActionController::Base
           end
           content = cleaned
           content = content.gsub("href", "hreff")
+          
+          head_part = content.scan(/<head>([^<>]*)<\/head>/imu).flatten
+          content = content.gsub(head_part, " ") 
+          
       rescue
       end
       

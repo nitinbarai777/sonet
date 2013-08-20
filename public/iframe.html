@@ -1,7 +1,1116 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a hreff="http://en.wikipedia.org/w/index.php">here</a>.</p>
-</body></html>
+<!DOCTYPE html>
+<html class='' lang='en' xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<script>
+  // Google Analytics
+  var _gaq = _gaq || [];
+
+  _gaq.push(['_setAccount', 'UA-25136408-1']);
+
+  // TODO (JULIAN): Remove after dashboard experiment
+  // Hack to set custom var before pageview tracked
+  // so that we can measure homepage dropoff for experiment
+  // END TODO
+
+  _gaq.push(['_trackPageview']);
+
+  // the flag is set in registration_controller to track signup event in GA
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  // chartbeat
+  var _sf_startpt=(new Date()).getTime();
+
+  // Generic
+  var root_url = "http://www.codecademy.com/";
+
+  // CCDATA
+  window.CCDATA = {};
+  CCDATA.env = 'production'
+  CCDATA.asset_host = ''
+
+
+
+
+</script>
+
+
+<title>Ruby | Codecademy</title>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http='{:equiv=&gt;"X-UA-Compatible"}'>
+<meta content='Ruby is an incredibly popular programming language that helps power websites all over the world. Learn how to create a number of useful applications quickly and easily.' name='description'>
+<link hreff='/favicon.ico' rel='shortcut icon'>
+<link hreff='/blog.rss' rel='alternate' title='Codecademy Blog' type='application/rss+xml'>
+<meta content='width=985, initial-scale=0.75, maximum-scale=1.0' name='viewport'>
+<link hreff="http://www.codecademy.com/tracks/ruby" rel="canonical" />
+
+<meta property="fb:app_id" content="212500508799908"/>
+<meta property="og:url" content="http://www.codecademy.com/tracks/ruby"/>
+<meta property="og:site_name" content="Codecademy"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Ruby"/>
+  <meta property="og:description" content="Ruby is an incredibly popular programming language that helps power websites all over the world. Learn how to create a number of useful applications quickly and easily."/>
+
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" name="csrf-token" />
+<link hreff="/assets/bootstrap-088367427c39a04fe372a8dce94f1399.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <link hreff="/assets/application-ltr-deb6833152ee6440f13ed771f988dcbb.css" media="screen" rel="stylesheet" type="text/css" />
+  <link hreff="/assets/application-ltr2-f33c833d270f0333c6693adffb4a187f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link hreff="/assets/application-ltr3-b2c4a042b389a888297b34526bfd60eb.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link hreff="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
+
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {filter: none;}
+  </style>
+<![endif]-->
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+<body class='curricula show'>
+<div id='wrapper'>
+<div id='overlay'>
+</div>
+
+
+<noscript>
+  <h4 style="background: #fffacd; margin: 0; padding: 15px; text-align: center;">
+    For a better experience on Codecademy, <a target="_blank" hreff="http://enable-javascript.com/">enable JavaScript in your browser</a>.
+  </h4>
+</noscript>
+
+<header id="header">
+  <div class="container">
+    <h1 class="logo">
+      <a hreff="/">
+        <div class="ui-header__logo">Codecademy</div>
+</a>    </h1>
+
+
+      <nav class="left">
+        <ul class="cf">
+          <li>
+            <a hreff="/learn" class="">Learn</a>
+          </li>
+
+            <li>
+              <a hreff="/create" class="">Teach</a>
+            </li>
+        </ul>
+      </nav>
+
+      <nav class="right">
+        <ul class="cf">
+            <li>
+              <a hreff="/sign_in" class="sign_in">Sign In</a>
+            </li>
+
+            <li>
+              <a hreff="/register/sign_up" class="sign_up">Create Account</a>
+            </li>
+
+        </ul>
+      </nav>
+
+
+  </div>
+
+  <div id="notices"></div>
+</header>
+
+<div class='full-width-container'>
+<script src="/assets/templates/curricula-en-7f0304a7a2dc152d10dd10496499a720.js" type="text/javascript"></script>
+<div class='container' id='curriculum'>
+<div id='flash'>
+</div>
+
+<div class='header'>
+<h1>Ruby</h1>
+</div>
+<div class='main'>
+<ul class="units">
+    <li id="unit-1" class="unit 5059f89cadf8b2000201f329 unit_item">
+  <h3 class="title">
+    <span class="number">1</span>
+    
+    Introduction to Ruby
+  </h3>
+  <div class="description">
+    <p>An introduction to the Ruby programming language.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-d1Ylq?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Introduction to Ruby
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              16 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-d1Ylq?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-MxXx5?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Putting the Form in Formatter
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              7 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-MxXx5?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-2" class="unit 505a0eb9d34cd300020339d1 unit_item">
+  <h3 class="title">
+    <span class="number">2</span>
+    
+    Control Flow in Ruby
+  </h3>
+  <div class="description">
+    <p>Learn how to change your Ruby programs' behavior based on user input.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-NFCZ7?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Control Flow in Ruby
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              17 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-NFCZ7?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-JdNDe?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Thith Meanth War!
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              8 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-JdNDe?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-3" class="unit 505a5952db1d81000200269f unit_item">
+  <h3 class="title">
+    <span class="number">3</span>
+    
+    Looping with Ruby
+  </h3>
+  <div class="description">
+    <p>Loops help you automate a series of instructions quickly and easily.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-XYcN1?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Loops &amp; Iterators
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              18 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-XYcN1?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-mzrZ6?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Redacted!
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              6 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-mzrZ6?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-4" class="unit 505b56eaf37e660002013449 unit_item">
+  <h3 class="title">
+    <span class="number">4</span>
+    
+    Arrays and Hashes
+  </h3>
+  <div class="description">
+    <p>Arrays and hashes are special variables that let us to store more than one value at a time.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-F3loB?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Data Structures
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              16 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-F3loB?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-693PD?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Create a Histogram
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              8 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-693PD?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-5" class="unit 5065f1e5d0290d00020dd3d8 unit_item">
+  <h3 class="title">
+    <span class="number">5</span>
+    
+    Blocks and Sorting
+  </h3>
+  <div class="description">
+    <p>Computer programs are ideal for sorting large amounts of information.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-ET4bU?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Methods, Blocks, &amp; Sorting
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              19 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-ET4bU?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-nOho7?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Ordering Your Library
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              6 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-nOho7?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-6" class="unit 50eda2a4c096fb80a70000f2 unit_item">
+  <h3 class="title">
+    <span class="number">6</span>
+    
+    Hashes and Symbols
+  </h3>
+  <div class="description">
+    <p>As we've seen, hashes are an important Ruby data structure. Here, we'll learn about the (chunky) bacon to hashes' eggs: symbols!</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-Qn7Qw?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Hashes and Symbols
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              15 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-Qn7Qw?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-0i8v1?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            A Night at the Movies
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              10 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-0i8v1?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-7" class="unit 50eda2fe6ddf81cc9f00010b unit_item">
+  <h3 class="title">
+    <span class="number">7</span>
+    
+    Refactoring
+  </h3>
+  <div class="description">
+    <p>Now that we know how to write a bit of Ruby, we'll look at refactoring—the process of making our code even better!</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-1o8Mb?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            The Zen of Ruby
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              20 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-1o8Mb?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-Zjd2y?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            The Refactor Factory
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              7 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-Zjd2y?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-8" class="unit 50eda355961721b50b000023 unit_item challenge">
+  <h3 class="title">
+    <span class="number">8</span>
+    
+    Blocks, Procs, and Lambdas
+  </h3>
+  <div class="description">
+    <p>In this course, we'll cover three of the most powerful aspects of the Ruby programming language: blocks, procs, and lambdas.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="challenge_link" hreff="/courses/ruby-beginner-en-L3ZCI?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Blocks, Procs, and Lambdas
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              21 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            challenge_link" hreff="/courses/ruby-beginner-en-L3ZCI?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Challenge
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-9" class="unit 50eda37a9051a47d5c000037 unit_item">
+  <h3 class="title">
+    <span class="number">9</span>
+    
+    Object-Oriented Programming, Part I
+  </h3>
+  <div class="description">
+    <p>Ruby is an object-oriented language. In this unit, we'll learn how to create our own objects using classes.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-MFiQ6?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Object-Oriented Programming I
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              20 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-MFiQ6?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-X5wcR?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Virtual Computer
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              8 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-X5wcR?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+    <li id="unit-10" class="unit 50eda407c90260a769000061 unit_item">
+  <h3 class="title">
+    <span class="number">10</span>
+    
+    Object-Oriented Programming, Part II
+  </h3>
+  <div class="description">
+    <p>Here, we'll tackle some of the more complex aspects of object-oriented programming, including information hiding, modules, and mixins.</p>
+  </div>
+    <ul class="unit_courses">
+        <li class="not_started">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-zfe3o?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+            Object-Oriented Programming II
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              18 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-zfe3o?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+        <li class="not_started secondary">
+          <a class="course_link" hreff="/courses/ruby-beginner-en-32cN3?curriculum_id=5059f8619189a5000201fbcb">
+          <h4>
+              Project:
+            Banking on Ruby
+              <span class="author">Eric Weinstein</span>
+            <span class="progress">
+              7 Exercises
+            </span>
+          </h4>
+
+          <span class="
+            course_link" hreff="/courses/ruby-beginner-en-32cN3?curriculum_id=5059f8619189a5000201fbcb">
+            Start
+            Course
+            &rsaquo;
+          </span>
+          </a>
+
+        </li>
+
+    </ul>
+</li>
+
+</ul>
+
+</div>
+<div class='meta'>
+<div class='description'>
+<p>Ruby is a powerful and expressive language with intuitive syntax. If you're unsure of which programming language to learn, Ruby is a great choice. The language can be used in a variety of disciplines, including application, game, and web development, and currently enjoys widespread popularity via the Ruby on Rails web framework. Courses are based on Ruby 1.9.3.</p>
+<div class='challenges'>
+<h3>
+Challenges
+<span>0 / 1</span>
+</h3>
+<ul>
+<li class='challenge'>
+<div class='badge ruby course-ruby-beginner-en-L3ZCI'></div>
+Blocks, Procs, and Lambdas
+<div class='status not_started'></div>
+</li>
+</ul>
+</div>
+</div>
+<div class='logo'>
+<img alt="505b718617007b000202c065_919480030" src="http://s3.amazonaws.com/codecademy-production/original/505b718617007b000202c065_919480030.jpg" />
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    CCDATA.showAppscoModal = false;
+  //]]>
+</script>
+
+
+</div>
+<div id='footer-clear'></div>
+</div>
+<footer id='footer'>
+<div class="wrapper">
+  <div class="container">
+    <div class="about">
+      <h1>
+        <span class="logo">Codecademy</span>
+        <span class="comma">,</span>
+        teaching the world to code
+      </h1>
+      <ul>
+        <li><a hreff="/about">About Us</a></li>
+        <li><a hreff="/about/jobs">We&#x27;re hiring</a></li>
+        <li><a hreff="/blog">Our Blog</a></li>
+      </ul>
+    </div>
+    <ul class="links">
+      <li>
+        <h4>Learn to Code</h4>
+        <ul>
+          <li><a hreff="/tracks/javascript"><span class='arraow'>&rarr;</span> JavaScript</a></li>
+          <li><a hreff="/tracks/web"><span class='arraow'>&rarr;</span> HTML/CSS</a></li>
+          <li><a hreff="/tracks/php"><span class='arraow'>&rarr;</span> PHP</a></li>
+          <li><a hreff="/tracks/python"><span class='arraow'>&rarr;</span> Python</a></li>
+          <li><a hreff="/tracks/ruby"><span class='arraow'>&rarr;</span> Ruby</a></li>
+          <li><a hreff="/tracks/apis"><span class='arraow'>&rarr;</span> APIs</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Other Programs</h4>
+        <ul>
+          <li><a hreff="/afterschool"><span class='arraow'>&rarr;</span>Afterschool Programming</a></li>
+          <li><a hreff="/stories"><span class='arraow'>&rarr;</span>Success Stories</a></li>
+          <li><a hreff="http://labs.codecademy.com"><span class='arraow'>&rarr;</span>Codecademy Labs</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Codecademy Online</h4>
+        <ul class="external">
+          <li class="twitter"><span class="icon-twitter"></span><a hreff="http://www.twitter.com/codecademy">Follow us on Twitter</a></li>
+          <li class="facebook"><span class="icon-facebook"></span><a hreff="http://www.facebook.com/codecademy">Find us on Facebook</a></li>
+          <li class="blog"><span class="icon-blog"></span><a hreff="/blog">Read our Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="container secondary">
+    <ul>
+      <li><a hreff="/help">Help</a></li>
+      <li><a hreff="/policy">Privacy Policy</a></li>
+      <li><a hreff="/terms">Terms</a></li>
+      <li>Made in NYC</li>
+      <li>&copy; 2013 Codecademy</li>
+    </ul>
+
+
+  </div>
+</div>
+
+
+</footer>
+<div class='ajax-loader offscreen'></div>
+<div class='ajax-loader-large offscreen'></div>
+<div id='user-registration-modal'>
+<div class="cf module" id="user-registration-form">
+
+  <header>
+    <h2 class="sign-up-to">Sign up to Codecademy</h2>
+    <h2 class="sign-up-encourage">
+      You&#x27;re doing great! <span>Sign up to keep track of what you’ve learned!</span>
+</h2>  </header>
+
+
+  <div class="cell social-signin">
+    <h4>Sign up with...</h4>
+
+      <a hreff="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign up with Facebook</a>
+      <a hreff="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign up with Google</a>
+      <a hreff="#" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign up with Twitter</a>
+
+  </div>
+
+  <div class="cell email-signin">
+    <h4>Or sign up with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/register" class="new_user" id="new-user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" /></div>
+  
+  <input id="user_email" name="user[email]" placeholder="Email" size="30" tabindex="1" type="email" />
+  <input autocapitalize="off" autocorrect="off" id="user_username" name="user[username]" placeholder="Username" size="30" tabindex="2" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="3" type="password" />
+  <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirm password" size="30" tabindex="4" type="password" />
+
+
+  <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" class="hidden" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+
+  <p class="note">By signing up, you agree to our <a hreff="/terms">Terms of Service</a></p>
+
+  <input class="bttn blue" name="commit" type="submit" value="Get started!" />
+</form>
+  </div>
+</div>
+
+<script type="text/x-underscore-template" id="tmpl-twitter-email-modal">
+  <form name="twitter-email" class="form-horizontal" id="twitter-email"
+   action="/auth/twitter" >
+    <h3>You&#x27;re almost done!</h3>
+    <p>We need your email to finish creating your account.</p>
+    <table class="control-group" id="email-group">
+      <tr>
+        <td class="controls">
+          <input type="text" id="twitter-email-field" name="email" placeholder="Enter your email address"/>
+          <span class="help-inline">Please enter a valid email address</span>
+        </td>
+      </tr>
+    </table>
+    <div class="actions">
+      <button type="submit" class="bttn green" id="submit-twitter" disabled="disabled">
+        Continue
+      </button>
+    </div>
+  </form>
+</script>
+
+</div>
+<div id='user-session-modal'>
+<div class="cf module" id="user-session-form">
+  <header>
+    <h2>Sign in to Codecademy</h2>
+  </header>
+
+  <div class="cell social-signin">
+    <h4>Sign in with...</h4>
+
+      <a hreff="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign in with Facebook</a>
+      <a hreff="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign in with Google</a>
+      <a hreff="/auth/twitter" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign in with Twitter</a>
+
+  </div>
+
+  <div class="cell neutral email-signin">
+    <h4>Sign in with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/sign_in" class="new_user" id="new-session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" /></div>
+
+
+  <input autocapitalize="off" autocorrect="off" id="user_login" name="user[login]" placeholder="Email or username" size="30" tabindex="1" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="2" type="password" />
+    <div class="remember-me">
+      <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+      <label for="user_remember_me">Remember me</label>
+
+      <a hreff="/secret/new" class="secondary">Forgot your password?</a>
+    </div>
+
+  <div>
+  <input class="sign-in-button bttn blue" name="commit" type="submit" value="Login" />
+  <a hreff="/register/sign_up" class="create-account secondary">Create Account</a>
+  </div>
+</form>
+
+  </div>
+</div>
+
+</div>
+<script src="/assets/templates/common-en-deebc268f3c63b1aa406855fbb13d4ec.js" type="text/javascript"></script>
+
+  <script src="/assets/dist/common-e6261eaf267c9fae30da73372bbdf817.js" type="text/javascript"></script>
+  <script src="/assets/dist/controllers/curriculum_show_controller-2554cc47228c3680a65ec9a1b88c96b3.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  require(['common', 'controllers/curriculum_show_controller'], function (common, controller) {
+    if (common) common.init();
+    if (controller) controller['init']();
+    
+  });
+</script>
+
+  <div id="fb-root"></div>
+  <script>
+    // Facebook
+    var FB_APP_ID = '212500508799908';
+    window.fbAsyncInit = function() {
+      var FB = (window.FB || undefined);
+      if (FB) {
+        FB.init({
+          appId      : FB_APP_ID
+        , channelUrl : window.root_url+'/channel.html'
+        , status     : true
+        , cookie     : true
+        , xfbml      : true
+        });
+      }
+    };
+
+    (function(d){
+      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      ref.parentNode.insertBefore(js, ref);
+    }(document));
+  </script>
+
+  <script>
+    // Overlay loader
+    var overlay = document.getElementById('overlay');
+    if (overlay && overlay.children.length > 0) {
+      overlay.style.cssText = "display: block;";
+    }
+  </script>
+
+  <!-- Qualaroo survey -->
+  <script type="text/javascript">
+    var _kiq = _kiq || [];
+  </script>
+  <script type="text/javascript" src="//s3.amazonaws.com/ki.js/48944/a3w.js" async="true"></script>
+
+  <script>
+    // Chartbeat
+    var _sf_async_config={uid:27714,domain:"codecademy.com"};
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+        "js/chartbeat.js");
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+  </script>
+
+<!-- Typekit scripts -->
+<script type="text/javascript" src="//use.typekit.net/rwa3ozy.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+<script id='tmpl-versions-label' type='text/x-underscore-template'>
+<label>Versions</label>
+</script>
+<script id='tmpl-versions-item' type='text/x-underscore-template'>
+<option value="<%= index %>"><%= label %></option>
+</script>
+<script id='tmpl-wrong-answer' type='text/x-underscore-template'>
+<span style="color: crimson">Oops, try again. <%
+  if (qa) {
+    %>If you're stuck learn more from fellow users at our <a hreff="<%= qa %>" target="_blank">Q&A section!</a><%
+  } %><%
+  if (hint) {
+    %><br><span style="color: #F80"><%= hint %></span><%
+  }
+%></span>
+
+</script>
+<script id='tmpl-correct-answer' type='text/x-underscore-template'>
+<span style="color: green">That's correct!<%
+  if (showNextExerciseLink) {
+    %><a hreff="javascript:void(0)" data-index=<%= index %> class="nextExerciseLink"> Next Exercise: <%= nextExerciseName %></a><%
+   }
+%></span>
+
+</script>
+<script id='tmpl-finish' type='text/x-underscore-template'>
+<%
+  if (nextSectionPath) {
+  %>Good work completing this section! <a class='next_lesson_in_console' hreff='<%= nextSectionPath %>'>Start the next section</a>.<%
+} else if (languageCoursesPath && currentCurriculumPath !== "") {
+%>Nice! You've completed this course! Continue on <a hreff='<%= currentCurriculumPath %>'>this track</a>, browse <a class='next_lesson_in_console' hreff='<%= curriculaPath %>'>other tracks</a>, or experiment with <a class='next_lesson_in_console' hreff='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+} else if (languageCoursesPath) {
+  %>You've completed this course! Start <a hreff='<%= curriculaPath %>'>a track</a>, tackle a <a hreff='<%= coursesPath %>'>non-track course</a>, or experiment with <a class='next_lesson_in_console' hreff='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+}%>
+
+</script>
+<script id='tmpl-keyboard-shortcuts' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span3">
+      <b>Run Exercise</b>
+      <div class='shortcut'>
+        <kbd>CTRL + <kbd>Enter</kbd>
+      </div>
+    </div>
+
+    <div class="shortcut-item span3">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>CTRL + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Reset Exercise</b>
+      <div class='shortcut'>
+        <kbd>ALT + <kbd>R</kbd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="shortcut-item span3">
+      <b>Next Exercise</b>
+      <div class='shortcut'>
+        <kbd>ALT + <kbd>T</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Previous Exercise</b>
+      <div class='shortcut'>
+        <kbd>ALT + <kbd>P</kbd>
+      </div>
+    </div>
+  </div>
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a hreff="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div><!-- keyboard-shortcuts-learner -->
+
+</script>
+<script id='tmpl-keyboard-shortcuts-creator' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span5">
+      <b>Preview Exercise</b>
+      <div class='shortcut'>
+        <kbd>CTRL + <kbd>P</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>CTRL + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Show Feedback</b>
+      <div class='shortcut'>
+        <kbd>ALT + <kbd>F</kbd>
+      </div>
+    </div>
+  </div>
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="items">
+      <div class="shortcut-item span4">
+        <b>Add Exercise</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>A</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Delete Exercise</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>D</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Next</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>T</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Previous</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>P</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Default Code</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>1</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit SCT</b>
+        <div class='shortcut'>
+          <kbd>ALT + <kbd>2</kbd>
+        </div>
+      </div>
+    </div>
+  </div><!-- end extra-shortcuts -->
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a hreff="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</script>
+<script id='tmpl-share-course-project' type='text/x-underscore-template'>
+<div class='aside share-course-project'>
+  <p>
+    Share this link with friends and others to show off your project:
+    <br>
+    <input type='text' id='url' readonly='readonly' name='url' value='<%= project_url %>'/> or
+    <a target='_blank' class='button light-green' hreff='<%= project_url %>'>View Project</a>
+  </p>
+</div>
+</script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-3.newrelic.com","8502746af5","2210607","c1hZF0tfVQkEExoFF0JFXgBMXFhKEglaEQ==",6,142,new Date().getTime(),"","","","",""]);</script></body>
+</html>
