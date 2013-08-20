@@ -1,1116 +1,1085 @@
-<!DOCTYPE html>
-<html class='' lang='en' xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
-<head>
-<script>
-  // Google Analytics
-  var _gaq = _gaq || [];
-
-  _gaq.push(['_setAccount', 'UA-25136408-1']);
-
-  // TODO (JULIAN): Remove after dashboard experiment
-  // Hack to set custom var before pageview tracked
-  // so that we can measure homepage dropoff for experiment
-  // END TODO
-
-  _gaq.push(['_trackPageview']);
-
-  // the flag is set in registration_controller to track signup event in GA
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  // chartbeat
-  var _sf_startpt=(new Date()).getTime();
-
-  // Generic
-  var root_url = "http://www.codecademy.com/";
-
-  // CCDATA
-  window.CCDATA = {};
-  CCDATA.env = 'production'
-  CCDATA.asset_host = ''
-
-
-
-
-</script>
-
-
-<title>Ruby | Codecademy</title>
-<meta charset='utf-8'>
-<meta content='IE=edge,chrome=1' http='{:equiv=&gt;"X-UA-Compatible"}'>
-<meta content='Ruby is an incredibly popular programming language that helps power websites all over the world. Learn how to create a number of useful applications quickly and easily.' name='description'>
-<link hreff='/favicon.ico' rel='shortcut icon'>
-<link hreff='/blog.rss' rel='alternate' title='Codecademy Blog' type='application/rss+xml'>
-<meta content='width=985, initial-scale=0.75, maximum-scale=1.0' name='viewport'>
-<link hreff="http://www.codecademy.com/tracks/ruby" rel="canonical" />
-
-<meta property="fb:app_id" content="212500508799908"/>
-<meta property="og:url" content="http://www.codecademy.com/tracks/ruby"/>
-<meta property="og:site_name" content="Codecademy"/>
-
-  <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Ruby"/>
-  <meta property="og:description" content="Ruby is an incredibly popular programming language that helps power websites all over the world. Learn how to create a number of useful applications quickly and easily."/>
-
-
-<meta content="authenticity_token" name="csrf-param" />
-<meta content="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" name="csrf-token" />
-<link hreff="/assets/bootstrap-088367427c39a04fe372a8dce94f1399.css" media="screen" rel="stylesheet" type="text/css" />
-
-  <link hreff="/assets/application-ltr-deb6833152ee6440f13ed771f988dcbb.css" media="screen" rel="stylesheet" type="text/css" />
-  <link hreff="/assets/application-ltr2-f33c833d270f0333c6693adffb4a187f.css" media="screen" rel="stylesheet" type="text/css" />
-  <link hreff="/assets/application-ltr3-b2c4a042b389a888297b34526bfd60eb.css" media="screen" rel="stylesheet" type="text/css" />
-
-<link hreff="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
-
-<!--[if gte IE 9]>
-  <style type="text/css">
-    .gradient {filter: none;}
-  </style>
-<![endif]-->
-<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
-<body class='curricula show'>
-<div id='wrapper'>
-<div id='overlay'>
-</div>
-
-
-<noscript>
-  <h4 style="background: #fffacd; margin: 0; padding: 15px; text-align: center;">
-    For a better experience on Codecademy, <a target="_blank" hreff="http://enable-javascript.com/">enable JavaScript in your browser</a>.
-  </h4>
-</noscript>
-
-<header id="header">
-  <div class="container">
-    <h1 class="logo">
-      <a hreff="/">
-        <div class="ui-header__logo">Codecademy</div>
-</a>    </h1>
-
-
-      <nav class="left">
-        <ul class="cf">
-          <li>
-            <a hreff="/learn" class="">Learn</a>
-          </li>
-
-            <li>
-              <a hreff="/create" class="">Teach</a>
-            </li>
-        </ul>
-      </nav>
-
-      <nav class="right">
-        <ul class="cf">
-            <li>
-              <a hreff="/sign_in" class="sign_in">Sign In</a>
-            </li>
-
-            <li>
-              <a hreff="/register/sign_up" class="sign_up">Create Account</a>
-            </li>
-
-        </ul>
-      </nav>
-
-
-  </div>
-
-  <div id="notices"></div>
-</header>
-
-<div class='full-width-container'>
-<script src="/assets/templates/curricula-en-7f0304a7a2dc152d10dd10496499a720.js" type="text/javascript"></script>
-<div class='container' id='curriculum'>
-<div id='flash'>
-</div>
-
-<div class='header'>
-<h1>Ruby</h1>
-</div>
-<div class='main'>
-<ul class="units">
-    <li id="unit-1" class="unit 5059f89cadf8b2000201f329 unit_item">
-  <h3 class="title">
-    <span class="number">1</span>
-    
-    Introduction to Ruby
-  </h3>
-  <div class="description">
-    <p>An introduction to the Ruby programming language.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-d1Ylq?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Introduction to Ruby
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              16 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-d1Ylq?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-MxXx5?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Putting the Form in Formatter
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              7 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-MxXx5?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-2" class="unit 505a0eb9d34cd300020339d1 unit_item">
-  <h3 class="title">
-    <span class="number">2</span>
-    
-    Control Flow in Ruby
-  </h3>
-  <div class="description">
-    <p>Learn how to change your Ruby programs' behavior based on user input.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-NFCZ7?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Control Flow in Ruby
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              17 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-NFCZ7?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-JdNDe?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Thith Meanth War!
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              8 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-JdNDe?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-3" class="unit 505a5952db1d81000200269f unit_item">
-  <h3 class="title">
-    <span class="number">3</span>
-    
-    Looping with Ruby
-  </h3>
-  <div class="description">
-    <p>Loops help you automate a series of instructions quickly and easily.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-XYcN1?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Loops &amp; Iterators
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              18 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-XYcN1?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-mzrZ6?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Redacted!
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              6 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-mzrZ6?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-4" class="unit 505b56eaf37e660002013449 unit_item">
-  <h3 class="title">
-    <span class="number">4</span>
-    
-    Arrays and Hashes
-  </h3>
-  <div class="description">
-    <p>Arrays and hashes are special variables that let us to store more than one value at a time.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-F3loB?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Data Structures
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              16 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-F3loB?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-693PD?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Create a Histogram
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              8 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-693PD?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-5" class="unit 5065f1e5d0290d00020dd3d8 unit_item">
-  <h3 class="title">
-    <span class="number">5</span>
-    
-    Blocks and Sorting
-  </h3>
-  <div class="description">
-    <p>Computer programs are ideal for sorting large amounts of information.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-ET4bU?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Methods, Blocks, &amp; Sorting
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              19 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-ET4bU?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-nOho7?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Ordering Your Library
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              6 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-nOho7?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-6" class="unit 50eda2a4c096fb80a70000f2 unit_item">
-  <h3 class="title">
-    <span class="number">6</span>
-    
-    Hashes and Symbols
-  </h3>
-  <div class="description">
-    <p>As we've seen, hashes are an important Ruby data structure. Here, we'll learn about the (chunky) bacon to hashes' eggs: symbols!</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-Qn7Qw?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Hashes and Symbols
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              15 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-Qn7Qw?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-0i8v1?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            A Night at the Movies
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              10 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-0i8v1?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-7" class="unit 50eda2fe6ddf81cc9f00010b unit_item">
-  <h3 class="title">
-    <span class="number">7</span>
-    
-    Refactoring
-  </h3>
-  <div class="description">
-    <p>Now that we know how to write a bit of Ruby, we'll look at refactoring—the process of making our code even better!</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-1o8Mb?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            The Zen of Ruby
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              20 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-1o8Mb?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-Zjd2y?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            The Refactor Factory
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              7 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-Zjd2y?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-8" class="unit 50eda355961721b50b000023 unit_item challenge">
-  <h3 class="title">
-    <span class="number">8</span>
-    
-    Blocks, Procs, and Lambdas
-  </h3>
-  <div class="description">
-    <p>In this course, we'll cover three of the most powerful aspects of the Ruby programming language: blocks, procs, and lambdas.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="challenge_link" hreff="/courses/ruby-beginner-en-L3ZCI?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Blocks, Procs, and Lambdas
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              21 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            challenge_link" hreff="/courses/ruby-beginner-en-L3ZCI?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Challenge
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-9" class="unit 50eda37a9051a47d5c000037 unit_item">
-  <h3 class="title">
-    <span class="number">9</span>
-    
-    Object-Oriented Programming, Part I
-  </h3>
-  <div class="description">
-    <p>Ruby is an object-oriented language. In this unit, we'll learn how to create our own objects using classes.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-MFiQ6?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Object-Oriented Programming I
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              20 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-MFiQ6?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-X5wcR?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Virtual Computer
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              8 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-X5wcR?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-    <li id="unit-10" class="unit 50eda407c90260a769000061 unit_item">
-  <h3 class="title">
-    <span class="number">10</span>
-    
-    Object-Oriented Programming, Part II
-  </h3>
-  <div class="description">
-    <p>Here, we'll tackle some of the more complex aspects of object-oriented programming, including information hiding, modules, and mixins.</p>
-  </div>
-    <ul class="unit_courses">
-        <li class="not_started">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-zfe3o?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-            Object-Oriented Programming II
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              18 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-zfe3o?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-        <li class="not_started secondary">
-          <a class="course_link" hreff="/courses/ruby-beginner-en-32cN3?curriculum_id=5059f8619189a5000201fbcb">
-          <h4>
-              Project:
-            Banking on Ruby
-              <span class="author">Eric Weinstein</span>
-            <span class="progress">
-              7 Exercises
-            </span>
-          </h4>
-
-          <span class="
-            course_link" hreff="/courses/ruby-beginner-en-32cN3?curriculum_id=5059f8619189a5000201fbcb">
-            Start
-            Course
-            &rsaquo;
-          </span>
-          </a>
-
-        </li>
-
-    </ul>
-</li>
-
-</ul>
-
-</div>
-<div class='meta'>
-<div class='description'>
-<p>Ruby is a powerful and expressive language with intuitive syntax. If you're unsure of which programming language to learn, Ruby is a great choice. The language can be used in a variety of disciplines, including application, game, and web development, and currently enjoys widespread popularity via the Ruby on Rails web framework. Courses are based on Ruby 1.9.3.</p>
-<div class='challenges'>
-<h3>
-Challenges
-<span>0 / 1</span>
-</h3>
-<ul>
-<li class='challenge'>
-<div class='badge ruby course-ruby-beginner-en-L3ZCI'></div>
-Blocks, Procs, and Lambdas
-<div class='status not_started'></div>
-</li>
-</ul>
-</div>
-</div>
-<div class='logo'>
-<img alt="505b718617007b000202c065_919480030" src="http://s3.amazonaws.com/codecademy-production/original/505b718617007b000202c065_919480030.jpg" />
-</div>
-</div>
-</div>
-<script>
-  //<![CDATA[
-    CCDATA.showAppscoModal = false;
-  //]]>
-</script>
-
-
-</div>
-<div id='footer-clear'></div>
-</div>
-<footer id='footer'>
-<div class="wrapper">
-  <div class="container">
-    <div class="about">
-      <h1>
-        <span class="logo">Codecademy</span>
-        <span class="comma">,</span>
-        teaching the world to code
-      </h1>
-      <ul>
-        <li><a hreff="/about">About Us</a></li>
-        <li><a hreff="/about/jobs">We&#x27;re hiring</a></li>
-        <li><a hreff="/blog">Our Blog</a></li>
-      </ul>
-    </div>
-    <ul class="links">
-      <li>
-        <h4>Learn to Code</h4>
-        <ul>
-          <li><a hreff="/tracks/javascript"><span class='arraow'>&rarr;</span> JavaScript</a></li>
-          <li><a hreff="/tracks/web"><span class='arraow'>&rarr;</span> HTML/CSS</a></li>
-          <li><a hreff="/tracks/php"><span class='arraow'>&rarr;</span> PHP</a></li>
-          <li><a hreff="/tracks/python"><span class='arraow'>&rarr;</span> Python</a></li>
-          <li><a hreff="/tracks/ruby"><span class='arraow'>&rarr;</span> Ruby</a></li>
-          <li><a hreff="/tracks/apis"><span class='arraow'>&rarr;</span> APIs</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <h4>Other Programs</h4>
-        <ul>
-          <li><a hreff="/afterschool"><span class='arraow'>&rarr;</span>Afterschool Programming</a></li>
-          <li><a hreff="/stories"><span class='arraow'>&rarr;</span>Success Stories</a></li>
-          <li><a hreff="http://labs.codecademy.com"><span class='arraow'>&rarr;</span>Codecademy Labs</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <h4>Codecademy Online</h4>
-        <ul class="external">
-          <li class="twitter"><span class="icon-twitter"></span><a hreff="http://www.twitter.com/codecademy">Follow us on Twitter</a></li>
-          <li class="facebook"><span class="icon-facebook"></span><a hreff="http://www.facebook.com/codecademy">Find us on Facebook</a></li>
-          <li class="blog"><span class="icon-blog"></span><a hreff="/blog">Read our Blog</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="container secondary">
-    <ul>
-      <li><a hreff="/help">Help</a></li>
-      <li><a hreff="/policy">Privacy Policy</a></li>
-      <li><a hreff="/terms">Terms</a></li>
-      <li>Made in NYC</li>
-      <li>&copy; 2013 Codecademy</li>
-    </ul>
-
-
-  </div>
-</div>
-
-
-</footer>
-<div class='ajax-loader offscreen'></div>
-<div class='ajax-loader-large offscreen'></div>
-<div id='user-registration-modal'>
-<div class="cf module" id="user-registration-form">
-
-  <header>
-    <h2 class="sign-up-to">Sign up to Codecademy</h2>
-    <h2 class="sign-up-encourage">
-      You&#x27;re doing great! <span>Sign up to keep track of what you’ve learned!</span>
-</h2>  </header>
-
-
-  <div class="cell social-signin">
-    <h4>Sign up with...</h4>
-
-      <a hreff="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign up with Facebook</a>
-      <a hreff="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign up with Google</a>
-      <a hreff="#" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign up with Twitter</a>
-
-  </div>
-
-  <div class="cell email-signin">
-    <h4>Or sign up with email</h4>
-    <span class="or module">or</span>
-    <form accept-charset="UTF-8" action="/register" class="new_user" id="new-user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" /></div>
-  
-  <input id="user_email" name="user[email]" placeholder="Email" size="30" tabindex="1" type="email" />
-  <input autocapitalize="off" autocorrect="off" id="user_username" name="user[username]" placeholder="Username" size="30" tabindex="2" type="text" />
-  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="3" type="password" />
-  <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirm password" size="30" tabindex="4" type="password" />
-
-
-  <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" class="hidden" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
-
-  <p class="note">By signing up, you agree to our <a hreff="/terms">Terms of Service</a></p>
-
-  <input class="bttn blue" name="commit" type="submit" value="Get started!" />
-</form>
-  </div>
-</div>
-
-<script type="text/x-underscore-template" id="tmpl-twitter-email-modal">
-  <form name="twitter-email" class="form-horizontal" id="twitter-email"
-   action="/auth/twitter" >
-    <h3>You&#x27;re almost done!</h3>
-    <p>We need your email to finish creating your account.</p>
-    <table class="control-group" id="email-group">
-      <tr>
-        <td class="controls">
-          <input type="text" id="twitter-email-field" name="email" placeholder="Enter your email address"/>
-          <span class="help-inline">Please enter a valid email address</span>
-        </td>
-      </tr>
-    </table>
-    <div class="actions">
-      <button type="submit" class="bttn green" id="submit-twitter" disabled="disabled">
-        Continue
-      </button>
-    </div>
-  </form>
-</script>
-
-</div>
-<div id='user-session-modal'>
-<div class="cf module" id="user-session-form">
-  <header>
-    <h2>Sign in to Codecademy</h2>
-  </header>
-
-  <div class="cell social-signin">
-    <h4>Sign in with...</h4>
-
-      <a hreff="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign in with Facebook</a>
-      <a hreff="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign in with Google</a>
-      <a hreff="/auth/twitter" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign in with Twitter</a>
-
-  </div>
-
-  <div class="cell neutral email-signin">
-    <h4>Sign in with email</h4>
-    <span class="or module">or</span>
-    <form accept-charset="UTF-8" action="/sign_in" class="new_user" id="new-session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9vIDpzma7S57TnSm7ngYEGcpJkdyjAyUqvm3NNiMh4Y=" /></div>
-
-
-  <input autocapitalize="off" autocorrect="off" id="user_login" name="user[login]" placeholder="Email or username" size="30" tabindex="1" type="text" />
-  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="2" type="password" />
-    <div class="remember-me">
-      <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
-      <label for="user_remember_me">Remember me</label>
-
-      <a hreff="/secret/new" class="secondary">Forgot your password?</a>
-    </div>
-
-  <div>
-  <input class="sign-in-button bttn blue" name="commit" type="submit" value="Login" />
-  <a hreff="/register/sign_up" class="create-account secondary">Create Account</a>
-  </div>
-</form>
-
-  </div>
-</div>
-
-</div>
-<script src="/assets/templates/common-en-deebc268f3c63b1aa406855fbb13d4ec.js" type="text/javascript"></script>
-
-  <script src="/assets/dist/common-e6261eaf267c9fae30da73372bbdf817.js" type="text/javascript"></script>
-  <script src="/assets/dist/controllers/curriculum_show_controller-2554cc47228c3680a65ec9a1b88c96b3.js" type="text/javascript"></script>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+<meta name="keywords" content="เทศบาลตำบลบ่อตรุ จังหวัดสงขลา">
+<title>เทศบาลตำบลบ่อตรุ จังหวัดสงขลา </title>
+
+<link hreff="style/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js1/jquery.js"></script>
+<script language="javascript" src="js1/listbox/jquery.skinned-select.js"></script>
 <script type="text/javascript">
-  require(['common', 'controllers/curriculum_show_controller'], function (common, controller) {
-    if (common) common.init();
-    if (controller) controller['init']();
-    
-  });
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
 </script>
+<script type="text/javascript" language="JavaScript1.2" src="stm31.js"></script>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
 
-  <div id="fb-root"></div>
-  <script>
-    // Facebook
-    var FB_APP_ID = '212500508799908';
-    window.fbAsyncInit = function() {
-      var FB = (window.FB || undefined);
-      if (FB) {
-        FB.init({
-          appId      : FB_APP_ID
-        , channelUrl : window.root_url+'/channel.html'
-        , status     : true
-        , cookie     : true
-        , xfbml      : true
-        });
-      }
-    };
+<style type="text/css">
+<!--
+.style4 {font-size: 14px}
+-->
 
-    (function(d){
-      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement('script'); js.id = id; js.async = true;
-      js.src = "//connect.facebook.net/en_US/all.js";
-      ref.parentNode.insertBefore(js, ref);
-    }(document));
-  </script>
+</style>
+</head>
 
-  <script>
-    // Overlay loader
-    var overlay = document.getElementById('overlay');
-    if (overlay && overlay.children.length > 0) {
-      overlay.style.cssText = "display: block;";
-    }
-  </script>
+<body onload="MM_preloadImages('images/ajax/1_19.jpg','images/ajax/1_20.jpg','images/ajax/1_34.jpg','images/ajax/1_35.jpg','images/wb1_50.jpg','images/wb2/3_24.jpg')">
+<div id="wrapper">
+        <div id="header">
+    	  <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','100%','height','411','src','flash','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','flash','wmode','transparent' ); //end AC code
+          </script>
+    	  <noscript>
+    	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="100%" height="411">
+            <param name="movie" value="flash.swf" />
+            <param name="quality" value="high" />
+            <param name="wmode" value="transparent" />
+            <embed src="flash.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="411"wmode="transparent"></embed>
+          </object>
+    	  </noscript>
+   	    </div>        <div id="container">
+        	<div id="content">
+            	<div id="box-1">
+                	            	<div class="talk">
+					<div class="text-s">
 
-  <!-- Qualaroo survey -->
-  <script type="text/javascript">
-    var _kiq = _kiq || [];
-  </script>
-  <script type="text/javascript" src="//s3.amazonaws.com/ki.js/48944/a3w.js" async="true"></script>
+<div style="padding-top:7px;">
+<marquee behavior='scroll' direction=35 width=870  height=20  scrollamount='1' scrolldelay=45  truespeed='truespeed' onmouseover='this.stop()' onmouseout='this.start()' style='margin:0px 5px 0px 5px;border:$border solid black'>
 
-  <script>
-    // Chartbeat
-    var _sf_async_config={uid:27714,domain:"codecademy.com"};
-    (function(){
-      function loadChartbeat() {
-        window._sf_endpt=(new Date()).getTime();
-        var e = document.createElement('script');
-        e.setAttribute('language', 'javascript');
-        e.setAttribute('type', 'text/javascript');
-        e.setAttribute('src',
-        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
-        "js/chartbeat.js");
-        document.body.appendChild(e);
-      }
-      var oldonload = window.onload;
-      window.onload = (typeof window.onload != 'function') ?
-      loadChartbeat : function() { oldonload(); loadChartbeat(); };
-    })();
-  </script>
+<a hreff="http://www.bortru.go.th/index.php?options=news&mode=detail&id=39755" class="green">
+โครงการเทิดทูนสถาบันสำคัญของชาติเพื่อเสริมสร้างความสมานฉันท์  ประจำปี ๒๕๕๖  (ดู : 613) รายละเอียด มีดังนี้ กำหนดการ
+โครงการเทิดทูนสถาบันสำคัญของชาติเพื่อเสริมสร้างความสมานฉันท์  ประจำปี ๒๕๕๖  
+วันจันทร์ที่  ๑๒  สิงหาคม  ๒๕๕๖
+ณ  บริเวณพังกุฏิ  หมู่ที่  ๓  ตำบลวัดสน
+	อำเภอระโนด  จังหวัดสงขลา	
+…………………………………………………
+วันจันทร์ที่  ๑๒  สิงหาคม  ๒๕๕๖
 
-<!-- Typekit scripts -->
-<script type="text/javascript" src="//use.typekit.net/rwa3ozy.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+๐๘.๓๐  น.	-  คณะผู้บริหาร,  สมาชิกสภาเทศบาล,  หัวหน้าส่วนราชการ,   
+	   พนักงานเทศบาล,  อสม. ,  นักเรียน  และประชาชนพร้อมกัน                                                 
+                         ณ บริเวณพังกุฏิ
+๐๙.๐๐  น.	-  ประธานเดินทางถึงบริเวณพิธี
+๐๙.๑๐  น.	-  การแสดงมโนราห์  โรงเรียนชุมชนวัดสามบ่อ
+๐๙.๓๐  น.	-  ประธานเปิดกรวยดอกไม้  ธูปเทียนแพ  ถวายราชสักการะฯ
+			-  ประธานกล่าวราชสดุดีเฉลิมพระเกียรติ
+-  ประธาน และผู้ร่วมพิธีร่วมร้องเพลงสรรเสริญพระบารมี                              และเพลงสดุดีมหาราชา  ๒  จบ
+- มอบพันธุ์ปลาให้กับชุมชน 
+- ประธานกล่าวพบปะผู้ร่วมพิธี
+   ๑๐.๐๐  น.  	-  ปล่อยพันธุ์ปลา  บริเวณพังกุฏิ
+
+เสร็จพิธี
+หมายเหตุ		 การแต่งกาย
+                            - ข้าราชการแต่งกายชุดปฏิบัติราชการสีกากี
+			 - พนักงานจ้าง  สวมเสื้อสีฟ้าหรือสีเหลือง 
+                           - ประชาชน  แต่งกายชุดไทย  ชุดผ้าไทยพื้นเมืองสีฟ้า  หรือเสื้อยืด
+			 สีฟ้าตราสัญลักษณ์  (สก.)  หรือแบบฟอร์มตามสังกัด
 
 
-<script id='tmpl-versions-label' type='text/x-underscore-template'>
-<label>Versions</label>
-</script>
-<script id='tmpl-versions-item' type='text/x-underscore-template'>
-<option value="<%= index %>"><%= label %></option>
-</script>
-<script id='tmpl-wrong-answer' type='text/x-underscore-template'>
-<span style="color: crimson">Oops, try again. <%
-  if (qa) {
-    %>If you're stuck learn more from fellow users at our <a hreff="<%= qa %>" target="_blank">Q&A section!</a><%
-  } %><%
-  if (hint) {
-    %><br><span style="color: #F80"><%= hint %></span><%
-  }
-%></span>
-
-</script>
-<script id='tmpl-correct-answer' type='text/x-underscore-template'>
-<span style="color: green">That's correct!<%
-  if (showNextExerciseLink) {
-    %><a hreff="javascript:void(0)" data-index=<%= index %> class="nextExerciseLink"> Next Exercise: <%= nextExerciseName %></a><%
-   }
-%></span>
-
-</script>
-<script id='tmpl-finish' type='text/x-underscore-template'>
-<%
-  if (nextSectionPath) {
-  %>Good work completing this section! <a class='next_lesson_in_console' hreff='<%= nextSectionPath %>'>Start the next section</a>.<%
-} else if (languageCoursesPath && currentCurriculumPath !== "") {
-%>Nice! You've completed this course! Continue on <a hreff='<%= currentCurriculumPath %>'>this track</a>, browse <a class='next_lesson_in_console' hreff='<%= curriculaPath %>'>other tracks</a>, or experiment with <a class='next_lesson_in_console' hreff='http://labs.codecademy.com'>Codecademy Labs</a>.<%
-} else if (languageCoursesPath) {
-  %>You've completed this course! Start <a hreff='<%= curriculaPath %>'>a track</a>, tackle a <a hreff='<%= coursesPath %>'>non-track course</a>, or experiment with <a class='next_lesson_in_console' hreff='http://labs.codecademy.com'>Codecademy Labs</a>.<%
-}%>
-
-</script>
-<script id='tmpl-keyboard-shortcuts' type='text/x-underscore-template'>
-<div id='keyboard-shortcuts'>
-  <!-- Frequently Used Shortcuts -->
-  <div class="frequently-used">
-    <div class="shortcut-item span3">
-      <b>Run Exercise</b>
-      <div class='shortcut'>
-        <kbd>CTRL + <kbd>Enter</kbd>
-      </div>
-    </div>
-
-    <div class="shortcut-item span3">
-      <b>Save Progress</b>
-      <div class='shortcut'>
-        <kbd>CTRL + <kbd>S</kbd>
-      </div>
-    </div>
-    <div class="shortcut-item span3">
-      <b>Reset Exercise</b>
-      <div class='shortcut'>
-        <kbd>ALT + <kbd>R</kbd>
-      </div>
-    </div>
-  </div>
-
-  <!-- Extra Shortcuts -->
-  <div class="extra-shortcuts">
-    <div class="shortcut-item span3">
-      <b>Next Exercise</b>
-      <div class='shortcut'>
-        <kbd>ALT + <kbd>T</kbd>
-      </div>
-    </div>
-    <div class="shortcut-item span3">
-      <b>Previous Exercise</b>
-      <div class='shortcut'>
-        <kbd>ALT + <kbd>P</kbd>
-      </div>
-    </div>
-  </div>
-  <div class="keyboard">
-    <div class="keyboard-toggle">
-      <a hreff="javascript:void(0);">
-        <b class="show-more">Show More</b>
-        <b class="show-less">Show Fewer</b>
-        <span class="caret"></span>
-      </a>
-    </div>
-  </div>
-</div><!-- keyboard-shortcuts-learner -->
-
-</script>
-<script id='tmpl-keyboard-shortcuts-creator' type='text/x-underscore-template'>
-<div id='keyboard-shortcuts'>
-  <!-- Frequently Used Shortcuts -->
-  <div class="frequently-used">
-    <div class="shortcut-item span5">
-      <b>Preview Exercise</b>
-      <div class='shortcut'>
-        <kbd>CTRL + <kbd>P</kbd>
-      </div>
-    </div>
-    <div class="shortcut-item span5">
-      <b>Save Progress</b>
-      <div class='shortcut'>
-        <kbd>CTRL + <kbd>S</kbd>
-      </div>
-    </div>
-    <div class="shortcut-item span5">
-      <b>Show Feedback</b>
-      <div class='shortcut'>
-        <kbd>ALT + <kbd>F</kbd>
-      </div>
-    </div>
-  </div>
-  <!-- Extra Shortcuts -->
-  <div class="extra-shortcuts">
-    <div class="items">
-      <div class="shortcut-item span4">
-        <b>Add Exercise</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>A</kbd>
-        </div>
-      </div>
-      <div class="shortcut-item span4">
-        <b>Delete Exercise</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>D</kbd>
-        </div>
-      </div>
-      <div class="shortcut-item span4">
-        <b>Edit Next</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>T</kbd>
-        </div>
-      </div>
-      <div class="shortcut-item span4">
-        <b>Edit Previous</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>P</kbd>
-        </div>
-      </div>
-      <div class="shortcut-item span4">
-        <b>Edit Default Code</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>1</kbd>
-        </div>
-      </div>
-      <div class="shortcut-item span4">
-        <b>Edit SCT</b>
-        <div class='shortcut'>
-          <kbd>ALT + <kbd>2</kbd>
-        </div>
-      </div>
-    </div>
-  </div><!-- end extra-shortcuts -->
-  <div class="keyboard">
-    <div class="keyboard-toggle">
-      <a hreff="javascript:void(0);">
-        <b class="show-more">Show More</b>
-        <b class="show-less">Show Fewer</b>
-        <span class="caret"></span>
-      </a>
-    </div>
-  </div>
+ </a>
+</marquee>
 </div>
 
-</script>
-<script id='tmpl-share-course-project' type='text/x-underscore-template'>
-<div class='aside share-course-project'>
-  <p>
-    Share this link with friends and others to show off your project:
-    <br>
-    <input type='text' id='url' readonly='readonly' name='url' value='<%= project_url %>'/> or
-    <a target='_blank' class='button light-green' hreff='<%= project_url %>'>View Project</a>
-  </p>
-</div>
+
+</div>                
+                </div>
+                </div>
+                <div id="box-2">
+                	<div class="left">
+                    	<div class="nayok">
+                        </div>
+                        <div class="menu">
+<script type="text/javascript" language="JavaScript1.2">
+<!--
+stm_bm(["menu35ef",400,"","blank.gif",0,"","",0,0,250,0,1000,1,0,0,""],this);
+stm_bp("p0",[1,4,0,0,0,0,0,0,100,"",-2,"",-2,50,0,0,"#fffff7","transparent","",3,0,0,"#ffffff"]);
+stm_ai("p0i0",[2,"","images/menu/menu_01.gif","images/menu/move_01.gif",216,77,0,"index.php?options=home","_self","","","","",0,0,0,"","",0,0,0,0,1,"#fffff7",1,"#ffffff",1,"","",3,3,0,0,"#fffff7","#000000","#000000","#000000","8pt Verdana","8pt Verdana",0,0]);
+stm_aix("p0i1","p0i0",[2,"","images/menu/menu_02.gif","images/menu/move_02.gif",216,30,0,""]);
+stm_bpx("p1","p0",[1,2,0,0,0,0,0,0,100,"progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.70)",-2,"progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.70)",-2,40]);
+stm_aix("p1i0","p0i0",[2,"","images/menu/sub2_01.jpg","images/menu/submove2_01.jpg",162,42,0,"index.php?options=content&mode=cate&id=1"]);
+stm_aix("p1i1","p0i0",[2,"","images/menu/sub2_02.jpg","images/menu/submove2_02.jpg",162,18,0,"index.php?options=content&mode=cate&id=2"]);
+stm_aix("p1i2","p0i0",[2,"","images/menu/sub2_03.jpg","images/menu/submove2_03.jpg",162,21,0,"index.php?options=content&mode=cate&id=3"]);
+stm_aix("p1i3","p0i0",[2,"","images/menu/sub2_04.jpg","images/menu/submove2_04.jpg",162,22,0,"index.php?options=content&mode=cate&id=4"]);
+stm_aix("p1i4","p0i0",[2,"","images/menu/sub2_05.jpg","images/menu/submove2_05.jpg",162,19,0,"index.php?options=content&mode=cate&id=5"]);
+stm_aix("p1i5","p0i0",[2,"","images/menu/sub2_06.jpg","images/menu/submove2_06.jpg",162,19,0,"index.php?options=success"]);
+stm_aix("p1i6","p0i0",[2,"","images/menu/sub2_07.jpg","images/menu/submove2_07.jpg",162,20,0,"index.php?options=develop_plan"]);
+stm_aix("p1i7","p0i0",[2,"","images/menu/sub2_08.jpg","images/menu/submove2_08.jpg",162,19,0,"index.php?options=content&mode=cate&id=6"]);
+stm_aix("p1i8","p0i0",[2,"","images/menu/sub2_09.jpg","images/menu/submove2_09.jpg",162,21,0,"index.php?options=content&mode=cate&id=7"]);
+stm_aix("p1i9","p0i0",[2,"","images/menu/sub2_10.jpg","images/menu/submove2_10.jpg",162,21,0,"index.php?options=personal_show_list"]);
+stm_aix("p1i10","p0i0",[2,"","images/menu/sub2_11.jpg","images/menu/submove2_11.jpg",162,36,0,"index.php?options=content&mode=cate&id=8"]);
+stm_ep();
+stm_aix("p0i2","p0i0",[2,"","images/menu/menu_03.gif","images/menu/move_03.gif",216,31,0,"","_self","","","","",0,0,0,"","",0,0,0,0,1,"#ffffff"]);
+stm_bpx("p2","p1",[]);
+stm_aix("p2i0","p0i0",[2,"","images/menu/sub1_01.jpg","images/menu/submove1_01.jpg",162,43,0,"index.php?options=news&mode=cate&id=1"]);
+stm_aix("p2i1","p0i0",[2,"","images/menu/sub1_02.jpg","images/menu/submove1_02.jpg",162,22,0,"index.php?options=news&mode=cate&id=2"]);
+stm_aix("p2i2","p0i0",[2,"","images/menu/sub1_03.jpg","images/menu/submove1_03.jpg",162,22,0,"index.php?options=news&mode=cate&id=3"]);
+stm_aix("p2i3","p0i0",[2,"","images/menu/sub1_04.jpg","images/menu/submove1_04.jpg",162,23,0,"index.php?options=newsall"]);
+stm_aix("p2i4","p0i0",[2,"","images/menu/sub1_05.jpg","images/menu/submove1_05.jpg",162,37,0,"http://www.sk-local.go.th/index.php?options=news&mode=list_rss"]);
+stm_ep();
+stm_aix("p0i3","p0i0",[2,"","images/menu/menu_04.gif","images/menu/move_04.gif",216,33,0,"index.php?options=photo","_self","","","","",0,0,0,"","",0,0,0,0,1,"#fffff7",1,"#ffffff",1,"","",3,3,0,0,"#fffff7","#ffffff"]);
+stm_aix("p0i4","p0i0",[2,"","images/menu/menu_05.gif","images/menu/move_05.gif",216,32,0,"index.php?options=travel","_self","","","","",0,0,0,"","",0,0,0,0,1,"#fffff7",1,"#b5bed6"]);
+stm_aix("p0i5","p0i4",[2,"","images/menu/menu_06.gif","images/menu/move_06.gif",216,32,0,"index.php?options=otop"]);
+stm_aix("p0i6","p0i4",[2,"","images/menu/menu_07.gif","images/menu/move_07.gif",216,31,0,"index.php?options=personal&id=145223"]);
+stm_aix("p0i7","p0i6",[2,"","images/menu/menu_08.gif","images/menu/move_08.gif",216,32,0,"index.php?options=personal&id=145224"]);
+stm_aix("p0i8","p0i6",[2,"","images/menu/menu_09.gif","images/menu/move_09.gif",216,36,0,"index.php?options=travel_new"]);
+stm_aix("p0i9","p0i4",[2,"","images/menu/menu_10.gif","images/menu/move_10.gif",216,34,0,"index.php?options=activity"]);
+stm_aix("p0i10","p0i6",[2,"","images/menu/menu_11.gif","images/menu/move_11.gif",216,34,0,""]);
+stm_bpx("p3","p1",[]);
+stm_aix("p3i0","p0i0",[2,"","images/menu/sub3_01.jpg","images/menu/submove3_01.jpg",199,42,0,"index.php?options=webboard"]);
+stm_aix("p3i1","p0i0",[2,"","images/menu/sub3_02.jpg","images/menu/submove3_02.jpg",199,40,0,"index.php?options=webboardall"]);
+stm_ep();
+stm_aix("p0i11","p0i4",[2,"","images/menu/menu_12.gif","images/menu/move_12.gif",216,34,0,"index.php?options=content&mode=cate&id=9"]);
+stm_aix("p0i12","p0i6",[2,"","images/menu/menu_13.png","images/menu/menu_13.png",0,0]);
+stm_ep();
+stm_em();
+//-->
 </script>
 
-<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
-NREUMQ.push(["load",new Date().getTime()]);
-var e=document.createElement("script");
-e.type="text/javascript";
-e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
-  "js-agent.newrelic.com/nr-100.js";
-document.body.appendChild(e);
-if(NREUMQ.a)NREUMQ.a();
-};
-NREUMQ.a=window.onload;window.onload=NREUMQ.f;
-};
-NREUMQ.push(["nrfj","beacon-3.newrelic.com","8502746af5","2210607","c1hZF0tfVQkEExoFF0JFXgBMXFhKEglaEQ==",6,142,new Date().getTime(),"","","","",""]);</script></body>
+
+                        
+                        </div>
+                    </div>
+                    <div class="right">
+                    	<div class="vdo">
+                        	<div class="vdo_01">
+                            	<div class="vdo_03">
+                                	<div class="vdo_04">
+                                	<style>
+.vdo_txt{
+	font-size:13px;
+	}
+</style>
+
+<div class="vdo_body">
+                                    	<ul>
+                                                                                
+                                        	<li>
+                                           	  <div class="vdo_pic">
+                                               	  <div class="vdo_pic1"><object width="350" height="239"><param name="movie" value="http://www.youtube.com/v/HdRcwh8Mr-c&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param 					name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/HdRcwh8Mr-c&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="239"></embed></object>                                                  </div>
+                                              </div>
+                                                <div align="center" class="vdo_txt">เกษตกรชาวบ่อตรุ</div>
+                                          	</li>
+                                        	                                        
+                                        	<li>
+                                           	  <div class="vdo_pic">
+                                               	  <div class="vdo_pic1"><object width="350" height="239"><param name="movie" value="http://www.youtube.com/v/OPkQ6O2ex_o&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param 					name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/OPkQ6O2ex_o&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="239"></embed></object>                                                  </div>
+                                              </div>
+                                                <div align="center" class="vdo_txt">วิถีความเป็นอยู่ของคนบ่อตรุ</div>
+                                          	</li>
+                                        	                                        </ul>
+                                    </div>                                    <div align="right" class="vdo_body1"><a hreff="index.php?options=youtube"><img src="images/vdo/all.jpg" width="66" height="22"  border="0"/></a></div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="vdo_02"></div>
+                      </div>
+                      <div class="box-ads1">
+                        <div class="ads-1">
+                        	<a hreff="index.php?options=news_council " target="_self"><img src="images/banner_new/banner_02.gif" /></a>                        </div>
+                        <div class="ads-2"><a hreff="index.php?options=news_money" target="_self"><img src="images/banner_new/banner_03.gif" width="195" height="63" /></a> </div>
+                        <div class="ads-3"><a hreff="index.php?options=success" target="_self"><img src="images/banner_new/banner_04.gif" width="196" height="63" /></a> </div>
+                      </div>
+                      <div class="ads-4">
+                      	<div class="sl"><script type="text/javascript" src="slide.min.js"></script>
+<style type="text/css">
+.featureNavButtPosition{
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}
+.featureNavButtPosition:hover{
+	filter:alpha(opacity=99);
+	-moz-opacity:.99;
+	opacity:.99;
+}
+</style>
+<script type="text/javascript">
+var imgArr = new Array();
+var LinkArr = new Array();
+imgArr.push("images/banner_abt/lqhus20130729112131.gif");
+LinkArr.push("");
+imgArr.push("images/banner_abt/ifyjs20130627181432.jpg");
+LinkArr.push("");
+imgArr.push("images/banner_abt/srpdz20130221153001.jpg");
+LinkArr.push("");
+imgArr.push("images/banner_abt/vysuy20130204110619.jpg");
+LinkArr.push("");
+imgArr.push("images/banner_abt/fpxmr20130131103045.jpg");
+LinkArr.push("");
+imgArr.push("images/banner_abt/wfajb20121009145426.jpg");
+LinkArr.push("");
+ slidebars(imgArr,LinkArr,756,212);
+ 
+</script>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="box-3">
+                	<script>
+	var max_news=3;
+	function show_gallery(para){
+			for(i=1;i<=max_news;i++){
+				document.getElementById("kr_gallery"+i+"_header").style.display="none";
+				document.getElementById("kr_gallery"+i).style.display="none";
+			
+			}
+				document.getElementById("kr_gallery"+para+"_header").style.display="block";
+				document.getElementById("kr_gallery"+para).style.display="block";	
+			
+	}
+</script>
+<div class="activity_nade">
+<div id="kr_gallery1_header">
+
+                   	  <div class="top">
+                   		<div class="activity_ajax_sel">
+                       	</div>
+                            <div class="tour_ajax">
+                            	<a hreff="#" onClick="show_gallery(2);return false;"><img src="images/space.gif" width="151" height="101" /></a> 
+                            </div>
+                            <div class="product_ajax">
+                            	<a hreff="#" onClick="show_gallery(3);return false;"><img src="images/space.gif" width="151" height="101"/></a>                            </div>
+                            
+                      </div>
+                      </div>
+   <div id="kr_gallery2_header" style="display:none">
+   <div class="top">
+			<div class="activity_ajax"><a hreff="#" onClick="show_gallery(1);return false;"><img src="images/space.gif" width="321" height="101" /></a></div>
+<div class="tour_ajax">
+                 <div class="tour_ajax_sel"></div>
+           </div>
+           <div class="product_ajax">
+                 <a hreff="#" onClick="show_gallery(3);return false;"><img src="images/space.gif" width="151" height="101"/></a>
+           </div>
+                            
+</div>
+  			 </div>
+             <div id="kr_gallery3_header" style="display:none">
+             <div class="top">
+		   <div class="activity_ajax"><a hreff="#" onClick="show_gallery(1);return false;"><img src="images/space.gif" width="321" height="101" /></a></div>
+           <div class="tour_ajax">
+                 <a hreff="#" onClick="show_gallery(2);return false;"><img src="images/space.gif" width="151" height="101" /></a> 
+           </div>
+           <div class="product_ajax">
+           		<div class="product_ajax_sel">
+                </div>
+           </div>
+                            
+</div>
+             </div>
+                      
+                      	 <div id="kr_gallery1"> <div class="mid1">
+                      <div class="mid">
+                        	<ul>
+                                                       	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=photo&mode=detail&id=10002"><img src="http://www.bortru.go.th/images/photo_gallery/resizepic_ratio.php?max_x=168&max_y=126&file=camcf20130816100333.jpg" border="0" ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=photo&mode=detail&id=10002">วันแม่   ประจ...</a> (ดู: 17)</a></span>                                </li>
+                                                            	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=photo&mode=detail&id=9896"><img src="http://www.bortru.go.th/images/photo_gallery/resizepic_ratio.php?max_x=168&max_y=126&file=sqhiy20130724160342.jpg" border="0" ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=photo&mode=detail&id=9896">วันเข้าพรรษา ...</a> (ดู: 45)</a></span>                                </li>
+                                                            	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=photo&mode=detail&id=9893"><img src="http://www.bortru.go.th/images/photo_gallery/resizepic_ratio.php?max_x=168&max_y=126&file=wfpkl20130724152343.jpg" border="0" ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=photo&mode=detail&id=9893">งานลอยแพ ประจ...</a> (ดู: 35)</a></span>                                </li>
+                                                            	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=photo&mode=detail&id=9875"><img src="http://www.bortru.go.th/images/photo_gallery/resizepic_ratio.php?max_x=168&max_y=126&file=xbrzu20130719162510.jpg" border="0" ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=photo&mode=detail&id=9875">กีฬาบ่อตรุคัพ...</a> (ดู: 68)</a></span>                                </li>
+                                                            	</ul>
+</div>
+                        <div align="right" class="more"><a hreff="index.php?options=photo"><img src="images/activity/more.gif" width="98" height="19"  border="0"/></a></div>
+                      </div></div>
+      <div id="kr_gallery2" style="display:none">  <div class="mid1">
+                      <div class="mid">
+                        	<ul>
+                               
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=travel&mode=detail&id=716"><img src="http://www.bortru.go.th/images/travel/resizepic_ratio.php?max_x=168&max_y=126&file=kezoo20100623111837.jpg" border="0"></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=travel&mode=detail&id=716">วัดสีหยัง</a> (ดู: 1266)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=travel&mode=detail&id=715"><img src="http://www.bortru.go.th/images/travel/resizepic_ratio.php?max_x=168&max_y=126&file=fskpq20100706133034.jpg" border="0"></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=travel&mode=detail&id=715">วัดเจดีย์งาม</a> (ดู: 2077)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=travel&mode=detail&id=675"><img src="http://www.bortru.go.th/images/travel/resizepic_ratio.php?max_x=168&max_y=126&file=efmqw20090504101706.jpg" border="0"></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=travel&mode=detail&id=675">ชาดหาดบ่อตรุ(สวนป่าท...</a> (ดู: 903)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=travel&mode=detail&id=255"><img src="http://www.bortru.go.th/images/travel/resizepic_ratio.php?max_x=168&max_y=126&file=vdwro20100707141017.jpg" border="0"></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=travel&mode=detail&id=255">สวนสุขภาพพังจันทร์</a> (ดู: 905)</span>                                </li>
+                                                            	</ul>
+</div>
+                        <div align="right" class="more"><a hreff="index.php?options=travel"><img src="images/activity/more.gif" width="98" height="19" /></a></div>
+                      </div></div>
+      <div id="kr_gallery3" style="display:none"> <div class="mid1">
+                      <div class="mid">
+                        	<ul>
+                                   
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=otop&mode=detail&id=776">
+                <img src="http://www.bortru.go.th/images/otop/resizepic_ratio.php?max_x=168&max_y=126&file=jxlzy20110203120122.jpg" border="0"  ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=otop&mode=detail&id=776">ฝาชีใบตาล</a> (ดู: 352)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=otop&mode=detail&id=662">
+                <img src="http://www.bortru.go.th/images/otop/resizepic_ratio.php?max_x=168&max_y=126&file=yllqh20090504102307.jpg" border="0"  ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=otop&mode=detail&id=662">กลุ่มตัดเย็บเ...</a> (ดู: 746)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=otop&mode=detail&id=661">
+                <img src="http://www.bortru.go.th/images/otop/resizepic_ratio.php?max_x=168&max_y=126&file=ojmho20090504102024.jpg" border="0"  ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=otop&mode=detail&id=661">ผลิตภัณฑ์จากไ...</a> (ดู: 806)</span>                                </li>
+                                     
+                        	  <li>
+                                	<span class="pic-n">                <a hreff="index.php?options=otop&mode=detail&id=247">
+                <img src="http://www.bortru.go.th/images/otop/resizepic_ratio.php?max_x=168&max_y=126&file=mnnln20060824093528.jpg" border="0"  ></a>
+                </span>
+                               		<span class="title"><a hreff="index.php?options=otop&mode=detail&id=247">สบู่ตาลโตนดแล...</a> (ดู: 852)</span>                                </li>
+                                                            	</ul>
+</div>
+                        <div align="right" class="more"><a hreff="index.php?options=otop"><img src="images/activity/more.gif" width="98" height="19"  border="0"/></a></div>
+                      </div> </div>
+                        <div class="bottom">
+                        
+                        </div>
+                    </div>                </div>
+                <div id="box-4">
+                	<div class="hotnews">
+                    	
+<div class="hot-in">
+                        	<ul>
+                            	<li>
+                                	<span class="pic-h"><span class="pic-n">          <a hreff="http://www.bortru.go.th/index.php?options=news&mode=detail&id=39755">
+          <img src="http://www.sk-local.go.th/images/news/resizepic_ratio.php?max_x=165&max_y=123&file=sghqg20130729115209.gif" border="0" ></a>
+		         </span></span>
+                         	  		<span class="title"><a hreff="http://www.bortru.go.th/index.php?options=news&mode=detail&id=39755" class="green">
+โครงการเทิดทูนสถาบันสำคัญของชาติเพื่อเสริมสร้างความสมานฉันท์  ประจำปี ๒๕๕๖  (ดู : 613)
+           
+                  
+</a></span>
+                          	 		<span class="detail"><a hreff="http://www.bortru.go.th/index.php?options=news&mode=detail&id=39755" class="green">
+โครงการเทิดทูนสถาบันสำคัญของชาติเพื่อเสริมสร้างความสมานฉันท์  ประจำปี ๒๕๕๖  
+วั...                  
+</a></span>                                
+                                </li>
+                          </ul>
+                                                      <div align="right" class="pn"><a hreff="index.php?options=news"><img src="images/all.png" width="71" height="18" style="behavior: url(iepngfix.htc);" border="0" /></a></div>
+                      </div>                    </div>
+                    <script>
+	var max_news=3;
+	function show_news(para){
+			for(i=1;i<=max_news;i++){
+				document.getElementById("kr_news"+i+"_header").style.display="none";
+				document.getElementById("kr_news"+i).style.display="none";
+				document.getElementById("kr_news_bo"+i).style.display="none";
+			}
+				document.getElementById("kr_news"+para+"_header").style.display="block";
+				document.getElementById("kr_news"+para).style.display="block";	
+				document.getElementById("kr_news_bo"+para).style.display="block";	
+	}
+</script>
+<div class="information">
+		<div id="kr_news1_header">
+					  <div class="top">
+                        	<div class="ajax_promotion">
+                            	<div class="ajax_promotion_sel">
+                                </div>
+                            </div>
+                          <div class="ajax_buy">
+                           	  <a hreff="#"  onClick="show_news(2);return false;"><img src="images/space.gif" width="123" height="39" /></a></div>
+                            <div class="ajax_work">
+                            	<a hreff="#"  onClick="show_news(3);return false;"><img src="images/space.gif" width="233" height="39" /></a></div>
+                      </div>
+                      </div>
+          <div id="kr_news2_header" style="display:none">
+          			<div class="top">
+                        	<div class="ajax_promotion">
+                            	<a hreff="#"  onClick="show_news(1);return false;"><img src="images/space.gif" width="138" height="39" /></a>
+                            </div>
+                          <div class="ajax_buy">
+                          	<div class="ajax_buy_sel">
+                            </div>
+  				</div>
+                            <div class="ajax_work"><a hreff="#"  onClick="show_news(3);return false;"><img src="images/space.gif" width="233" height="39" /></a></div>
+			</div>
+          </div>
+           <div id="kr_news3_header" style="display:none">
+        <div class="top">
+                        	<div class="ajax_promotion">
+                            	<a hreff="#"  onClick="show_news(1);return false;"><img src="images/space.gif" width="138" height="39" /></a>
+  </div>
+                          
+                          <div class="ajax_buy">
+                           	  <a hreff="#"  onClick="show_news(2);return false;"><img src="images/space.gif" width="123" height="39" /></a></div>
+  <div class="ajax_work">
+  		<div class="ajax_work_sel">
+        </div>
+  </div>
+</div>
+           
+          </div>
+                      <div id="kr_news1"> <div class="mid">
+                        	<ul>
+                                                                                      	                            	<li><span class="title"><a hreff="index.php?options=news&mode=detail1&id=38847"> รางวัลเกียรติยศ “ระฆังทอง” (บุคคลแห่งปี) รางวัลเพื่อคนไทยและสังคมไทย  ...</a> (ดู: 813)</span></li>
+            
+                                        	<li><span class="title"><a hreff="index.php?options=news&mode=detail1&id=38826"> เยี่ยมผู้สูงอายุ</a> (ดู: 566)</span></li>
+            
+                                        	<li><span class="title"><a hreff="index.php?options=news&mode=detail1&id=38769"> โครงการฝึกอบรมเพื่่อเพิ่มประสิทธิภาพ (อปพร.)</a> (ดู: 546)</span></li>
+            
+                                   	  </ul>
+                      </div></div>
+                  <div id="kr_news2" style="display:none"><div class="mid">
+                        	<ul>
+                                                                                      	                            	<li><span class="title"><a hreff="index.php?options=news&mode=detail2&id=40172"> สอบราคาจ้างโครงการบำรุงรักษาและซ่อมแซมแก้ไขคอมพิวเตอร์ระบบงานทะเบียนรา...</a> (ดู: 148) 
+            <img src="images/new.gif" width="25" height="11" /></span></li>
+            
+                                        	<li><span class="title"><a hreff="index.php?options=news&mode=detail2&id=39733"> สอบราคาจ้างโครงการซ่อมบำรุงเครื่องสูบน้ำบ่อบาดาลและบ่อบาดาลประจำปี</a> (ดู: 612)</span></li>
+            
+                                        	<li><span class="title"><a hreff="index.php?options=news&mode=detail2&id=38209"> สอบราคาซื้อโครงการจัดซื้อเครื่องเล่นสนาม  สำหรับศูนย์พัฒนาเด็กเล็กจำนว...</a> (ดู: 894)</span></li>
+            
+                                   	  </ul>
+                      </div></div>
+                  <div id="kr_news3" style="display:none"><div class="mid">
+                        	<ul>
+                                                                                      	                            	<li><span class="title"><a hreff="index.php?options=news&mode=detail3&id=29799"> ประกาศคณะกรรมการดำเนินการคัดเลือกพนักงานเทศบาลเพื่อแต่งตั้งให้ดำรงตำแห...</a> (ดู: 3722)</span></li>
+            
+                                   	  </ul>
+                      </div> </div>
+                                
+                    <div id="kr_news_bo1">     <div align="right" class="bottom"><a hreff="index.php?options=news&mode=cate&id=1"><img src="images/all1.png" width="70" height="28" style="behavior: url(iepngfix.htc);"/></a></div></div>
+                    <div id="kr_news_bo2" style="display:none"><div align="right" class="bottom"><a hreff="index.php?options=news&mode=cate&id=2"><img src="images/all1.png" width="70" height="28" style="behavior: url(iepngfix.htc);"/></a></div></div>
+                    <div id="kr_news_bo3"  style="display:none"><div align="right" class="bottom"><a hreff="index.php?options=news&mode=cate&id=3"><img src="images/all1.png" width="70" height="28" style="behavior: url(iepngfix.htc);"/></a></div></div>
+                  </div>                </div>
+                <div id="box-5">
+                	
+                    	<div class="network-n">
+                    	<div class="top"></div>
+                        <div class="top-s"></div>
+                        <div class="mid">
+                        	<ul>
+                                                                                                            	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40184' class="white">ประกาศรายชื่อผู้เข้าอบรมโครงการพัฒนาบุคล...	(ดู : 153 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">ท้องถิ่นจังหวัดสงขลา</span></li>
+                                     	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40183' class="white">ประกาศเทศบาลเมืองปาดังเบซาร์  เรื่อง สอบ...	(ดู : 145 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">ทม.ปาดังเบซาร์</span></li>
+                                     	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40182' class="white">ประกาศเทศบาลเมืองปาดังเบซาร์  เรื่อง  สอ...	(ดู : 154 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">ทม.ปาดังเบซาร์</span></li>
+                                     	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40181' class="white">ประกาศรายชื่อผู้ชนะการเสนอราคา	(ดู : 166 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">ทต.พะตง</span></li>
+                                     	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40180' class="white">ประกาศผลการตรวจคุณภาพน้ำของเทศบาลตำบลปาก...	(ดู : 155 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">ทต.ปากแตระ</span></li>
+                                     	  <li>
+                            	<span class="title"><a hreff = 'index.php?options=newsall&mode=detail&id=40179' class="white">อบต.แม่ทอม ประกาศสอบราคาจ้างโครงการปรับป...	(ดู : 145 )  			 <img src="images/political.gif" width="24" height="10" border="0" /></a></span>             	<span class="agencies">อบต.แม่ทอม</span></li>
+                                    	</ul>
+                      </div><div class="bottom">
+                        	<div class="more"><a hreff="index.php?options=newsall"><img src="images/all2.png" width="78" height="24" style="behavior: url(iepngfix.htc);" border="0" /></a></div>
+                        </div>
+                    </div>
+                    
+                   <script>
+	var max_activity=2;
+	function show_activity(para){
+			for(i=1;i<=max_activity;i++){
+				
+				document.getElementById("kr_activity"+i+"_header").style.display="none";
+				document.getElementById("kr_activity"+i).style.display="none";
+				document.getElementById("kr_activity_bo"+i).style.display="none";
+			}
+				
+				document.getElementById("kr_activity"+para+"_header").style.display="block";
+				document.getElementById("kr_activity"+para).style.display="block";	
+				document.getElementById("kr_activity_bo"+para).style.display="block";	
+	}
+</script>
+<div class="province">
+<div id="kr_activity1_header">
+                   	<div class="top">
+                    	<div class="ajax_interest">
+                        	<div class="ajax_interest_sel">
+                            </div>
+                        </div>
+                        <div class="ajax_calendar"><a hreff="#" onClick="show_activity(2);return false;"><img src="images/space.gif" width="183" height="37" /></a></div>
+                    </div>
+                    </div>
+                    
+   <div id="kr_activity2_header" style="display:none">
+   <div class="top">
+                    	<div class="ajax_interest">
+                        	<a hreff="#" onClick="show_activity(1);return false;"><img src="images/space.gif" width="169" height="37" /></a>
+                        </div>
+                        <div class="ajax_calendar">
+                        	<div class="ajax_calendar_sel">
+                            </div>
+                        </div>
+</div>
+   </div>
+                     <div id="kr_activity1">  
+<div class="midall">
+  						<div class="mid">
+                        	<ul>
+                        		<li>
+                                <span class="pic-n"><img src="http://www.sk-local.go.th/images/news/resizepic_ratio.php?max_x=168&max_y=126&file=aqkvh20130809103223.jpg">
+						   </span>
+                                <span class="title"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=465" class="green">ชาวไทยมุสลิมในอำเภอเมืองสงขลา ละหมาดขอพรพระเจ้าในวันฮารีรายอ อีดิ้ลฟิตรี</a></span>                            	
+                                <span class="detail"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=465" class="green"> (อ่านต่อ) (ดู : 104)</a></span>                                
+                               
+                           	  </li>
+                          	</ul>   
+                        </div>
+                         <div class="mid1">
+                         	<ul>
+                                                 	<li>
+                                	<span class="title"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=464" target="_blank" id="back">
+				   สภาวัฒนธรรมต.บ่อยาง ร่วมกับองค์กรชุมชนจัดพิธีหล่...				(ดู: 306)</a></span>               </li>
+                                            	<li>
+                                	<span class="title"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=463" target="_blank" id="back">
+				   เจ้าหน้าที่วางมาตรการรักษาความปลอดภัยพื้นที่ จ.ส...				(ดู: 387)</a></span>               </li>
+                                            	<li>
+                                	<span class="title"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=462" target="_blank" id="back">
+				   สสภ.16 เผยหมอกควันจากอินโดนีเซียที่เริ่มพัดเข้าม...				(ดู: 326)</a></span>               </li>
+                                            	<li>
+                                	<span class="title"><a hreff="http://www.sk-local.go.th/modules/news/?mode=detail_rss&id=461" target="_blank" id="back">
+				   บรรยากาศเปิดรับสมัครชิงตำแหน่งนายกอบจ.สงขลา วันแ...				(ดู: 639)</a></span>               </li>
+                                         	</ul>
+</div>
+                         </div></div>
+ 										<div id="kr_activity2"  style="display:none"><div class="midall">
+                     <div class="top2"></div>
+                         <div class="mid1">
+                         	<ul>
+                                                         	<li>
+                                	<span class="date-c">08/11/55 - 31/10/56</span>
+                            		<span class="title2"><a hreff="index.php?options=activity&mode=detail2&id=446" target="_blank" class="white">        โครงการรณรงค์ป้องกันและควบคุมการแพร่ระบาดของโรคไข้เลือดออก  (ดู1667)</a></span>
+                                    <span class="a-gen">อบต.ท่าโพธิ์</span>                                </li>
+                                                                	<li>
+                                	<span class="date-c">14/11/55 - 09/10/56</span>
+                            		<span class="title2"><a hreff="index.php?options=activity&mode=detail2&id=445" target="_blank" class="white">        โครงการอำนวยความสะดวกและลดขั้นตอนการขอมีบัตรประจำตัวผู้พิการ ประจำปี 2556  (ดู1015)</a></span>
+                                    <span class="a-gen">อบต.ท่าโพธิ์</span>                                </li>
+                                                                	<li>
+                                	<span class="date-c">21/01/56 - 30/09/56</span>
+                            		<span class="title2"><a hreff="index.php?options=activity&mode=detail2&id=495" target="_blank" class="white">        โครงการป้องกันและควบคุมโรคติดต่อ  (ดู1493)</a></span>
+                                    <span class="a-gen">ทต.คลองแงะ</span>                                </li>
+                                                                	<li>
+                                	<span class="date-c">21/01/56 - 30/09/56</span>
+                            		<span class="title2"><a hreff="index.php?options=activity&mode=detail2&id=493" target="_blank" class="white">        โครงการศูนย์ประสานงานป้องกันและแก้ไขปัญหายาเสพติด  (ดู659)</a></span>
+                                    <span class="a-gen">ทต.คลองแงะ</span>                                </li>
+                                                           	   </ul>
+</div>
+                         </div></div>
+                  <div id="kr_activity_bo1">       <div class="more"><a hreff="http://www.sk-local.go.th/modules/news/?mode=list_rss&id=365"><img src="images/all1.png" width="70" height="28" style="behavior: url(iepngfix.htc);"/></a></div></div>
+                     <div id="kr_activity_bo2" style="display:none">       <div class="more"><a hreff="index.php?options=activity"><img src="images/all1.png" width="70" height="28" style="behavior: url(iepngfix.htc);"/></a></div></div>
+                  </div>                </div>
+                <div id="box-6">
+               	  <div class="box-6head">
+                  </div>
+                    <div class="box-6_mid">
+                    <div class="box-6_mid1">
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td> <script>
+	var max_webboard=2;
+	function show_webboard(para){
+			for(i=1;i<=max_webboard;i++){
+				
+				document.getElementById("kr_webboard"+i+"_header").style.display="none";
+				document.getElementById("kr_webboard"+i).style.display="none";
+				document.getElementById("kr_webboard_bottom"+i).style.display="none";
+			}
+				
+				document.getElementById("kr_webboard"+para+"_header").style.display="block";
+				document.getElementById("kr_webboard"+para).style.display="block";	
+				document.getElementById("kr_webboard_bottom"+para).style.display="block";	
+	}
+</script>
+<div class="wb">
+
+<div id="kr_webboard1_header">
+                   		<div class="top">
+                            	<div class="ajax_wb">
+                                	<div class="ajax_wb_sel"></div>
+                                </div>
+                            <div class="ajax_wbin"><a hreff="#" onclick="show_webboard(2);return false;"><img src="images/space.gif" width="167" height="79" /></a></div>
+                                <div class="wb_line"></div>
+                        </div>
+                        </div>
+ <div id="kr_webboard2_header" style="display:none">
+<div class="top">
+                            	<div class="ajax_wb">
+                                	<a hreff="#" onclick="show_webboard(1);return false;"><img src="images/space.gif" width="167" height="79" /></a>
+                                </div>
+                            <div class="ajax_wbin">
+                            	<div class="ajax_wbin_sel">
+                                	<img src="images/space.gif" width="167" height="79" />                                </div>
+                            </div>
+                                <div class="wb_line"></div>
+                        </div>
+ </div>
+                        
+                                   <div id="kr_webboard1"><div class="mid">
+                            	<ul>
+                                                                	<li>
+                                    	<span class="title"><a hreff = 'index.php?options=wbdetail&id=40062'  class="white">
+                  นายวีรพล  และหลาดก้วน  ( อ่าน : 1236 &nbsp;ตอบ : 7&nbsp;) </a></span>
+                                        <span class="date">08/06/56</span>
+                                    </li>
+                                                                    	<li>
+                                    	<span class="title"><a hreff = 'index.php?options=wbdetail&id=40061'  class="white">
+                  เก็ษภาษ๊ประชาชนไว้เลี้ยงยุงเพื่อให้เด็กไข้เลือดออกจะได้มีงบซื้อยางาๆๆๆๆๆๆๆๆๆๆๆๆ  ( อ่าน : 555 &nbsp;ตอบ : 4&nbsp;) </a></span>
+                                        <span class="date">08/06/56</span>
+                                    </li>
+                                                                    	<li>
+                                    	<span class="title"><a hreff = 'index.php?options=wbdetail&id=40060'  class="white">
+                  ประกาศผลพื้นที่ยุงมาก  ( อ่าน : 477 &nbsp;ตอบ : 1&nbsp;) </a></span>
+                                        <span class="date">08/06/56</span>
+                                    </li>
+                                                                    	<li>
+                                    	<span class="title"><a hreff = 'index.php?options=wbdetail&id=38737'  class="white">
+                  เชิญชมการพัฒนาพังตัวอย่าง  ( อ่าน : 499 &nbsp;ตอบ : 0&nbsp;) </a></span>
+                                        <span class="date">29/04/56</span>
+                                    </li>
+                                                                        
+                            	</ul>
+                            </div></div>
+								<div id="kr_webboard2" style="display:none"><style>
+ul li span.datemean {
+color:#0066FF;
+display:block;
+float:left;
+font-size:12px;
+font-weight:normal;
+line-height:16px;
+margin:0;
+padding:0 0 0 0px;
+}
+</style>
+<div class="mid">
+                        	<ul>
+                                       	                        	<li>
+                            	<span class="title2"><a hreff = 'index.php?options=wbdetailall&id=40879' >บอกเบาะแสแล้วช่วยดำเนินด้... ( อ่าน : 40 &nbsp;ตอบ : 1&nbsp;)</a></span><span class="agencies">ทต.พะตง</span><span class="date">20/08/56</span>                            </li>
+                                                        	<li>
+                            	<span class="title2"><a hreff = 'index.php?options=wbdetailall&id=40878' >ไฟฟ้าภายในหมู่บ้าน ( อ่าน : 43 &nbsp;ตอบ : 1&nbsp;)</a></span><span class="agencies">ทม.คอหงส์</span><span class="date">20/08/56</span>                            </li>
+                                                        	<li>
+                            	<span class="title2"><a hreff = 'index.php?options=wbdetailall&id=40873' >แอโรบิคเสียงดังเกิน100เดซ... ( อ่าน : 122 &nbsp;ตอบ : 0&nbsp;)</a></span><span class="agencies">ทม.คอหงส์</span><span class="date">19/08/56</span>                            </li>
+                                                        	<li>
+                            	<span class="title2"><a hreff = 'index.php?options=wbdetailall&id=40872' >เรียน ผู้เกี่ยวข้อง ( อ่าน : 114 &nbsp;ตอบ : 0&nbsp;)</a></span><span class="agencies">ทม.คอหงส์</span><span class="date">19/08/56</span>                            </li>
+                                                       	  </ul>
+  </div></div> 
+                                <div id="kr_webboard_bottom1">
+                            <div class="more">
+                            	<div class="more1">
+                                	<div class="new_button"><a hreff="index.php?options=webboard&mode=add"><img src="images/wb/wb_01.jpg" width="81" height="28" border="0"/></a> </div>
+                                    <div class="all_button"><a hreff="index.php?options=webboard"><img src="images/wb/wb_02.jpg" width="88" height="28"  border="0"/></a> </div>
+                                </div>
+                            </div>
+                            </div>
+                                   <div id="kr_webboard_bottom2" style="display:none">
+                            <div class="more">
+                            	<div class="more1">
+                                	<div class="new_button">&nbsp; </div>
+                                    <div class="all_button"><a hreff="index.php?options=webboardall"><img src="images/wb/wb_02.jpg" width="88" height="28"  border="0"/></a> </div>
+                                </div>
+                            </div>
+                            </div>
+                   	  </div></td>
+  </tr>
+  <tr>
+    <td><div class="link-j">
+                       
+            	<div class="linkbody">
+                	<div class="linkbody1">
+                    <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select2"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+    <option selected="selected">ท่องเว็บจังหวัดทั่วไทย</option>
+    <option>== ภาคเหนือ ==</option>
+    <option value="http://www.kamphaengphet.go.th">กำแพงเพชร</option>
+    <option value="http://www.chiangrai.go.th">เชียงราย</option>
+    <option value="http://www.chiangmai.go.th">เชียงใหม่</option>
+    <option value="http://www.tak.go.th">ตาก</option>
+    <option value="http://www.nan.go.th">น่าน</option>
+    <option value="http://www.phayao.go.th">พะเยา</option>
+    <option value="http://www.phichit.go.th">พิจิตร</option>
+    <option value="http://www.phitsanulok.go.th">พิษณุโลก</option>
+    <option value="http://www.phetchabun.go.th">เพชรบูรณ์</option>
+    <option value="http://www.phrae.go.th">แพร่</option>
+    <option value="http://www.maehongson.go.th">แม่ฮ่องสอน</option>
+    <option value="http://www.lampang.go.th">ลำปาง</option>
+    <option value="http://www.lamphun.go.th">ลำพูน</option>
+    <option value="http://www.sukhothai.go.th">สุโขทัย</option>
+    <option value="http://www.uttaradit.go.th">อุตรดิตถ์</option>
+    <option value="http://www.uthaithani.go.th">อุทัยธานี</option>
+    <option>== ภาคกลาง ==</option>
+    <option value="http://www.bma.go.th">กรุงเทพมหานคร</option>
+    <option value="http://www.kanchanaburi.go.th">กาญจนบุรี</option>
+    <option value="http://www.chanthaburi.go.th">จันทบุรี</option>
+    <option value="http://www.chachoengsao.go.th">ฉะเชิงเทรา</option>
+    <option value="http://www.chonburi.go.th">ชลบุรี</option>
+    <option value="http://www.chainat.go.th">ชัยนาท</option>
+    <option value="http://www.trat.go.th">ตราด</option>
+    <option value="http://www.nakhonnayok.go.th">นครนายก</option>
+    <option value="http://www.nakhonpathom.go.th">นครปฐม</option>
+    <option value="http://www.nakhonsawan.go.th">นครสวรรค์</option>
+    <option value="http://www.nonthaburi.go.th">นนทบุรี</option>
+    <option value="http://www.pathumthani.go.th">ปทุมธานี</option>
+    <option value="http://www.prachuapkhirikhan.go.th">ประจวบคีรีขันธ์</option>
+    <option value="http://www.prachinburi.go.th">ปราจีนบุรี</option>
+    <option value="http://www.ayutthaya.go.th">พระนครศรีอยุธยา</option>
+    <option value="http://www.phetchaburi.go.th">เพชรบุรี</option>
+    <option value="http://www.rayong.go.th">ระยอง</option>
+    <option value="http://www.ratchaburi.go.th">ราชบุรี</option>
+    <option value="http://www.lopburi.go.th">ลพบุรี</option>
+    <option value="http://www.samutprakan.go.th">สมุทรปราการ</option>
+    <option value="http://www.samutsongkhram.go.th">สมุทรสงคราม</option>
+    <option value="http://www.samutsakhon.go.th">สมุทรสาคร</option>
+    <option value="http://www.sakaeo.go.th">สระแก้ว</option>
+    <option value="http://www.saraburi.go.th">สระบุรี</option>
+    <option value="http://www.singburi.go.th">สิงห์บุรี</option>
+    <option value="http://www.suphanburi.go.th">สุพรรณบุรี</option>
+    <option value="http://www.angthong.go.th">อ่างทอง</option>
+    <option>== ภาคอีสาน ==</option>
+    <option value="http://www.kalasin.go.th">กาฬสินธุ์</option>
+    <option value="http://www.khonkaen.go.th">ขอนแก่น</option>
+    <option value="http://www.chaiyaphum.go.th">ชัยภูมิ</option>
+    <option value="http://www.nakhonphanom.go.th">นครพนม</option>
+    <option value="http://www.nakhonratchasima.go.th">นครราชสีมา</option>
+    <option value="http://www.buriram.go.th">บุรีรัมย์</option>
+    <option value="http://www.mahasarakham.go.th">มหาสารคาม</option>
+    <option value="http://www.mukdahan.go.th">มุกดาหาร</option>
+    <option value="http://www.yasothon.go.th">ยโสธร</option>
+    <option value="http://www.roiet.go.th">ร้อยเอ็ด</option>
+    <option value="http://www.loei.go.th">เลย</option>
+    <option value="http://www.sisaket.go.th">ศรีสะเกษ</option>
+    <option value="http://www.sakonnakhon.go.th">สกลนคร</option>
+    <option value="http://www.surin.go.th">สุรินทร์</option>
+    <option value="http://www.nongkhai.go.th">หนองคาย</option>
+    <option value="http://www.nongbualamphu.go.th">หนองบัวลำภู</option>
+    <option value="http://www.udonthani.go.th">อุดรธานี</option>
+    <option value="http://www.ubonratchathani.go.th">อุบลราชธานี</option>
+    <option value="http://www.amnatcharoen.go.th">อำนาจเจริญ</option>
+    <option>== ภาคใต้ ==</option>
+    <option value="http://www.krabi.go.th">กระบี่</option>
+    <option value="http://www.chumphon.go.th">ชุมพร</option>
+    <option value="http://www.trang.go.th">ตรัง</option>
+    <option value="http://www.nakhonsithammarat.go.th">นครศรีธรรมราช</option>
+    <option value="http://www.narathiwat.go.th">นราธิวาส</option>
+    <option value="http://www.pattani.go.th">ปัตตานี</option>
+    <option value="http://www.phangnga.go.th">พังงา</option>
+    <option value="http://www.phatthalung.go.th">พัทลุง</option>
+    <option value="http://www.phuket.go.th">ภูเก็ต</option>
+    <option value="http://www.yala.go.th">ยะลา</option>
+    <option value="http://www.ranong.go.th">ระนอง</option>
+    <option value="http://www.songkhla.go.th">สงขลา</option>
+    <option value="http://www.satun.go.th">สตูล</option>
+    <option value="http://www.suratthani.go.th">สุราษฎร์ธานี</option>
+  </select>
+    					</div>
+					</div>
+                    </div>
+                    
+                    <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+          <option selected="selected">เว็บไซต์กระทรวง</option>
+          <option value="http://www.moi.go.th">มหาดไทย</option>
+          <option value="http://www.mod.go.th">กลาโหม</option>
+          <option value="http://www.mof.go.th">คลัง</option>
+          <option value="http://www.mfa.go.th/web/1.php">ต่างประเทศ</option>
+          <option value="http://www.moac.go.th">เกษตร</option>
+          <option value="http://www.motc.go.th">คมนาคม</option>
+          <option value="http://www.moc.go.th">พาณิชย์</option>
+          <option value="http://www.moj.go.th">ยุติธรรม</option>
+          <option value="http://www.mol.go.th">แรงงาน</option>
+          <option value="http://www.moe.go.th">ศึกษาธิการ</option>
+          <option value="http://www.moph.go.th">สาธารณสุข</option>
+          <option value="http://www.industry.go.th">อุตสาหกรรม</option>
+          <option value="http://www.social.go.th">พัฒนาสังคม</option>
+          <option value="http://www.monre.go.th">ทรัพยากรธรรมชาติ</option>
+          <option value="http://www.energy.go.th">พลังงาน</option>
+          <option value="http://www.mts.go.th">การท่องเที่ยวและกีฬา</option>
+          <option value="http://www.ictl.go.th">เทคโนโลยีสารสนเทศ</option>
+          <option value="http://www.culture.go.th">วัฒนธรรม</option>
+        </select>
+    					</div>
+					</div>
+                    </div>
+                   
+                   <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+          <option selected="selected">ข่าวหนังสือพิมพ์ / ทีวี</option>
+          <option value="http://www.thairath.co.th">ไทยรัฐ</option>
+          <option value="http://www.dailynews.co.th">เดลินิวส์</option>
+          <option value="http://www.khaosodusa.com">ข่าวสด</option>
+          <option value="http://www.manager.co.th">ผู้จัดการ</option>
+          <option value="http://www.thannews.th.com">ฐานเศรษฐกิจ</option>
+          <option value="http://www.nationgroup.com/bkk/bkk.html">กรุงเทพธุรกิจ</option>
+          <option value="http://cybermall.inet.co.th/siam_business">สยามธุรกิจ</option>
+          <option value="http://www.bangkokpost.com">Bangkok Post</option>
+          <option value="http://www.nationmultimedia.com">The Nation</option>
+          <option value="http://www.pacific.co.th">Facific</option>
+          <option value="http://www.bday.net">Business Day</option>
+          <option>---- ข่าวทีวี -----</option>
+          <option value="http://www.tv3.co.th">TV 3</option>
+          <option value="http://www.tv5.co.th">TV 5</option>
+          <option value="http://www.ch7.com">TV 7</option>
+          <option value="http://www.mcot.or.th">TV 9</option>
+          <option value="http://www.prd.go.th">TV 11</option>
+          <option value="http://www.itv.co.th">ITV</option>
+          <option value="http://www.cnn.com">CNN</option>
+          <option value="http://www.cnbc.com">CNBC</option>
+          <option value="http://news.bbc.co.uk">BBC</option>
+          <option value="http://www.abc.news.com">ABC</option>
+          <option value="http://www.hbo.com">HBO</option>
+        </select>
+    					</div>
+					</div>
+                    </div>
+                    </div>
+             <!------------------------------------------------------------------------------------------------------------------------->       
+               <div class="linkbody1">
+                    <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+          <option selected="selected">การเงิน/ธนาคาร</option>
+          <option value="http://www.bot.or.th">ธนาคารแห่งประเทศไทย</option>
+          <option value="http://www.gsb.or.th">ธนาคารออมสิน</option>
+          <option value="http://www.baac.or.th">ธ.ก.ส.</option>
+          <option value="http://www.ktb.co.th">ธนาคารกรุงไทย</option>
+          <option value="http://www.ghb.co.th">ธ.อาคารสงเคราะห์</option>
+          <option value="http://www.scb.co.th">ธนาคารไทยพาณิชย์</option>
+          <option value="http://www.bbl.co.th">ธนาคารกรุงเทพ</option>
+          <option value="http://www.tfb.co.th">ธนาคารกสิกรไทย</option>
+          <option value="http://www.bay.co.th">ธนาคารกรุงศรีอยุธยา</option>
+          <option value="http://www.fbcb.co.th">ธนาคารมหานคร</option>
+          <option value="http://www.ntb.co.th">ธนาคารนครธน</option>
+          <option value="http://siamcity.co.th">ธนาคารนครหลวงไทย</option>
+          <option value="http://www.exim.go.th/thai/index.htm">Exim Bank</option>
+          <option value="http://mirror.citibank.com.sg/thailand">ธนาคารซิตี้แบงค์</option>
+          <option>*********</option>
+        </select>
+    					</div>
+					</div>
+                    </div>
+                    
+                    <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+          <!--width="200px"-->
+          <option selected="selected">สถาบันการศึกษา</option>
+          <option value="http://www.chiangmai.ac.th">เชียงใหม่</option>
+          <option value="http://www.mju.ac.th">แม่โจ้</option>
+          <option value="http://www.chula.ac.th">จุฬาลงกรณ์</option>
+          <option value="http://www.tu.ac.th">ธรรมศาสตร์</option>
+          <option value="http://www.ru.ac.th">รามคำแหง</option>
+          <option value="http://www.stou.ac.th">สุโขทัยธรรมาธิราช</option>
+          <option value="http://www.ku.ac.th">เกษตรศาสตร์</option>
+          <option value="http://www.kku.ac.th">ขอนแก่น</option>
+          <option value="http://www.mahidol.ac.th">มหิดล</option>
+          <option value="http://www.su.ac.th">ศิลปากร</option>
+          <option value="http://www.swu.ac.th">ศรีนครินวิโรฒน์</option>
+          <option value="http://www.psu.ac.th">สงขลานครินทร์</option>
+          <option value="http://www.nida.ac.th">นิด้า</option>
+          <option value="http://www.kmitnb.ac.th">พระจอมเกล้าฯนครเหนือ</option>
+          <option value="http://www.kmitl.ac.th">พระจอมเกล้าฯลาดกระบัง</option>
+          <option value="http://www.ubu.ac.th">อุบลราชธานี</option>
+          <option value="http://www.buu.ac.th">บูรพา</option>
+          <option value="http://www.msu.ac.th">มหาสารคาม</option>
+          <option value="http://www.nu.ac.th">นเรศวร</option>
+          <option value="http://www.tsu.ac.th">ทักษิณ</option>
+          <option value="http://www.rit.ac.th"></option>
+          <option value="http://www.sut.ac.th">เทคโนโลยีสุรนารี</option>
+          <option value="http://www.wu.ac.th">วลัยลักษณ์</option>
+          <option value="http://www.kmutt.ac.th">พระจอมเกล้าธนบุรี</option>
+          <option value="http://www.mfu.ac.th">แม่ฟ้าหลวง</option>
+          <option value="http://www.bu.ac.th">กรุงเทพ</option>
+          <option value="http://www.dpu.ac.th">ธุรกิจบัณฑิตย์</option>
+          <option value="http://www.krirk.ac.th">เกริก</option>
+          <option value="http://www.kbu.ac.th">เกษมบัณฑิต</option>
+          <option value="http://www.payap.ac.th">พายัพ</option>
+          <option value="http://www.stjohn.ac.th">เซ็นต์จอห์น</option>
+          <option value="http://www.nivadhana.ac.th">ณิวัฒนา</option>
+          <option value="http://www.mut.ac.th">เทคโนโลยีมหานคร</option>
+          <option value="http://www.rsu.ac.th">รังสิต</option>
+          <option value="http://203.155.27.33">วงษ์ชวลิตกุล</option>
+          <option value="http://www.asianust.ac.th">วิทยาศาสตร์ฯแห่งเอเชีย</option>
+          <option value="http://www.spu.ac.th">ศรีปทุม</option>
+          <option value="http://www.siam.ac.th">สยาม</option>
+          <option value="http://www.utcc.ac.th">หอการค้าไทย</option>
+          <option value="http://www.hcu.ac.th">หัวเฉียวฯ</option>
+          <option value="http://www.au.ac.th">อัสสัมชัญ</option>
+          <option value="http://www.eau.ac.th">อีสเทิร์นเอเชีย</option>
+          <option value="http://www.sau.ac.th">เอเชียอาคเนย์</option>
+          <option value="http://www.dusitthanicollage.ac.th">วิทยาลัยดุสิตธานี</option>
+          <option value="http://www.saintlouis.or.th">วิทยาลัยเซนต์หลุยส์</option>
+          <option value="http://www.pkc.ac.th">วิทยาลัยภาคกลาง</option>
+          <option value="http://www.hcc.ac.th">วิทยาลัยเมืองหาดใหญ่</option>
+          <option value="http://www.yonok.ac.th">วิทยาลัยโยนก</option>
+          <option>==สถาบันราชภัฏ==</option>
+          <option value="http://www.rikc.ac.th"></option>
+          <option value="http://www.chandra.ac.th"></option>
+          <option value="http://www.cmri.ac.th"></option>
+          <option value="http://www.ricr.ac.th"></option>
+          <option value="http://www.rits.ac.th"></option>
+          <option value="http://203.146.46.170"></option>
+          <option value="http://www.rinp.ac.th"></option>
+          <option value="http://www.rin.ac.th"></option>
+          <option value="http://www.rint.ac.th"></option>
+          <option value="http://www.rink.ac.th">นครสวรรค์</option>
+          <option value="http://ribscom.moe.go.th"></option>
+          <option value="http://www.ribr.ac.th"></option>
+          <option value="http://www.ripn.ac.th"></option>
+          <option value="http://www.ripa.ac.th"></option>
+          <option value="http://www.rip.ac.th"></option>
+          <option value="http://www.rajabhat.edu"></option>
+          <option value="http://www.rb.ac.th"></option>
+          <option value="http://www.riloei.ac.th"></option>
+          <option value="http://www.rilp.ac.th">ลำปาง</option>
+          <option value="http://www.ris.ac.th"></option>
+          <option value="http://www.dusit.ac.th/new_ver5/index.html">สวนดุสิต</option>
+          <option value="http://www.riss.ac.th"></option>
+          <option value="http://www.risurin.ac.th"></option>
+          <option value="http://www.riudon.ac.th"></option>
+          <option value="http://www.riu.ac.th"></option>
+          <option value="http://www.riubon.ac.th"></option>
+          <option value="http://www.rimc.ac.th"></option>
+        </select>
+    					</div>
+					</div>
+                    </div>
+                   
+                   <div class="linkbody2">
+                	<div id="quickMenu">
+    					<div style="float:left;width:179px;height:26px;" class="my-skinnable-select">
+        				<select name="select"  size="1" class="text" style="COLOR: #0000FF; width:179px" 
+                                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+          <option selected="selected">เว็บไซต์หน่วยงานสังกัด มท.</option>
+          <option value="http://www.moi.go.th">สำนักงานรัฐมนตรี</option>
+          <option value="http://moinet/intranet.asp">สำนักงานปลัดกระทรวงฯ</option>
+          <option value="http://www.dola.go.th">กรมการปกครอง</option>
+          <option value="http://www.dtcp.go.th">กรมโยธาฯ ผังเมือง</option>
+          <option value="http://www.cdd.moi.go.th">กรมการพัฒนาชุมชน</option>
+          <option value="http://www.dol.go.th">กรมที่ดิน</option>
+          <option value="http://www.disaster.go.th">กรมป้องกันและบรรเทาฯ</option>
+          <option value="http://www.thailocaladmin.go.th/index.jsp">กรมส่งเสริมการปกครองฯ</option>
+          <option value="http://www.mwa.co.th">การประปานครหลวง</option>
+          <option value="http://www.pwa.co.th">การไฟฟ้านครหลวง</option>
+          <option value="http://www.pea.co.th">การไฟฟ้าส่วนภูมิภาค</option>
+          <option value="http://www.pakklongtalad.com">องค์การตลาด</option>
+          <option value="http://www.bma.go.th">กรุงเทพมหานคร</option>
+        </select>
+    					</div>
+					</div>
+                 </div>
+                  </div>     
+                </div>
+                        </div></td>
+  </tr>
+</table>
+
+                    </div>
+<div class="ads-6"><a hreff="index.php?options=personal&id=145223"><img src="images/ads/board.gif" width="199" height="81"  border="0"/></a></div>
+<div class="ads-7"><a hreff="index.php?options=personal&id=145224"><img src="images/ads/health.gif" width="199" height="81"  border="0"/></a></div>
+<div class="ads-7"><a hreff='index.php?options=travel_new' ><img src="images/ads/gov.gif" width="199" height="81" border="0" /></a></div>
+
+<div class="ads-7"><a hreff="http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/enu/AdbeRdr70_enu_full.exe" target="_blank"><img src="images/ads/acrobat.gif" width="199" height="81" border="0" /></a></div>
+
+<div class="ads-7"><a hreff="index.php?options=cutepdf" target="_blank"><img src="images/ads/cutepdf.gif" width="198" height="81"  border="0"/></a></div>
+
+<div class="ads-7" style="float:right"><a hreff="javascript:;" ><img onclick="openWindow();" src="images/ads/radio.jpg" width="198" height="81"  border="0"/></a></div>
+
+<script>
+	function openWindow(){
+		window.open ("http://www.bortru.go.th/radio.html", "mywindow","location=1,status=1,scrollbars=1, width=350,height=100");	
+	}
+</script>
+
+                      </div>
+                    </div>
+                    <div class="box-6_mid">
+                    	
+                    </div>
+                    <div class="box-6_bot">
+                    </div>
+                </div>
+              <div id="box-7">
+              	<div class="banner">
+                	<div class="banner1">
+                    	<ul>
+                        	<li><a hreff="http://www.sk-local.go.th/sknetwork/index.php" target="_blank"><img src="images/banner_bottom/songkhla.jpg" width="123" height="48" border="0" /></a></li>
+                            <li><a hreff="http://www.sk-local.go.th/localnetwork.php" target="_blank"><img src="images/banner_bottom/network1.jpg" width="123" height="48"  border="0"/></a></li>
+                            <li><a hreff="http://www.thailocaladmin.go.th/index.jsp" target="_blank"><img src="images/banner_bottom/2.jpg" width="123" height="48"  border="0"/></a></li>
+                            <li><a hreff="http://www.thaitambon.com/" target="_blank"><img src="images/banner_bottom/3.jpg" width="123" height="48" border="0" /></a></li>
+                            <li><a hreff="http://www.moi.go.th/ " target="_blank"><img src="images/banner_bottom/1.jpg" width="123" height="48"  border="0"/></a></li>
+                            <li><a hreff="http://www.publicconsultation.opm.go.th/" target="_self"><img src="images/banner_bottom/8.jpg" width="123" height="48" border="0" /></a></li>
+                        </ul>
+                  </div>
+                </div>
+               </div>
+            </div>
+        </div>
+        <div class="footer">
+   	  <div class="infooter">
+   	    <div class="text1">ตำบลบ่อตรุ อำเภอระโนด จังหวัดสงขลา 90140<br />
+            โทรศัพท์ 074-589112, 074-589098 E-mail: info@bortru.go.th<br />
+        Copyright &copy; 2010.BORTRU.GO.TH All rights reserved.Powered by <a hreff="http://www.cityvariety.co.th/index.php" target="_blank">CityVariety Corporation</a></div>
+        	<div class="stat">
+                <div class="st-in">
+            	<div class="textstat">สถิติผู้เข้าชมตั้งแต่่ 19 เมษายน 2549</div>
+            	<div class="number-home" align="center">
+           		<!--  <script type="text/javascript" src="http://stat.mycools.in.th/stats.php?userid=bortru.go.th"></script>	-->
+                <!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a hreff="http://www.histats.com" target="_blank" title="web stats analysis" ><script  type="text/javascript" >
+try {Histats.start(1,1955916,4,1030,150,25,"00000010");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a hreff="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?1955916&101" alt="web stats analysis" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    </div>
+
+</body>
 </html>

@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
       begin
           cleaned = body.dup.force_encoding('UTF-8')
           unless cleaned.valid_encoding?
-             cleaned = body.encode( 'UTF-8', 'Windows-1251' )
+             cleaned = body.encode( 'UTF-8', 'windows-874' )
           end
           content = cleaned
           content = content.gsub("href", "hreff")
