@@ -152,7 +152,7 @@ en:
     google: "Google"
     urls: "URLs"
     url_name: "URL"
-    url_example: "(Ex. www.example.com)"
+    url_example: "(Ex. http://www.example.com)"
     url_title: "Title"
     desc: "Description"
     share_on_facebook: "Share on Facebook"

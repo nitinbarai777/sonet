@@ -67,38 +67,25 @@ class ApplicationController < ActionController::Base
   end
   
   def get_main_page_feed_url(home_main_url)
-    host_name = get_host_from_url(home_main_url)
-    @page_url = !host_name.include?('www') ? 'http://www.' + host_name.to_s : 'http://' + host_name.to_s
-    @is_www = true
     begin
-      res = Net::HTTP.get_response(URI.parse(@page_url))
-      body = res.body
-      if body.length < 100
-        @is_www = false
-        host_name = host_name.split('www.').last
-        @page_url = 'http://' + host_name.to_s
-        res = Net::HTTP.get_response(URI.parse(@page_url))
-        body = res.body
-        if body.length < 100
-          body = ''
-        end
-      end
+      url = URI.parse(home_main_url)
+      req = Net::HTTP::Get.new(url.path)
+      res = Net::HTTP.start(url.host, url.port) {|http|
+        http.request(req)
+      }
+      body = res.body 
       content = ''
       begin
-          cleaned = body.dup.force_encoding('UTF-8')
-          unless cleaned.valid_encoding?
-             cleaned = body.encode( 'UTF-8', 'windows-874' )
-          end
-          content = cleaned
-          content = content.gsub("href", "hreff")
-          
-          head_part = content.scan(/<head>([^<>]*)<\/head>/imu).flatten
-          content = content.gsub(head_part, " ") 
-          
+        cleaned = body.dup.force_encoding('UTF-8')
+        unless cleaned.valid_encoding?
+           cleaned = body.encode( 'UTF-8', 'windows-874' )
+        end
+        content = cleaned
+        content = content.gsub("href", "hreff")
+        head_part = content.scan(/<head>([^<>]*)<\/head>/imu).flatten
+        content = content.gsub(head_part, " ")
       rescue
       end
-      
-      
       #write javascript file start
       
       directory_file = Rails.public_path.to_s + "/iframe.html"
