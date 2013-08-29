@@ -32,7 +32,7 @@ class UrlContentsController < ApplicationController
   # POST /url_contents
   # POST /url_contents.json
   def create
-    @user_url = UserUrl.find(session[:url_id])
+    @user_url = UserUrl.find_by(:url_name => session[:user_url])
     @o_single = UrlContent.new(url_content_params)
 
     unless params[:url_content][:content].blank?
@@ -63,8 +63,12 @@ class UrlContentsController < ApplicationController
           config.oauth_token = session[:token]
           config.oauth_token_secret = session[:secret]
         end
-        Twitter.update(params[:url_content][:content])
-        notice = t("general.successfully_tweet_on_twitter")
+        begin
+          Twitter.update(params[:url_content][:content])
+          notice = t("general.successfully_tweet_on_twitter")
+        rescue Exception => e
+          notice = e.message
+        end            
       end
       
       respond_to do |format|
@@ -127,7 +131,7 @@ class UrlContentsController < ApplicationController
     
     def get_records(search, page, provider)
       @o_single = UrlContent.new
-      @user_url = UserUrl.find(session[:url_id])
+      @user_url = UserUrl.find_by(:url_name => session[:user_url])
       @contact_body = get_main_page_feed_url(@user_url.url_name)
       if provider == 'facebook'
         url_content_query = @user_url.url_contents.where(:is_facebook_shared => true)
