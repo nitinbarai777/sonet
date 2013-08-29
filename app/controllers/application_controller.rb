@@ -1,6 +1,11 @@
+# encoding: UTF-8
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+require 'net/http'
+require 'uri'  
+
+  
   protect_from_forgery with: :exception
   helper_method :current_user, :is_admin?, :is_user?, :is_provider_user?
   before_filter :add_xframe
@@ -11,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   
   def add_xframe
-    headers['X-Frame-Options'] = 'GOFORIT'
+    #headers['X-Frame-Options'] = 'GOFORIT'
   end
 
   def current_user_session
@@ -66,14 +71,17 @@ class ApplicationController < ActionController::Base
     current_user.authorization
   end
   
-  def get_main_page_feed_url(home_main_url)
+  def get_main_page_feed_url(home_main_url) 
+    content = Net::HTTP.get(URI.parse(home_main_url))
+    content = Iconv.iconv('UTF-8//IGNORE', 'windows-874', content).join
+    content = content.gsub("href", "hreff")
+  end   
+  
+  def ggget_main_page_feed_url(home_main_url)
     begin
-      url = URI.parse(home_main_url)
-      req = Net::HTTP::Get.new(url.path)
-      res = Net::HTTP.start(url.host, url.port) {|http|
-        http.request(req)
-      }
-      body = res.body 
+      
+      body = Net::HTTP.get(URI.parse(home_main_url))
+      #return content
       content = ''
       begin
         cleaned = body.dup.force_encoding('UTF-8')

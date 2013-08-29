@@ -70,6 +70,7 @@ GEM
     httpauth (0.2.0)
     httpclient (2.3.4.1)
     i18n (0.6.4)
+    iconv (1.0.3)
     jbuilder (1.4.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -209,6 +210,7 @@ DEPENDENCIES
   facebook_share
   fb_graph
   google_visualr (>= 2.1)
+  iconv
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
