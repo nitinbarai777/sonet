@@ -24,6 +24,8 @@ Sonet::Application.routes.draw do
   get '/fronts/other/:page_id' => 'fronts#other', :as => :other
   match '/forgot_password' => 'fronts#forgot_password', :as => :forgot_password, via: [:get, :post]
   
+  get '/news/:id' => 'fronts#news', :as => :news
+  
   get '/auth/twitter/callback', :to => 'fronts#auth_login'
   get '/auth/facebook/callback', :to => 'fronts#auth_login'
   get '/auth/google_oauth2/callback', :to => 'fronts#auth_login'

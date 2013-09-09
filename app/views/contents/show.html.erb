@@ -41,7 +41,7 @@
 						<td width="100%" colspan="3">
 	  					<!-- facebook -->
 	  					<span class="fontSocialIcon"><%= t("general.share_on_facebook") %></span>
-							<a onclick="Share.facebook('','<%= @o_single.content_text.html_safe unless @o_single.content_text.blank? %>', '', '<%= @o_single.subject %>')"><%= image_tag "facebook.jpeg", :width => "60px" %></a>	  					
+							<a onclick="Share.facebook('<%= BASE_URL %>/news/<%= @o_single.id %>','<%= @o_single.content_text.html_safe unless @o_single.content_text.blank? %>', '', '<%= @o_single.subject %>')"><%= image_tag "facebook.jpeg", :width => "60px" %></a>	  					
 						  <span id="spinner" style="display: none;">
 						    <%= image_tag "loading.gif" %>
 						  </span>  		
@@ -51,14 +51,14 @@
 						<td width="100%" colspan="3">
 	  					<!-- twitter -->
 	  						<span class="fontSocialIcon"><%= t("general.share_on_twitter") %></span>
-								<a onclick="Share.twitter('','<%= @o_single.content_text.html_safe unless @o_single.content_text.blank? %>')"><%= image_tag "twitter.png", :width => "60px" %></a>
+								<a onclick="Share.twitter('','<%= BASE_URL.to_s %>/news/<%= @o_single.id.to_s %> <%= @o_single.content_text.html_safe unless @o_single.content_text.blank? %>')"><%= image_tag "twitter.png", :width => "60px" %></a>
 						</td>	
 					</tr>
 					<tr>	
 						<td width="100%" colspan="3">	
 							<!-- google -->
 			    		<span class="fontSocialIcon"><%= t("general.share_on_google") %></span>
-							<a onclick="Share.google('<%= @o_single.content_text.html_safe unless @o_single.content_text.blank? %>')"><%= image_tag "google.png", :width => "60px" %></a>
+							<a onclick="Share.google('<%= BASE_URL %>/news/<%= @o_single.id %>')"><%= image_tag "google.png", :width => "60px" %></a>
 	  				</td>
   				</tr>
   			</table> 
@@ -78,7 +78,7 @@
 				url = 'http://www.facebook.com/sharer.php?s=100';
 				url += '&p[title]=' + encodeURIComponent(ptitle);
 				url += '&p[summary]=' + encodeURIComponent(text);
-				url += '&p[url]=' + ' ';
+				url += '&p[url]=' + encodeURIComponent(purl);
 				url += '&p[images][0]=' + encodeURIComponent(pimg);
 				Share.popup(url);
 			},

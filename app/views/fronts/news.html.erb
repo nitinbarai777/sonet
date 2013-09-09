@@ -1,0 +1,12 @@
+<% if @content %>
+	<div class="page-header">
+		<h3><%= @content.subject %></h3>
+	</div>
+	<div class="searchRight">	
+		<p><%= @content.created_at.to_s(:pretty) %></p>
+	</div>	
+	<div class="clearBoth"></div>
+  <p><%= @content.content_text.html_safe unless @content.content_text.blank? %></p>
+<% else %>
+  <%= t("general.page_not_found") %>
+<% end %>

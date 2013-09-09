@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("general.title") %></title>
+  <script type="text/javascript">var CKEDITOR_BASEPATH = '/assets/ckeditor/';</script>
+
+
+  <%# unless current_controller_name == "url_contents" and current_action == "index" %>
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+  <%# end %>
+ 
+  
+  
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%#= javascript_include_tag :defaults %>
+  
+  
+  <%= csrf_meta_tags %>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+</head>
+<body>
+  <script type="text/javascript">$(".row-fluid input:text, #content textarea").eq(0).focus();</script>
+
+  
+	  <div class="container-fluid">
+	    <div class="row-fluid">
+	      <div class="row-fluid"><br /><br />
+	        <div class="loginfom">
+        		<div class="span12">
+          		<%= yield %>
+          	</div>
+          	<div class="clearBoth">&nbsp;</div>	
+        </div>  
+      <div>
+    <div>
+    <footer class="footerFront"><%= render 'layouts/footer' %></footer>
+  <div>
+</body>
+</html>

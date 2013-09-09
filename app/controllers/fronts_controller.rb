@@ -17,6 +17,11 @@ class FrontsController < ApplicationController
   #user login
   def login
   end
+  
+  def news
+    @content = Content.find(params[:id])
+    render :layout => "news"
+  end
 
 	#forgot password
   def forgot_password
