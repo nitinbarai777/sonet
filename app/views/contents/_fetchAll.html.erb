@@ -1,0 +1,34 @@
+<table class="table table-striped">
+ <thead> 
+  <tr>
+  	<th width="15%"><%= sortable "created_at", t("general.created_at")%></th>
+    <th width="70%"><%= sortable "subject", t("general.subject") %></th>
+    <th width="15%"><%= t("general.actions") %></th>
+  </tr>
+ </thead> 
+  
+  <tbody>
+    <% if @o_all.size > 0 %>
+      <% @o_all.each do |o_row| %>
+        <tr>
+        	<td><%= o_row.created_at.to_s(:pretty) %></td>
+          <td><%= link_to o_row.subject, content_path(o_row) %></td>
+          <td> 
+			      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+			                  edit_content_path(o_row), :class => 'btn btn-mini' %>
+				      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+				                  content_path(o_row),
+				                  :method => :delete,
+				                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+				                  :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr><th colspan="6"><%= t("general.record_not_found") %></th></tr>
+    <% end %>      
+  </tbody>
+</table>
+<div class="fRight">
+	<%= will_paginate @o_all %>
+</div>	

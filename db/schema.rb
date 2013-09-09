@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808123010) do
+ActiveRecord::Schema.define(version: 20130909050406) do
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20130808123010) do
   end
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.boolean  "is_active",  default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -41,6 +48,15 @@ ActiveRecord::Schema.define(version: 20130808123010) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "contents", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.string   "subject"
+    t.text     "content_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "role_type"

@@ -33,6 +33,7 @@ require 'uri'
     unless current_user
       redirect_to :controller => "fronts", :action => "login"
     end
+    @categories = Category.active    
   end
   
   def require_admin
@@ -72,6 +73,7 @@ require 'uri'
   end
   
   def get_main_page_feed_url(home_main_url) 
+    home_main_url = !home_main_url.include?('http') ? 'http://' + home_main_url.to_s : home_main_url
     content = Net::HTTP.get(URI.parse(home_main_url))
     content = Iconv.iconv('UTF-8//IGNORE', 'windows-874', content).join
     content = content.gsub("href", "hreff")

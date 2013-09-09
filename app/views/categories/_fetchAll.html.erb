@@ -1,0 +1,34 @@
+<table class="table table-striped">
+ <thead> 
+  <tr>
+    <th width="80%"><%= sortable "name", t("general.name") %></th>
+    <th width="5%"><%= sortable "is_active", t("general.is_active") %></th>
+    <th width="15%"><%= t("general.actions") %></th>
+  </tr>
+ </thead> 
+  
+  <tbody>
+    <% if @o_all.size > 0 %>
+      <% @o_all.each do |o_row| %>
+        <tr>
+          <td><%= o_row.name %></td>
+          <td><%= o_row.is_active ? image_tag("Yes.gif") : image_tag("No.gif") %></td>
+          <td> 
+			      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+			                  edit_category_path(o_row), :class => 'btn btn-mini' %>
+			      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+			                  category_path(o_row),
+			                  :method => :delete,
+			                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+			                  :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr><th colspan="6"><%= t("general.record_not_found") %></th></tr>
+    <% end %>      
+  </tbody>
+</table>
+<div class="fRight">
+	<%= will_paginate @o_all %>
+</div>	

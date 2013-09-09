@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 	has_one :authorization, :dependent => :destroy
 	has_many :user_urls, :dependent => :destroy
 	
+	has_many :contents, :dependent => :destroy
+	
   def self.search(search)
     if search
       where('(users.username LIKE ? OR users.email LIKE ? OR users.contact LIKE ?)', "%#{search}%", "%#{search}%", "%#{search}%")

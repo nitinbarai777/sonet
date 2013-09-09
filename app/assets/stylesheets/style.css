@@ -216,3 +216,17 @@ margin:0 0 6px; padding:7px 2px 2px 10px; resize:none; width:386px;}
 .redStart {color: red; margin:0 5px 0 3px;font-size:15px;}
 .brand {height:30px;}
 .footerFront p {text-align:center !important;}
+
+.searchRight { float: right; font-size: 20px; margin: -70px 30px 0px 0px; }
+.searchRightFront { float: right; font-size: 20px; margin: -5px 0px 0px 0px; }
+.fRight { float: right; font-size: 16px; }
+
+.spinner {float: right; margin: -50px 385px 0 0;}
+.mar20{ margin: 0 20px 0 5px;}
+.loginfom {background: none repeat scroll 0 0 #FFFFFF; border: 2px solid #777; border-radius: 10px 10px 10px 10px; box-shadow: 0 0 3px 3px rgba(206, 206, 205, 0.5); margin: 10px auto; padding: 20px; }
+.marTop9 {margin-top: 9px;}
+.textArea { height: 250px; width: 700px; }
+.textAreaBig { height: 405px; width: 800px; }
+.textAreaSmall { height: 230px; width: 245px; }
+.textAreaMedium { height: 165px; width: 715px; }
+.clearBoth {clear:both;}

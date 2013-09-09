@@ -1,0 +1,22 @@
+<%- model_class = Category -%>
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+    
+<div class="page-header">
+  <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> (<span id="count_records"><%= @o_all.count %></span>)</h4>
+</div>
+
+<div class="searchRight">
+	<%#= link_to 'Search', show_search_box_path(true, model_class, @search_fields.join(',')), :remote => true, :class => 'btn btn-primary btn-small' %>&nbsp;
+	
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+	            new_category_path,
+	            :class => 'btn btn-primary btn-small' %>
+</div>	
+
+
+<div id="div_update_search"></div>
+
+<div id="div_update">
+	<%= render "fetchAll" %>
+</div>

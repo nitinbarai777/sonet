@@ -1,0 +1,45 @@
+<%= form_for @o_single, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend></legend>
+		<%= f.hidden_field :category_id, :value => session[:category] %> 
+		<%= f.hidden_field :user_id, :value => session[:user_id] %>
+    <div class="control-group">
+      <label class = 'control-label'>Title<span class="redStart">*</span></label>
+      <div class="controls">
+        <%= f.text_field :subject, :class => 'text_field' %>
+       	<% if @o_single.errors[:subject].any? %>
+        	<span class="text-error text-message"><%= @o_single.errors[:subject].first %></span>
+      	<% end %> 
+      </div>
+    </div>
+    
+    <% if @o_single.errors[:content_text].any? %>
+	  	<div class="control-group">
+	      <div class="controls">
+	        <span class="text-error text-message" style=""><%= @o_single.errors[:content_text].first %></span>
+	      </div>
+	  	</div>
+   <% end %>       
+    
+    
+    <div class="control-group">
+      <label class = 'control-label'>Content<span class="redStart">*</span></label>
+      <div class="controls">
+        <%= f.text_area :content_text, :class => 'wysihtml5 textArea', :placeholder => "Enter text ..." %>
+      </div>
+    </div>    
+ 
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', contents_url, :class => 'btn' %>
+    </div>
+    
+  </fieldset>
+     
+<% end %>
+
+<script type="text/javascript">
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
+</script>

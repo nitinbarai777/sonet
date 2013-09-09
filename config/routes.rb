@@ -8,6 +8,8 @@ Sonet::Application.routes.draw do
 	resources :fronts
 	resources :user_urls
 	resources :url_contents
+	resources :categories
+	resources :contents
 	
 	get 'logout' => 'user_sessions#destroy', :as => :logout
 	get 'login' => 'user_sessions#new', :as => :login

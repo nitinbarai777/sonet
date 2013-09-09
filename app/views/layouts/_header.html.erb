@@ -33,6 +33,7 @@
           <% if current_user %>
             <% if is_admin? %>
               <ul class="nav"><li class="<%= 'active' if @users %>"><%= link_to t("general.users"), users_path %></li></ul>
+              <ul class="nav"><li class="<%= 'active' if @categories %>"><%= link_to t("general.categories"), categories_path %></li></ul>
               <ul class="nav"><li class="<%= 'active' if @static_pages %>"><%= link_to t("general.pages"), static_pages_path %></li></ul>
             <% end %>
           <% end %>  
