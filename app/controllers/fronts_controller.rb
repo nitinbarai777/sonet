@@ -8,7 +8,7 @@ class FrontsController < ApplicationController
   	if current_user
   	  if is_user?
   			if current_user.user_urls
-  			  redirect_to user_urls_url
+  			  redirect_to contents_url
   			end
   		end	
 		end
@@ -52,7 +52,7 @@ class FrontsController < ApplicationController
 		  @o_single.password_required = true
 	    respond_to do |format|
 	      if @o_single.update_attributes(user_params)
-	        format.html { redirect_to users_url, notice: t("general.successfully_updated") }
+	        format.html { redirect_to contents_url, notice: t("general.successfully_updated") }
 	        format.json { head :no_content }
 	      else
 	        format.html { render action: 'change_password' }

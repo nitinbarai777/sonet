@@ -117,9 +117,13 @@ class ContentsController < ApplicationController
     
     #fetch search records
     def get_records(search, page)
-      @category = Category.find(session[:category])
-      #content_query = Content.scoped
-      content_query = @category.contents 
+      if session[:category]
+        @category = Category.find(session[:category])
+        content_query = @category.contents
+      else
+        content_query = current_user.contents
+      end  
+       
       content_query.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => page)
     end    
     
