@@ -38,6 +38,8 @@ Sonet::Application.routes.draw do
   match '/user_url/share_content' => 'user_urls#share_content', :as => :share_content, via: [:get, :post, :patch]
   match '/user_url/send_content' => 'user_urls#send_content', :as => :send_content, via: [:get, :post, :patch]
   
+  match '/sonet/share_content' => 'fronts#share_content', :as => :sonet_share_content, via: [:get, :post, :patch]
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

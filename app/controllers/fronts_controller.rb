@@ -18,6 +18,16 @@ class FrontsController < ApplicationController
   def login
   end
   
+  def share_content
+    message = 'successfully accepted'
+    render json: {
+      success: {
+        message:  message,
+        status_code: 200
+      }
+    }
+  end
+  
   def news
     @content = Content.find(params[:id])
     render :layout => "news"
