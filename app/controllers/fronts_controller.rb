@@ -19,11 +19,50 @@ class FrontsController < ApplicationController
   end
   
   def share_content
-    message = 'successfully accepted'
+    if params[:sharefacebook] == "true"
+      objData = {
+        url: params[:url],
+        pageimage: params[:pageimage],
+        pagetitle: params[:pagetitle],
+        contentselected: params[:contentselected],
+        comment: params[:comment],
+        emailfacebook: params[:emailfacebook]
+      }
+      message = 'successfully accepted'
+      status_code = 200
+   elsif params[:sharett] == "true"
+      objData = {
+        url: params[:url],
+        pageimage: params[:pageimage],
+        pagetitle: params[:pagetitle],
+        contentselected: params[:contentselected],
+        comment: params[:comment],
+        twittermail: params[:twittermail],
+      }     
+      message = 'successfully accepted'
+      status_code = 200
+   elsif params[:sharegg] == "true"
+      objData = {
+        url: params[:url],
+        pageimage: params[:pageimage],
+        pagetitle: params[:pagetitle],
+        contentselected: params[:contentselected],
+        comment: params[:comment],
+        googleemail: params[:googleemail]
+      }
+      message = 'successfully accepted'
+      status_code = 200
+    else
+      objData = {}
+      message = 'something goes wrong'
+      status_code = 500  
+    end 
+    
     render json: {
       success: {
+        data: objData,
         message:  message,
-        status_code: 200
+        status_code: status_code
       }
     }
   end
