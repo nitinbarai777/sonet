@@ -20,50 +20,53 @@ class FrontsController < ApplicationController
   
   def share_content
     if params[:extension] == "true"
-       session[:extension] = true
-      redirect_to "/auth/facebook"
+      session[:extension] = true
+      if params[:auth] == "facebook"
+        redirect_to "/auth/facebook"
+      elsif params[:auth] == "twitter"
+        redirect_to "/auth/twitter"
+      else
+        render json: {
+          error: {
+            message:  "something goes wrong",
+            status_code: 401
+          }
+        }        
+      end         
     else
-      if params[:sharefacebook] == "true"
-        objData = {
-          url: params[:url],
-          pageimage: params[:pageimage],
-          pagetitle: params[:pagetitle],
-          contentselected: params[:contentselected],
-          comment: params[:comment],
-          emailfacebook: params[:emailfacebook]
-        }
-        contentselected = ""
-        if params[:contentselected]
-          contentselected = params[:contentselected].dup.force_encoding('UTF-8')
-          unless contentselected.valid_encoding?
-             contentselected = contentselected.encode( 'UTF-8', 'windows-874' )
-          end
+
+      contentselected = ""
+      if params[:contentselected]
+        contentselected = params[:contentselected].dup.force_encoding('UTF-8')
+        unless contentselected.valid_encoding?
+           contentselected = contentselected.encode( 'UTF-8', 'windows-874' )
         end
+      end
+      pagetitle = ""
+      if params[:pagetitle]
+        pagetitle = params[:pagetitle].dup.force_encoding('UTF-8')
+        unless pagetitle.valid_encoding?
+           pagetitle = pagetitle.encode( 'UTF-8', 'windows-874' )
+        end
+      end
+      comment = ""
+      if params[:comment]
+        comment = params[:comment].dup.force_encoding('UTF-8')
+        unless comment.valid_encoding?
+           comment = pagetitle.encode( 'UTF-8', 'windows-874' )
+        end
+      end        
           
-        pagetitle = ""
-        if params[:pagetitle]
-          pagetitle = params[:pagetitle].dup.force_encoding('UTF-8')
-          unless pagetitle.valid_encoding?
-             pagetitle = pagetitle.encode( 'UTF-8', 'windows-874' )
-          end
-        end           
-  
-        comment = ""
-        if params[:comment]
-          comment = params[:comment].dup.force_encoding('UTF-8')
-          unless comment.valid_encoding?
-             comment = pagetitle.encode( 'UTF-8', 'windows-874' )
-          end
-        end
-        
+      
+      if params[:sharefacebook] == "true"        
         begin
           me = FbGraph::User.me(params[:tokenfacebook])
           
           myfeed = me.feed!(
-            :message => "ddd",
+            :message => contentselected,
             :picture => params[:pageimage],
             :link => params[:url],
-            :name => "ss",
+            :name => pagetitle,
             :description => comment
           )
           objData = myfeed
@@ -76,25 +79,14 @@ class FrontsController < ApplicationController
         end
   
      elsif params[:sharett] == "true"
-        objData = {
-          url: params[:url],
-          pageimage: params[:pageimage],
-          pagetitle: params[:pagetitle],
-          contentselected: params[:contentselected],
-          comment: params[:comment],
-          twittermail: params[:twittermail],
-        }     
-        message = 'successfully accepted'
-        status_code = 200
-     elsif params[:sharegg] == "true"
-        objData = {
-          url: params[:url],
-          pageimage: params[:pageimage],
-          pagetitle: params[:pagetitle],
-          contentselected: params[:contentselected],
-          comment: params[:comment],
-          googleemail: params[:googleemail]
-        }
+        Twitter.configure do |config|
+          config.consumer_key = TWITTER_CONSUMER_KEY
+          config.consumer_secret = TWITTER_CONSUMER_SECRET
+          config.oauth_token = params[:tokentwitter]
+          config.oauth_token_secret = params[:secrettwitter]
+        end
+        Twitter.update(contentselected)
+         
         message = 'successfully accepted'
         status_code = 200
       else
@@ -102,7 +94,7 @@ class FrontsController < ApplicationController
         message = 'something goes wrong'
         status_code = 500  
       end 
-      
+        
       render json: {
         success: {
           data: objData,
@@ -176,7 +168,7 @@ class FrontsController < ApplicationController
 		user_session.save
 		if session[:extension]
 		  session[:extension] = nil
-		  objData = {token: session[:token], secret: session[:secret]}
+		  objData = {token: session[:token], secret: session[:secret], email: user.email}
       render json: {
         success: {
           data: objData,
