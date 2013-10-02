@@ -28,8 +28,24 @@ class FrontsController < ApplicationController
         comment: params[:comment],
         emailfacebook: params[:emailfacebook]
       }
-      message = 'successfully accepted'
-      status_code = 200
+      begin
+        me = FbGraph::User.me(params[:tokenfacebook])
+        myfeed = me.feed!(
+          :message => params[:contentselected],
+          :picture => params[:pageimage],
+          :link => params[:url],
+          :name => params[:pagetitle],
+          :description => params[:comment]
+        )
+        objData = myfeed
+        message = 'successfully shared to facebook'
+        status_code = 200        
+      rescue
+        objData = {}
+        message = 'something goes wrong with oauth token'
+        status_code = 500
+      end
+
    elsif params[:sharett] == "true"
       objData = {
         url: params[:url],
