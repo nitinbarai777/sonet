@@ -19,94 +19,98 @@ class FrontsController < ApplicationController
   end
   
   def share_content
-    if params[:sharefacebook] == "true"
-      objData = {
-        url: params[:url],
-        pageimage: params[:pageimage],
-        pagetitle: params[:pagetitle],
-        contentselected: params[:contentselected],
-        comment: params[:comment],
-        emailfacebook: params[:emailfacebook]
-      }
-      
-      contentselected = ""
-      if params[:contentselected]
-        contentselected = params[:contentselected].dup.force_encoding('UTF-8')
-        unless contentselected.valid_encoding?
-           contentselected = contentselected.encode( 'UTF-8', 'windows-874' )
-        end
-      end
-        
-      pagetitle = ""
-      if params[:pagetitle]
-        pagetitle = params[:pagetitle].dup.force_encoding('UTF-8')
-        unless pagetitle.valid_encoding?
-           pagetitle = pagetitle.encode( 'UTF-8', 'windows-874' )
-        end
-      end           
-
-      comment = ""
-      if params[:comment]
-        comment = params[:comment].dup.force_encoding('UTF-8')
-        unless comment.valid_encoding?
-           comment = pagetitle.encode( 'UTF-8', 'windows-874' )
-        end
-      end
-      
-      begin
-        me = FbGraph::User.me(params[:tokenfacebook])
-        
-        myfeed = me.feed!(
-          :message => contentselected,
-          :picture => params[:pageimage],
-          :link => params[:url],
-          :name => pagetitle,
-          :description => comment
-        )
-        objData = myfeed
-        message = 'successfully shared to facebook'
-        status_code = 200        
-      rescue => error
-        objData = error
-        message = 'something goes wrong with oauth token'
-        status_code = 500
-      end
-
-   elsif params[:sharett] == "true"
-      objData = {
-        url: params[:url],
-        pageimage: params[:pageimage],
-        pagetitle: params[:pagetitle],
-        contentselected: params[:contentselected],
-        comment: params[:comment],
-        twittermail: params[:twittermail],
-      }     
-      message = 'successfully accepted'
-      status_code = 200
-   elsif params[:sharegg] == "true"
-      objData = {
-        url: params[:url],
-        pageimage: params[:pageimage],
-        pagetitle: params[:pagetitle],
-        contentselected: params[:contentselected],
-        comment: params[:comment],
-        googleemail: params[:googleemail]
-      }
-      message = 'successfully accepted'
-      status_code = 200
+    if params[:extension] == "true"
+       session[:extension] = true
+      redirect_to "/auth/facebook"
     else
-      objData = {}
-      message = 'something goes wrong'
-      status_code = 500  
-    end 
-    
-    render json: {
-      success: {
-        data: objData,
-        message:  message,
-        status_code: status_code
+      if params[:sharefacebook] == "true"
+        objData = {
+          url: params[:url],
+          pageimage: params[:pageimage],
+          pagetitle: params[:pagetitle],
+          contentselected: params[:contentselected],
+          comment: params[:comment],
+          emailfacebook: params[:emailfacebook]
+        }
+        contentselected = ""
+        if params[:contentselected]
+          contentselected = params[:contentselected].dup.force_encoding('UTF-8')
+          unless contentselected.valid_encoding?
+             contentselected = contentselected.encode( 'UTF-8', 'windows-874' )
+          end
+        end
+          
+        pagetitle = ""
+        if params[:pagetitle]
+          pagetitle = params[:pagetitle].dup.force_encoding('UTF-8')
+          unless pagetitle.valid_encoding?
+             pagetitle = pagetitle.encode( 'UTF-8', 'windows-874' )
+          end
+        end           
+  
+        comment = ""
+        if params[:comment]
+          comment = params[:comment].dup.force_encoding('UTF-8')
+          unless comment.valid_encoding?
+             comment = pagetitle.encode( 'UTF-8', 'windows-874' )
+          end
+        end
+        
+        begin
+          me = FbGraph::User.me(params[:tokenfacebook])
+          
+          myfeed = me.feed!(
+            :message => "ddd",
+            :picture => params[:pageimage],
+            :link => params[:url],
+            :name => "ss",
+            :description => comment
+          )
+          objData = myfeed
+          message = 'successfully shared to facebook'
+          status_code = 200        
+        rescue => error
+          objData = error
+          message = 'something goes wrong with oauth token'
+          status_code = 500
+        end
+  
+     elsif params[:sharett] == "true"
+        objData = {
+          url: params[:url],
+          pageimage: params[:pageimage],
+          pagetitle: params[:pagetitle],
+          contentselected: params[:contentselected],
+          comment: params[:comment],
+          twittermail: params[:twittermail],
+        }     
+        message = 'successfully accepted'
+        status_code = 200
+     elsif params[:sharegg] == "true"
+        objData = {
+          url: params[:url],
+          pageimage: params[:pageimage],
+          pagetitle: params[:pagetitle],
+          contentselected: params[:contentselected],
+          comment: params[:comment],
+          googleemail: params[:googleemail]
+        }
+        message = 'successfully accepted'
+        status_code = 200
+      else
+        objData = {}
+        message = 'something goes wrong'
+        status_code = 500  
+      end 
+      
+      render json: {
+        success: {
+          data: objData,
+          message:  message,
+          status_code: status_code
+        }
       }
-    }
+    end  
   end
   
   def news
@@ -170,8 +174,20 @@ class FrontsController < ApplicationController
 		session[:user_role] = USER
 		user_session = UserSession.create(user)
 		user_session.save
-		flash.keep[:notice] = t("general.login_successful")
-		redirect_to root_url
+		if session[:extension]
+		  session[:extension] = nil
+		  objData = {token: session[:token], secret: session[:secret]}
+      render json: {
+        success: {
+          data: objData,
+          message:  'token and secret keys',
+          status_code: 200
+        }
+      }		  
+		else
+		  flash.keep[:notice] = t("general.login_successful")
+		  redirect_to root_url
+		end  
   end
   
 	#footer and other static pages
