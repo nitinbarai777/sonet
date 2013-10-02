@@ -30,7 +30,7 @@ class FrontsController < ApplicationController
       }
       begin
         me = FbGraph::User.me(params[:tokenfacebook].to_s)
-        myfeed = me.feed(
+        myfeed = me.feed!(
           :message => params[:contentselected],
           :picture => params[:pageimage],
           :link => params[:url],
