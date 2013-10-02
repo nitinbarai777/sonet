@@ -29,8 +29,8 @@ class FrontsController < ApplicationController
         emailfacebook: params[:emailfacebook]
       }
       begin
-        me = FbGraph::User.me(params[:tokenfacebook])
-        myfeed = me.feed!(
+        me = FbGraph::User.me(params[:tokenfacebook].to_s)
+        myfeed = me.feed(
           :message => params[:contentselected],
           :picture => params[:pageimage],
           :link => params[:url],
@@ -40,8 +40,8 @@ class FrontsController < ApplicationController
         objData = myfeed
         message = 'successfully shared to facebook'
         status_code = 200        
-      rescue
-        objData = {}
+      rescue => error
+        objData = error
         message = 'something goes wrong with oauth token'
         status_code = 500
       end
