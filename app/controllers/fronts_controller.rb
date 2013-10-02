@@ -28,14 +28,40 @@ class FrontsController < ApplicationController
         comment: params[:comment],
         emailfacebook: params[:emailfacebook]
       }
+      
+      contentselected = ""
+      if params[:contentselected]
+        contentselected = params[:contentselected].dup.force_encoding('UTF-8')
+        unless contentselected.valid_encoding?
+           contentselected = contentselected.encode( 'UTF-8', 'windows-874' )
+        end
+      end
+        
+      pagetitle = ""
+      if params[:pagetitle]
+        pagetitle = params[:pagetitle].dup.force_encoding('UTF-8')
+        unless pagetitle.valid_encoding?
+           pagetitle = pagetitle.encode( 'UTF-8', 'windows-874' )
+        end
+      end           
+
+      comment = ""
+      if params[:comment]
+        comment = params[:comment].dup.force_encoding('UTF-8')
+        unless comment.valid_encoding?
+           comment = pagetitle.encode( 'UTF-8', 'windows-874' )
+        end
+      end
+      
       begin
-        me = FbGraph::User.me(params[:tokenfacebook].to_s)
+        me = FbGraph::User.me(params[:tokenfacebook])
+        
         myfeed = me.feed!(
-          :message => params[:contentselected],
+          :message => contentselected,
           :picture => params[:pageimage],
           :link => params[:url],
-          :name => params[:pagetitle],
-          :description => params[:comment]
+          :name => pagetitle,
+          :description => comment
         )
         objData = myfeed
         message = 'successfully shared to facebook'
