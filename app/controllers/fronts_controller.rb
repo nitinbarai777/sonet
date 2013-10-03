@@ -28,6 +28,7 @@ class FrontsController < ApplicationController
       else
         render json: {
           error: {
+            data: params.inspect,
             message:  "something goes wrong",
             status_code: 401
           }
@@ -73,24 +74,30 @@ class FrontsController < ApplicationController
           message = 'successfully shared to facebook'
           status_code = 200        
         rescue => error
-          objData = error
+          objData = params.inspect
           message = 'something goes wrong with oauth token'
           status_code = 500
         end
   
      elsif params[:sharett] == "true"
-        Twitter.configure do |config|
-          config.consumer_key = TWITTER_CONSUMER_KEY
-          config.consumer_secret = TWITTER_CONSUMER_SECRET
-          config.oauth_token = session[:twittertoken]
-          config.oauth_token_secret = session[:twittersecret]
-        end
-        Twitter.update(contentselected)
-         
-        message = 'successfully accepted'
-        status_code = 200
+       begin
+          Twitter.configure do |config|
+            config.consumer_key = TWITTER_CONSUMER_KEY
+            config.consumer_secret = TWITTER_CONSUMER_SECRET
+            config.oauth_token = session[:twittertoken]
+            config.oauth_token_secret = session[:twittersecret]
+          end
+          Twitter.update(contentselected)
+          objData = {} 
+          message = 'successfully accepted'
+          status_code = 200
+        rescue => error
+          objData = params.inspect
+          message = 'something goes wrong with oauth token'
+          status_code = 500
+        end          
       else
-        objData = {}
+        objData = params.inspect
         message = 'something goes wrong'
         status_code = 500  
       end 
