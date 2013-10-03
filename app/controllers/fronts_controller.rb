@@ -60,7 +60,7 @@ class FrontsController < ApplicationController
       
       if params[:sharefacebook] == "true"        
         begin
-          me = FbGraph::User.me(params[:tokenfacebook])
+          me = FbGraph::User.me(session[:token])
           
           myfeed = me.feed!(
             :message => contentselected,
@@ -82,8 +82,8 @@ class FrontsController < ApplicationController
         Twitter.configure do |config|
           config.consumer_key = TWITTER_CONSUMER_KEY
           config.consumer_secret = TWITTER_CONSUMER_SECRET
-          config.oauth_token = params[:tokentwitter]
-          config.oauth_token_secret = params[:secrettwitter]
+          config.oauth_token = session[:token]
+          config.oauth_token_secret = session[:secret]
         end
         Twitter.update(contentselected)
          
