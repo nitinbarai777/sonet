@@ -412,12 +412,10 @@
 				console.log(data1);
 				$.ajax({
 					url: 'http://sonetdemo.herokuapp.com/sonet/share_content',
-					type: 'POST',
+					type: 'GET',
 					data: data1,
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
-					jsonp: "callback",
-					jsonpCallback: "jsonpCallbackfunction",
 					success: function (data) {
 						console.log('on success!');
 						console.log(data);
