@@ -1,0 +1,440 @@
+﻿<html>
+	<head> 
+		<title> Sonet share social </title>
+		<meta property="og:image" content="http://media.docbao.vn/Assets/News/27092013/to_huyen_chip120.jpg" />
+		<meta property="og:url" content="http://vnprodev.com/sondh/Sonet/sonetShare.php" />
+		<meta property="og:title" content="Mot ngay khong co nang" />
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<!--
+		<script type="text/javascript" src="js/sonetShare.js"></script>
+		-->
+		<style>
+			#sonetPopup
+			{
+				position: fixed;
+				z-index: 1000;
+				width: 559px;
+				height: 485px;
+				border: solid;
+				border-width: 1px;
+				border-radius: 3px;
+				background-color: white;
+				font-size: 13px;
+				left: 3px;
+				top: 4px;
+			}
+			.shareInfor
+			{
+				margin: 8px 0 0 2px;
+				border:1px solid #d6d6d6;
+				border-radius:3px 3px 3px 3px;
+				border-color: #0199ca;
+				width: 551px;
+				height: 185px;
+				float: left;
+			}
+			.titleex
+			{
+				margin: 0 0 0 10px;;
+				font-weight: bold;
+				font-size: 14px;
+			}
+			.linkShare
+			{
+				margin: 5px 0 0 10px;
+				font-style: italic;
+				font-size: 12px;
+			}
+			.contentSelected
+			{
+				margin: 5px 0 0 10px;
+				font-size: 16px;
+				height: 98px;
+				overflow: auto;
+			}
+			.shareChooser
+			{
+				margin-top: 20px;
+				float: left;
+				position: relative;
+				width: 100%;
+			}
+			#signin-button, #googleShare
+			{
+				position: absolute;
+				right: 5px;
+			}
+			.shareChooser div
+			{
+				text-align:center;
+				cursor: pointer;
+				width: 150px;
+			}
+			#fbShare
+			{
+				position: absolute;
+			}
+			#twisterShare
+			{
+				position: absolute;
+				left: 200px;
+			}
+			#comment
+			{
+				margin: 10px 2px 2px 2px;
+				color:#0199ca;
+				font-size:18px;
+				height:82px;
+				width:551px;
+				border:1px solid #d6d6d6;
+				border-radius:3px 3px 3px 3px;
+				text-align:center;
+				border-color: #0199ca;
+			}
+			.floatLeft
+			{
+				float:left;
+			}
+			.rightContent
+			{	
+				width: 395px;
+				height: auto;
+			}
+			.rightContent div
+			{
+				text-align: left;
+			}
+			textarea
+			{
+				width:100%; 
+				height: 99%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				box-sizing: border-box;
+				-webkit-appearance: none;
+				outline: none;
+				border: 0;
+			}
+			.pageImage
+			{
+				margin: 3px;
+			}
+			.modal-background 
+			{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: Gray;
+				opacity: .70;
+				-webkit-opacity: .7;
+				-moz-opacity: .7;
+				filter: alpha(opacity=70);
+				z-index: 1000 !important;
+				display:none;
+			}
+			.PopupWindow 
+			{
+				background-color: white;
+				position:fixed;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				box-shadow: 0 0 20px 0 #222;
+				-webkit-box-shadow: 0 0 20px 0 #222;
+				-moz-box-shadow: 0 0 20px 0 #222;
+				z-index: 1001 !important;
+				font-family: arial;
+				color: #034a82;
+				text-align: left;
+			}
+			#divShare
+			{
+				position: absolute;
+				bottom: 11px;
+				left: 234px;
+				font-size: 26px;
+				font-weight: bold;
+			}
+			#btnShare
+			{
+				cursor: pointer;
+				padding: 5px;
+				width: 92px;
+				text-align: center;
+				background-color: #034a82;
+				color: white;
+			}
+			#btnShare:hover
+			{
+				background-color: #0199ca;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script src="//connect.facebook.net/en_US/all.js"></script>
+		<script>
+			FB.init({
+				appId  : '198106573696140',
+				status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				xfbml  : true, // parse XFBML
+				channelUrl : 'http://vnprodev.com/', // channel.html file
+				oauth  : true // enable OAuth 2.0
+			});
+		</script>
+		<div class="modal-background"></div>
+		<div id="sonetPopup" class="PopupWindow">
+			<img src="images/sonetLogo.jpeg" style="margin: 1px;"/>
+			<div id="comment">
+				<textarea id="txtComment"> </textarea>
+			</div>
+			<div class="shareInfor">
+				<div class="pageImage floatLeft" >
+					<img id="imgPage" src="http://media.docbao.vn/Assets/News/27092013/to_huyen_chip120.jpg" style="width: 135px;" />
+					<div id="divImageNone" style="width: 135px; height: 101px;"></div>
+				</div>
+				<div class="rightContent floatLeft">
+					<div class="titleex">
+					</div>
+					<div class="linkShare">  </div>
+					<div class="contentSelected">
+					</div>
+				</div>
+			</div>
+			<div class="shareChooser">
+				<div id="fbShare">
+					<img src="images/facebook.jpeg" style="width:32px;" />
+					<br/>
+					<input id="chkfacebook" type="checkbox"/>
+					<span> Share on facebook </span>
+				</div>
+				<div id="twisterShare">
+					<img src="images/twitter.png" style="width:32px;" />
+					<br/>
+					<input id="chktwitter" type="checkbox"/>
+					<span> Login twister </span>
+					<!--
+					<a target="_blank" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdev.twitter.com%2Fdiscussions%2F14965&related=Davide36555770%2Ctwitterapi&text=Javascript%20Twitter%20Authentication%20%7C%20Twitter%20Developers&tw_p=tweetbutton&url=https%3A%2F%2Fdev.twitter.com%2Fdiscussions%2F14965"> share Twitter</a>
+					-->
+				</div>
+				<div id="googleShare">
+					<img src="images/google.png" style="width:32px;" />
+					<br/>
+					<input id="chkgoogle" type="checkbox"/>
+					<span> Share on google+ </span>		
+				</div>
+				<div id="signin-button">
+					<div class="g-signin" data-callback="signinGoogleCallback"
+						data-approvalprompt="force"
+						data-clientid="550777244305.apps.googleusercontent.com"
+						data-scope="https://www.googleapis.com/auth/userinfo.email"
+						data-height="short"
+						data-cookiepolicy="single_host_origin">
+					</div>
+					<span style="position: absolute;left: 34px;top: 34px;"> Login google+ </span>		
+				</div>
+			</div>
+			<div id="divShare"> 
+				<div id="btnShare"> Share </div>
+			</div>
+		</div>
+		<div id="facebookEmail" style="display:none;"></div>
+		<div id="facebookToken" style="display:none;"></div>
+		<div id="twitterEmail" style="display:none;"></div>
+		<div id="twitterToken" style="display:none;"></div>
+		<div id="twitterSecret" style="display:none;"></div>
+		<div id="googleEmail" style="display:none;"></div>
+		<div id="googleToken" style="display:none;"></div>
+		<img style="display:none;"onload="show_login_status('Google', true)"onerror="show_login_status('Google', false)"src="https://accounts.google.com/CheckCookie?continue=https%3A%2F%2Fwww.google.com%2Fintl%2Fen%2Fimages%2Flogos%2Faccounts_logo.png&followup=https%3A%2F%2Fwww.google.com%2Fintl%2Fen%2Fimages%2Flogos%2Faccounts_logo.png&chtml=LoginDoneHtml&checkedDomains=youtube&checkConnection=youtube%3A291%3A1"/>
+		<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="show_login_status('Twitter', true)" onerror="show_login_status('Twitter', false)">
+		<script type="text/javascript">
+			
+			function show_login_status(network, status)
+			{
+				if(network == 'Twitter'){
+					if (status)
+					{
+						$("#twisterShare").children("span").text("Share on Twitter");
+						$("#chktwitter").show();
+					}else{
+						$("#twisterShare").children("span").text("Login Twitter");
+						$("#chktwitter").hide();
+					}
+				}else{
+					//google+
+					if (status)
+					{
+						$("#signin-button").css("display","none");
+						$("#googleShare").css("display","block");
+						$("#chkgoogle").show();
+					}else{
+						$("#signin-button").css("display","block");
+						$("#googleShare").css("display","none");
+						$("#chkgoogle").show();
+					}
+				}
+			}
+			$(document).ready(function(){
+				window.resizeTo(583,533);
+				$("#sonetPopup").show();
+				//return;
+				var currentLink = $(location).attr("href");
+				currentLink = currentLink.substring(currentLink.indexOf('?') + 1);
+				var arrData = currentLink.split("&");
+				$(arrData).each(function(index, item){
+					arrData[index] = item.substring(item.indexOf("=")+1);
+				});
+				$(".linkShare").text(arrData[0]);
+				if(arrData[1] == 'undefined'){
+					$("#divImageNone").show();
+					$("#imgPage").hide();
+				}
+				$("#imgPage").attr("src",arrData[1]);
+				$(".titleex").text(decodeURI(arrData[2]));
+				
+				LoginFacebookStatus();
+			});
+			Bind = function(){
+				$("#btnShare").click(function(){
+					// build data
+					alert('share');
+					var pageImage = $("#imgPage").attr("src");
+					var pageTitle = $(".titleex").text();
+					var contentSelected = $(".contentSelected").text();
+					var comment = $("#txtComment").val();					
+					var fbEmail = $("#facebookEmail").text();
+					var fbtoken = $("#facebookToken").text();
+					var sharefb = $("#chkfacebook").prop("checked");
+					var ttEmail = $("#twitterEmail").text();
+					var ttToken = $("#twitterToken").text();
+					var sharett = $("#chktwitter").prop("checked");
+					var googleEmail = $("#googleEmail").text();
+					var ggToken = $("#googleToken").text();
+					var sharegg = $("#chkgoogle").prop("checked");
+					var ttsecret = $("#twitterSecret").text();
+					//var objData = '{"url":"' + $(".linkShare").text() + '","pageimage":"' + pageImage + '","pagetitle":"' + pageTitle + '", "contentselected":"' + contentSelected + '", "comment":"' + comment + '","emailfacebook":"' + fbEmail + '", "sharefacebook":"'+ sharefb +'", "twittermail":"' + ttEmail + '", "sharett":"'+ sharett +'", "googleemail":"' + googleEmail + '", "sharegg":"'+ sharegg +'"}';
+					var stringRestURL = 'url=' + $(".linkShare").text() + '&pageimage='+ pageImage + '&pagetitle=' + pageTitle + '&contentselected=' + contentSelected + '&comment=' + comment + '&emailfacebook=' + fbEmail + '&sharefacebook='+ sharefb +'&twittermail=' + ttEmail + '&sharett='+ sharett +'&googleemail=' + googleEmail + '&sharegg='+ sharegg;
+					var objData = {
+						url:$(".linkShare").text(),
+						pageimage: pageImage,
+						pagetitle: pageTitle,
+						contentselected: contentSelected,
+						comment: comment,
+						emailfacebook: fbEmail,
+						tokenfacebook: fbtoken,
+						sharefacebook: sharefb,
+						twittermail: ttEmail,
+						twittertoken: ttToken,
+						secrettwitter: ttsecret,
+						sharett: sharett,
+						googleemail: googleEmail,
+						sharegg: sharegg,
+						googletoken: ggToken
+					}
+					shareLinkToSonet(objData,function(result){
+						window.close();
+					});
+				});
+			}
+			LoginFacebookStatus = function(){
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						var uid = response.authResponse.userID;
+						var accessToken = response.authResponse.accessToken;
+						//$("#chkfacebook").show();
+						console.log("allowed sonet app");
+						CheckLoginFacebook();
+					} else if (response.status === 'not_authorized') {
+					// the user is logged in to Facebook, 
+					// but has not authenticated your app
+						console.log('not yet use sonet app');
+					} else {
+					// the user isn't logged in to Facebook.
+						console.log('not yet login');
+						$("#chkfacebook").hide();
+						$("#fbShare span").text('Login facebook');
+					}
+					Bind();
+				});
+			}
+			CheckLoginFacebook = function(){
+			
+				 FB.login(function(response) {
+					if (response.authResponse) {
+						console.log('Welcome!  Fetching your information.... ', response);
+						$("#facebookToken").text(response.authResponse.accessToken);
+						FB.api('/me', function(response) {
+							$("#facebookEmail").text(response.email);
+							$("#fbShare span").text('Share on facebook');
+							$("#chkfacebook").show();
+							$("#chkfacebook").click();
+						});
+					} else {
+						console.log('User cancelled login or did not fully authorize.');
+					}
+				 });
+			}
+			function signinGoogleCallback(authResult) {
+				if (authResult) {
+					if (authResult['error'] == undefined){
+						gapi.auth.setToken(authResult); // Store the returned token.
+						console.log("google token: ", authResult.access_token);
+						$("#googleToken").text(authResult.access_token);
+						getEmail();                     // Trigger request to get the email address.
+					} else {
+						console.log('An error occurred');
+				  }
+				} else {
+				  console.log('Empty authResult');  // Something went wrong
+				}
+			}
+			function getEmail(){
+				gapi.client.load('oauth2', 'v2', function() {
+					  var request = gapi.client.oauth2.userinfo.get();
+					  request.execute(getEmailCallback);
+				});
+			}
+
+			function getEmailCallback(obj){
+				if (obj['email']) {
+					$("#googleEmail").text(obj['email']);
+					$("#signin-button").css("display","none");
+					$("#googleShare").css("display","block");
+					$("#chkgoogle").click();
+				}
+			}
+			shareLinkToSonet = function(data1, callback){
+				console.log(data1);
+				$.ajax({
+					url: 'http://sonetdemo.herokuapp.com/sonet/share_content',
+					type: 'POST',
+					data: data1,
+					contentType: "application/json; charset=utf-8",
+					dataType: "jsonp",
+					jsonp: "callback",
+					jsonpCallback: "jsonpCallbackfunction",
+					success: function (data) {
+						console.log('on success!');
+						console.log(data);
+						callback;
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+					   console.log('on error!');
+					   console.log("xhr.status: " + xhr.status);
+					   console.log("xhr.statusText: " + xhr.statusText);
+					   console.log("xhr.readyState: " + xhr.readyState);
+					   console.log("textStatus: " + textStatus);
+					   console.log("errorThrown: " + errorThrown);
+					   console.log("xhr.redirect: " + xhr.redirect);
+					   callback
+					}
+				});		
+			}
+		</script>
+	</body>
+</html>
