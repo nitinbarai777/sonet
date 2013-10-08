@@ -410,15 +410,12 @@
 			}
 			shareLinkToSonet = function(data1, callback){
 				console.log(data1);
-				var tempUrl = 'http://sonetdemo.herokuapp.com/sonet/share_content?contentselected=' + data1.contentselected + '&sharefacebook=true&tokenfacebook=';
-				tempUrl += data1.tokenfacebook + '&pagetitle=' + data1.pagetitle + '&url=' + data1.url + '&pageimage=' + data1.pageimage;
 				$.ajax({
-					//url: 'http://sonetdemo.herokuapp.com/sonet/share_content',
-					url: tempUrl,
+					url: 'http://sonetdemo.herokuapp.com/sonet/share_content',
 					type: 'GET',
-					//data: data1,
+					data: data1,
 					contentType: "application/json; charset=utf-8",
-					dataType: "jsonp",
+					dataType: "json",
 					success: function (data) {
 						console.log('on success!');
 						console.log(data);
@@ -439,7 +436,3 @@
 		</script>
 	</body>
 </html>
-<!--
-TWITTER
-http://sonetdemo.herokuapp.com/sonet/share_content?contentselected=hii&sharett=true&twittertoken=tokenvalue&twittersecret=secretvalue
--->
