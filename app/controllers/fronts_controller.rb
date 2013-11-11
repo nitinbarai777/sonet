@@ -64,11 +64,11 @@ class FrontsController < ApplicationController
           me = FbGraph::User.me(params[:tokenfacebook])
           
           myfeed = me.feed!(
-            :message => contentselected,
+            :message => pagetitle,
             :picture => params[:pageimage],
             :link => params[:url],
             :name => pagetitle,
-            :description => comment
+            :description => contentselected
           )
           objData = myfeed
           message = 'successfully shared to facebook'
