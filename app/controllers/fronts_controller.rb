@@ -72,7 +72,10 @@ class FrontsController < ApplicationController
           )
           objData = myfeed
           message = 'successfully shared to facebook'
-          status_code = 200        
+          status_code = 200
+          if session[:user_id]
+            UserUrl.create(:user_id => session[:user_id], :url_name => params[:url], :title => pagetitle, :desc => contentselected, :image => params[:pageimage])
+          end     
         rescue => error
           objData = params.inspect
           message = 'something goes wrong with oauth token'
@@ -91,6 +94,9 @@ class FrontsController < ApplicationController
           objData = {} 
           message = 'successfully accepted'
           status_code = 200
+          if session[:user_id]
+            UserUrl.create(:user_id => session[:user_id], :url_name => params[:url], :title => pagetitle, :desc => contentselected, :image => params[:pageimage])
+          end
         rescue => error
           objData = params.inspect
           message = 'something goes wrong with oauth token'
